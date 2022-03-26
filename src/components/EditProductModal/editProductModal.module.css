@@ -1,0 +1,31 @@
+.modalContent {
+  /* background-color: rgb(27, 27, 27); */
+  overflow-x: auto;
+  /* max-height: 600px; */
+}
+
+.modalHeader,
+.modalFooter {
+  border: none;
+}
+
+.modalHeader {
+  padding: 0px;
+  position: relative;
+}
+
+.productName {
+  font-family: 'Niconne';
+  font-size: 1.5rem;
+}
+
+.modalTittle{
+  margin: 0px;
+}
+
+
+.modalBody {
+  padding: 0px;
+  background-color: rgb(27, 27, 27);
+}
+

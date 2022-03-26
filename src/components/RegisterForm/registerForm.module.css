@@ -1,0 +1,68 @@
+.formTitle {
+  margin-bottom: 20px;
+  color: var(--bargas-gold);
+  font-family: "Niconne";
+  border-bottom: solid rgba(114, 114, 114, 0.596) 2px;
+  clear: both;
+}
+
+.formContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 122px 0px 0px 0px;
+}
+
+.wrapper {
+  margin: 30px 0px 0px 0px;
+  padding: 40px;
+  width: 40%;
+  background-color: rgba(0, 0, 0, 0.555);
+}
+
+.generalBtn {
+  display: block;
+  margin: 20px auto 0px auto;
+  width: 60%;
+
+  transition: all 0.5s;
+  background-color: var(--bargas-gold);
+  color: rgba(0, 0, 0, 0.692);
+  border: none;
+  border-radius: 5px;
+  font-family: "Squada One";
+  font-weight: 300;
+  font-style: normal;
+  text-decoration: none;
+  padding: 8px;
+}
+
+.generalBtn:hover {
+  background-color: rgb(233, 198, 44);
+  color: black;
+}
+
+.linkLabel {
+  display: block;
+  margin: 0px 0px 0px 0px;
+  color: var(--bargas-muted-text1);
+  float: right;
+}
+
+.loginLink {
+  text-decoration: underline;
+  cursor: pointer;
+  margin: 0px 0px 0px 5px;
+  color: rgba(255, 255, 255, 0.849);
+  transition: color .5s;
+}
+
+.loginLink:hover {
+  color: rgba(255, 255, 255, 0.945);
+}
+
+/*SHARED STYLES*/
+.linkLabel, .loginLink {
+  font-family: "Squada One";
+  font-size: medium;
+}

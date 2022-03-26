@@ -1,0 +1,34 @@
+.cartLink {
+  display: inline-block;
+  color: black;
+  border: none;
+  background-color: transparent;
+}
+
+.bagWrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.counter {
+  position: absolute;
+  display: flex;
+  padding: 3px;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 10px;
+  top: -5px;
+  right: -13px;
+  min-width: 20px;
+  min-height: 20px;
+  background-color: crimson;
+  border-radius: 100%;
+}
+
+.bagIcon {
+  font-size: 25px;
+  stroke-width: 0.1;
+  margin-bottom: 3px;
+}
+

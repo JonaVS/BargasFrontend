@@ -1,0 +1,17 @@
+.icon {
+  color: var(--bargas-gold);
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+}
+
+.wrapper {
+  display: inline-flex;
+  display: -webkit-inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  background-color: rgba(163, 163, 163, 0.185);
+  margin: 0px 10px 0px 0px;
+  height: 50px;
+  width: 50px;
+}

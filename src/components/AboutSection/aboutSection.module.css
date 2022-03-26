@@ -1,0 +1,50 @@
+.content {
+  position: relative;
+}
+
+.aboutInfo {
+  z-index: 2;
+  padding: 25px;
+  text-align: start;
+}
+
+.aboutContainer {
+  width: 100%;
+  max-width: 100%;
+}
+
+/*SHARED STYLES*/
+.aboutInfo, .aboutContainer {
+  background-color: rgba(0, 0, 0, 0.65);
+}
+
+@media (min-width: 320px) {
+  .content {
+    text-align: center;
+  }
+  .aboutInfo {
+    padding: 10px;
+    position: initial;
+    transform: translate(0%, 0%);
+  }
+}
+
+@media (min-width: 991px) {
+  .content {
+    text-align: start;
+  }
+
+  .aboutInfo {
+    padding: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-10%, -50%);
+  }
+}
+
+@media (min-width: 1200px) {
+  .aboutInfo {
+    width: 55%;
+  }
+}

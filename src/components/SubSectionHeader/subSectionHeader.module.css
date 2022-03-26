@@ -1,0 +1,38 @@
+.sectionDesc {
+  background-color: rgba(15, 15, 15, 0.719);
+}
+
+.sectionDesc > h1 {
+  font-family: "Niconne";
+  color: var(--bargas-gold);
+}
+
+.sectionDesc > p {
+  font-family: "Josefin Slab";
+  color: rgb(226, 226, 226);
+  font-size: 1.2rem;
+  clear: both;
+}
+
+.floatRight {
+  float: right;
+}
+
+.clearFix {
+  clear: both;
+}
+
+@media (min-width: 320px) {
+  .sectionDesc {
+    max-width: 100%;
+    padding: 25px;
+  }
+}
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 991px) {
+  .sectionDesc {
+    max-width: 50%;
+    padding: 25px;
+  }
+}

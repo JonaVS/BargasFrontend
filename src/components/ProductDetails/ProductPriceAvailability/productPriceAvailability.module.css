@@ -1,0 +1,9 @@
+.price {
+  font-family: 'Squada One';
+  color: rgb(221, 221, 221);
+}
+
+.spinner {
+  margin: 0px 0px 5px 10px;
+  vertical-align: middle;
+}

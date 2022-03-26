@@ -1,0 +1,75 @@
+.radioGroup {
+  margin: 0px 0px 0px 0px;
+}
+
+.radioGroup h2,
+.formLabel,
+.subTotal {
+  margin: 20px 0px 10px 0px;
+  font-family: "Squada One";
+  color: var(--bargas-muted-text2);
+  font-size: 1.2rem;
+}
+
+.formLabel {
+  display: block;
+}
+
+.submitBtn {
+  display: block;
+  width: 40%;
+  padding: 5px;
+  margin: 20px 0px 0px 0px;
+  background-color: transparent;
+  font-family: "Squada One";
+  font-size: 1.2rem;
+  color: rgb(218, 214, 214);
+  transition: all ease-in-out 0.5s;
+  outline: none;
+  border: solid var(--bargas-gold) 1px;
+  border-radius: 5px;
+  font-weight: 300;
+
+}
+
+.submitBtn:hover {
+  background-color: var(--bargas-gold);
+  border-color: transparent;
+  color: rgb(22, 22, 22);
+}
+
+.submitBtn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+
+.textArea {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.376);
+  color: white;
+  border: none;
+  padding: 10px;
+}
+
+textarea:focus {
+  outline: solid rgb(216, 183, 35) 2px;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px 0px 0px 0px;
+}
+
+.actions > button {
+  margin: 0px 0px 0px 5px;
+}
+
+
+.test {
+  border: solid var(--bargas-gold) 1px;
+
+}

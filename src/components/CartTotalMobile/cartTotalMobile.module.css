@@ -1,0 +1,34 @@
+.totalWrapper {
+  position: fixed;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  z-index: 2;
+  padding: 15px;
+  width: 100%;
+  bottom: 0px;
+  left: 0px;
+  background-color: black;
+}
+
+.orderBtn {
+  background-color: rgb(216, 183, 35);
+  color: black;
+  font-size: 1rem;
+  font-family: 'Squada One';
+  margin: 0px 0px 0px 20px;
+}
+
+.dataWrapper > p {
+  margin: 0px !important;
+  line-height: normal;
+  color: rgb(199, 199, 199);
+  font-family: "Squada One";
+  font-size: 1rem;
+}
+
+.basicDivider {
+  height: 2px;
+  background-color: rgb(179, 179, 179);
+  margin: 0px 0px 0px 0px;
+}

@@ -1,0 +1,53 @@
+.sectionHeader {
+  display: flex;
+}
+
+.linkBtn {
+  padding: 8px;
+  margin: 20px 0px 0px 0px;
+  background-color: rgba(2, 1, 1, 0.486);
+  font-family: "Squada One";
+  font-size: 1.2rem;
+  font-style: normal;
+  color: var(--bargas-muted-text1);
+  transition: all ease-in-out 0.5s;
+  outline: none;
+  border: solid var(--bargas-gold) 1px;
+  border-radius: 5px;
+  font-weight: 300;
+
+}
+
+.linkBtn:hover {
+  background-color: var(--bargas-gold);
+  border-color: transparent;
+  color: rgb(22, 22, 22);
+}
+
+.linkBtn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+@media (min-width: 320px) {
+  .sectionHeader {
+    flex-direction: column;
+  }
+
+  .linkBtn {
+    align-self: flex-start;
+    margin: 10px 0px 0px 0px;
+  }
+}
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 991px) {
+  .sectionHeader {
+    flex-direction: row;
+  }
+
+  .linkBtn {
+    align-self: flex-end;
+    margin: 0px 0px 2px 10px;
+  }
+}

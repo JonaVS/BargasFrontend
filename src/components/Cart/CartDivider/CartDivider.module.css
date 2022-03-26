@@ -1,0 +1,8 @@
+.cartDivider {
+  color: white;
+}
+
+.text {
+  color: var(--bargas-gold);
+  font-family: "Niconne";
+}

@@ -1,0 +1,4 @@
+.fixed {
+  position: fixed !important;
+  max-width: 1920px;
+}

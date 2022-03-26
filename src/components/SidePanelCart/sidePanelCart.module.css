@@ -1,0 +1,49 @@
+.sideCart {
+  background-color: rgb(27, 27, 27) !important;
+}
+
+
+.header > button {
+  color: white !important;
+  background-color: rgb(216, 183, 35) !important;
+  opacity: 1;
+}
+
+.title {
+  font-family: "Niconne";
+  color: rgb(216, 183, 35);
+  font-size: 10px;
+}
+
+.contentWrapper{
+ padding-bottom: 100px;
+}
+
+.btnWrapper 
+{
+  position:absolute;
+  bottom: 0;
+  right: 0;
+  height: 50px;
+  width: 100%;
+}
+
+.cartBtn {
+  background-color: var(--bargas-gold);
+  color: rgb(15, 14, 14);
+  width: 100%;
+  height: 100%;
+  border: none;
+  margin: 0px;
+  font-family: 'Squada One';
+  font-size: 20px;
+  transition: all .5s;
+}
+
+.cartBtn:hover {
+  background-color: var(--bargas-gold-hover);
+}
+
+.wrapper{
+  overflow: auto;
+}

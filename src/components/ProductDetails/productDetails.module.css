@@ -1,0 +1,74 @@
+.orderingPanel > h1 {
+  font-family: "Niconne";
+  color: var(--bargas-gold);
+  font-style: italic;
+  display: flex;
+  margin: 0px 100px 0px 0px;
+}
+
+.menuLink {
+  display: flex;
+  align-items: center;
+  color: rgb(209, 208, 208);
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+  line-height: 0;
+}
+
+.menuLink:hover {
+  background-color: transparent;
+  color: rgb(253, 245, 245);
+}
+
+.fixedComponent {
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 100%;
+  padding: 5px 10px 5px 10px;
+  background-color: rgba(0, 0, 0, 0.822);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 45px;
+}
+
+.fixedComponent > h1 {
+  font-family: "Niconne";
+  margin: 0px;
+  color: var(--bargas-gold);
+}
+
+.icon {
+  margin: 0px 5px 0px 0px;
+}
+
+@media (min-width: 320px) {
+  .menuLink > span {
+    font-size: 1rem;
+  }
+
+  .icon {
+    font-size: 1.1rem;
+  }
+  .fixedComponent {
+    top: 78px;
+  }
+}
+
+@media (min-width: 576px) {
+  .menuLink > span {
+    font-size: 1.4rem;
+  }
+
+  .icon {
+    font-size: 1.3rem;
+  }
+}
+
+@media (min-width: 991px) {
+  .fixedComponent {
+    top: 120px;
+  }
+}

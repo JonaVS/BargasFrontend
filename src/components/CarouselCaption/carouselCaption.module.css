@@ -1,0 +1,60 @@
+.caption {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  background-color: rgba(2, 2, 2, 0.555);
+  font-family: "Niconne";
+  border: solid var(--bargas-gold) 1px;
+  border-radius: 0px 20px 0px 0px;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+.caption > h3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  color: rgb(216, 183, 35);
+  margin: 0px;
+}
+
+.icon {
+  margin: 0px 0px 0px 20px;
+  color: rgb(199, 198, 198);
+}
+
+.caption > p {
+  color: rgb(224, 224, 224);
+  text-align: left;
+  font-family: "Josefin Slab";
+  word-wrap: break-word;
+  max-width: 500px;
+}
+
+@media (min-width: 320px) {
+  .caption > h3 {
+    font-size: 1.2rem ;
+  }
+  .caption > p {
+    display: none;
+  }
+  .caption {
+    top: 10%;
+    padding: 5px;
+  }
+}
+
+@media (min-width: 991px) {
+  .caption > h3 {
+    font-size: 1.8rem;
+  }
+  .caption > p {
+    display: block;
+  }
+  .caption {
+    top: 20%;
+    padding: 20px;
+  }
+}

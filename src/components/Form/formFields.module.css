@@ -1,0 +1,63 @@
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 1px solid var(--bargas-gold-light);
+  -webkit-text-fill-color: var(--bargas-muted-text1);
+  -webkit-box-shadow: 0 0 0px 1000px var(--bargas-gold-light) inset;
+  box-shadow:  0 0 0px 1000px rgba(0, 0, 0, 0.383) inset ;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.inputWrapper{
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+.textField,
+.textArea, .selectField, .textBox {
+  color: var(--bargas-muted-text1);
+  background-color: rgba(0, 0, 0, 0.65);
+  width: 100%;
+  padding: 10px;
+  border: solid var(--bargas-gold-light) 1px;
+  border-radius: 10px 10px 10px 10px;
+  margin: none;
+  display: block;
+}
+.textField,
+.selectField, .textBox {
+  height: 50px;
+}
+
+.textArea {
+  height: 120px;
+}
+
+
+.textField:focus,
+.textArea:focus, .selectField:focus {
+  outline: solid rgb(216, 183, 35) 1px;
+}
+
+
+.formLabel {
+  display: block;
+  color: var(--bargas-gold);
+  font-family: "Squada One";
+  font-size: 1.2rem;
+  margin: 5px 0px 2px 0px;
+}
+
+.error {
+  font-family: 'Squada One'; 
+  margin: 0px 0px 0px 0px;  
+  color: rgb(179, 45, 45);
+  border-radius: 10px 10px 10px 10px;
+  width: 40%;
+}

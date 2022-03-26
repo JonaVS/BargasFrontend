@@ -1,0 +1,18 @@
+.icon {
+  flex-shrink: 0;
+  font-size: 1.5rem;
+  color: var(--bargas-gold);
+}
+
+.textIcon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.textIcon > span {
+  margin: 0px 0px 0px 5px;
+  font-family: "Josefin Slab";
+  font-size: 1rem;
+  color: rgb(238, 238, 238);
+}

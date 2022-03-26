@@ -1,0 +1,80 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: rgba(34, 33, 33, 0.712);
+  position: absolute;
+  bottom: 0%;
+}
+
+.footerCol {
+  padding: 40px;
+  color: white;
+  margin: 0px 0px 0px 0px;
+  border-right: solid rgb(47, 46, 46);
+}
+
+.footerCol > a {
+  display: block;
+  transition: all .5s;
+  text-decoration: none;
+}
+
+.footerCol > a:hover {
+  color: rgb(255, 255, 255);
+}
+
+.footerCol > h3 {
+  font-size: 1.5rem;
+}
+
+.footerTittle {
+  font-family: "Squada One";
+  color: white;
+  text-decoration: underline;
+}
+
+.icon,
+.socialIcon {
+  color: rgb(216, 183, 35);
+}
+
+.icon {
+  flex-shrink: 0;
+  font-size: 1.5rem;
+}
+
+.socialIcon {
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+}
+
+.roundedWrapper {
+  display: inline-flex;
+  display: -webkit-inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  background-color: rgba(163, 163, 163, 0.185);
+  margin: 0px 10px 0px 0px;
+  height: 50px;
+  width: 50px;
+}
+
+.footerInfo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.footerInfo > span {
+  margin: 0px 0px 0px 5px;
+}
+
+
+/*Shared css*/
+.footerCol > a, .footerInfo > span {
+  font-family: "Josefin Slab";
+  color: rgb(238, 238, 238);
+  font-size: 1rem;
+}

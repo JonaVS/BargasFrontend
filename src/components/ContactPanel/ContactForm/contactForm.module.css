@@ -1,0 +1,21 @@
+.submitBtn {
+  display: block;
+  margin: 20px auto 0px auto;
+  background-color: var(--bargas-gold);
+  width: 50%;
+  font-family: "Squada One";
+  font-size: 1.2rem;
+  transition: all ease-in-out 0.5s;
+  outline: none;
+}
+
+.submitBtn:hover {
+  background-color: transparent;
+  border-color: var(--bargas-gold);
+  color: rgb(218, 214, 214);
+}
+
+.submitBtn:focus {
+  outline: none;
+  box-shadow: none;
+}

@@ -1,0 +1,51 @@
+.topNavWrapper {
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background-color: transparent;
+  padding: 20px 60px 0px 60px;
+}
+
+.topLeft > a {
+  color: rgb(0, 0, 0);
+  margin: 0px 5px 0px 0px;
+}
+
+.icon {
+  font-size: 25px;
+  stroke-width: 1.5;
+}
+
+
+@media (min-width: 320px) {
+  .topNavWrapper {
+    display: none;
+  }
+
+}
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+
+}
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 991px) {
+  .topNavWrapper {
+    display: flex;
+  }
+}
+
+/* X-Large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+
+}
+
+
+

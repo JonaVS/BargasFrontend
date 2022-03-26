@@ -1,0 +1,14 @@
+.carousel {
+  width: 100%;
+  margin: auto;
+}
+
+.itemWrapper {
+  /* max-height: 800px; */
+  max-height: 100vh;
+}
+
+.carouselImg {
+  object-fit: cover;
+  overflow: hidden;
+}

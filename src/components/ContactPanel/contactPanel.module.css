@@ -1,0 +1,25 @@
+.formCol {
+  background-color: rgba(0, 0, 0, 0.596);
+  padding: 20px;
+  margin: 0px 0px 0px 0px;
+}
+
+.subTitle {
+  font-family: "Niconne";
+  color: var(--bargas-gold);
+}
+
+.icon,
+.socialIcon {
+  color: rgb(216, 183, 35);
+}
+
+.icon {
+  flex-shrink: 0;
+  font-size: 1.5rem;
+}
+
+.socialIcon {
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+}

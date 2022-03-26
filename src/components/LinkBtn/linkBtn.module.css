@@ -1,0 +1,17 @@
+.linkBtn {
+  transition: all 0.5s;
+  background-color: var(--bargas-gold);
+  color: rgba(0, 0, 0, 0.692);
+  border: none;
+  border-radius: 5px;
+  font-family: "Squada One";
+  font-weight: 300;
+  font-style: normal;
+  text-decoration: none;
+  padding: 8px;
+}
+
+.linkBtn:hover {
+  background-color: rgb(233, 198, 44);
+  color: black;
+}

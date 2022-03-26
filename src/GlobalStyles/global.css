@@ -1,0 +1,60 @@
+:root {
+  --bargas-gold: rgb(216, 183, 35);
+  --bargas-gold-hover: rgb(233, 194, 21);
+  --bargas-gold-light: rgba(236, 206, 71, 0.349);
+  --bargas-muted-text1: rgb(179, 179, 179);
+  --bargas-muted-text2: rgb(212, 212, 212);
+}
+
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  /* scrollbar-color: rgb(83, 83, 83) #f1f1f1; */
+  scrollbar-color: var(--bargas-gold)  #353434;
+  scrollbar-width: thin !important;
+  scroll-behavior: initial !important;
+}
+
+.react-icons {
+  vertical-align: middle;
+  margin-right: 5px;
+  font-size: 25px;
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  transition: all 0.5s ease;
+}
+
+::-webkit-scrollbar-track {
+  background: #353434;
+}
+
+::-webkit-scrollbar-thumb {
+  /* background: rgb(83, 83, 83); */
+   background: var(--bargas-gold); 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  /* background: rgb(41, 41, 41); */
+  background: var(--bargas-gold-hover);
+}
+
+.toastAdd {
+  background-color: rgb(25, 135, 84);
+  color: rgba(255, 255, 255, 0.87);
+  font-family: "Squada One";
+  font-weight: lighter;
+  font-size: 1.2rem;
+  z-index: 1;
+}
+
+.toastAddBar {
+  background: rgb(36, 36, 36);
+}

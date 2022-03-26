@@ -1,0 +1,18 @@
+.cartListWrapper {
+  scrollbar-width: thin !important;
+  scrollbar-color: var(--bargas-gold)  #353434;
+}
+
+@media (min-width: 576px) {
+  .cartListWrapper {
+    max-height: none;
+    overflow: initial;
+  }
+}
+
+@media (min-width: 991px) {
+  .cartListWrapper {
+    max-height: 600px;
+    overflow: auto;
+  }
+}

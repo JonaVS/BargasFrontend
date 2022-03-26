@@ -1,0 +1,112 @@
+.heroCaption {
+  max-width: 500px;
+  min-width: 150px;
+  padding: 10px;
+  display: inline;
+  position: absolute;
+  left: 0%;
+  background-color: rgba(0, 0, 0, 0.541);
+}
+
+.heroCaption > h1 {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  font-family: "Niconne";
+  margin: 0px;
+  color: rgb(216, 183, 35);
+}
+
+.heroCaption > p {
+  font-family: "Josefin Slab";
+  color: rgb(226, 226, 226);
+  font-style: italic;
+  margin: 0px;
+}
+
+.roundedWrapper {
+  margin: 0px 0px 0px 20px;
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+  background-color: black;
+}
+
+.icon {
+  margin: 0px 0px 0px 0px;
+  color: rgb(195, 191, 191);
+}
+
+.btn {
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.644);
+  border: none;
+  border-radius: 5%;
+  color: rgb(255, 255, 255);
+  font-family: "Josefin Slab";
+  font-size: 1.4rem;
+  font-weight: 500;
+  float: right;
+  transition: background-color 0.5s;
+}
+
+.btn:hover{
+  background-color: rgba(0, 0, 0, 0.972);
+}
+
+.basicDivider {
+  width: 100%;
+  height: 2px;
+  background-color: aliceblue;
+  margin: 0px 0px 5px 0px;
+}
+
+@media (min-width: 320px) {
+  .heroCaption {
+    bottom: 0%;
+    top: unset;
+  }
+
+  .heroCaption > h1 {
+    font-size: 2.25rem;
+  }
+
+  .btn {
+    display: none;
+  }
+
+  .roundedWrapper {
+    padding: 10px;
+  }
+
+  .icon {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 991px) {
+  .heroCaption {
+    top: 20%;
+    bottom: unset;
+  }
+
+  .heroCaption > h1 {
+    font-size: 3.5rem;
+  }
+
+  .heroCaption > p {
+    display: block;
+  }
+
+  .roundedWrapper {
+    padding: 10px;
+  }
+
+  .icon {
+    font-size: 2rem;
+  }
+
+  .btn {
+    display: block;
+  }
+}

@@ -1,0 +1,106 @@
+.cartDataCont {
+  display: flex;
+  justify-content: center;
+}
+
+.cartCard {
+  background-color: rgba(8, 8, 8, 0.555);
+  width: 100%;
+  padding: 10px;
+  margin: 0px 0px 10px 0px;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0px 0px 0px;
+}
+
+.iconBtn {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  border: none;
+  padding: 0px;
+  margin: 0px 0px 0px 5px;
+  color: white;
+}
+
+.infoWrapper {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.imgWrapper {
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 90px;
+  height: 90px;
+  border-radius: 100%;
+  flex-shrink: 0;
+}
+
+.itemCount {
+  position: absolute;
+  top: 0;
+  right: -10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35px;
+  width: 35px;
+  border: solid rgb(216, 183, 35) 2px;
+  border-radius: 100%;
+  color: aliceblue;
+  font-size: 0.8rem;
+  background-color: black;
+}
+
+.itemData {
+  width: 80%;
+  margin: 0px 0px 0px 20px;
+}
+
+.itemData > p {
+  max-width: 230px;
+  font-size: 15px;
+  line-height: 1.1;
+  margin: 5px 0px 0px 0px;
+  font-family: "Josefin Slab";
+  font-style: italic;
+  color: rgb(226, 226, 226);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.itemTittle {
+  font-family: "Niconne";
+  display: flex;
+  align-items: center;
+  margin: 0px 0px 0px 0px;
+}
+
+.priceTag {
+  background-color: rgba(0, 255, 0, 0.726);
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  color: aliceblue;
+  padding: 0px 10px 0px 10px;
+  border-radius: 20px;
+}
+
+.subTotal,
+.itemCount {
+  font-family: "Squada One";
+}
+
+.icon,
+.itemTittle,
+.subTotal {
+  color: rgb(216, 183, 35);
+}

@@ -1,0 +1,40 @@
+.mainCont {
+  margin: 50px auto 0px auto;
+}
+
+.col {
+  display: flex;
+  align-items: center;
+  padding: 20px 20px 20px 20px;
+}
+
+.row div:last-child {
+  border-right-style: none;
+}
+
+.col > p {
+  font-family: "Josefin Slab";
+  font-size: 1.2rem;
+  color: rgb(233, 233, 233);
+  margin: 0px;
+}
+
+.icon {
+  font-size: 2rem;
+  margin: 0px 10px 0px 0px;
+  color: var(--bargas-gold);
+  flex-shrink: 0;
+}
+
+@media (max-width: 576px) {
+  .col {
+    border: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .col {
+    border-right-style: solid;
+    border-right-color: rgba(177, 177, 177, 0.685);
+  }
+}

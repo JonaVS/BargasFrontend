@@ -1,7 +1,14 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/browser-apis/
- */
+import React from "react"
+import { CartProvider } from "./src/context/CartContext"
+import "bootstrap/dist/css/bootstrap.min.css"
+import "@fontsource/josefin-slab"
+import "@fontsource/niconne"
+import "@fontsource/squada-one"
+import "./src/GlobalStyles/typography.css"
+import 'react-toastify/dist/ReactToastify.min.css'
+import "./src/GlobalStyles/global.css"
 
-// You can delete this file if you're not using it
+
+export const wrapRootElement = ({ element }) => (
+    <CartProvider>{element}</CartProvider>
+  )

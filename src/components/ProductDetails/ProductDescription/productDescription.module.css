@@ -1,0 +1,30 @@
+.card {
+  background-color: transparent;
+}
+
+.cardBody {
+  padding: 5px;
+}
+
+.descText {
+  color: white;
+  color: rgb(233, 229, 229);
+  font-family: "Josefin Slab";
+  font-size: 1.2rem;
+}
+
+.toggleText {
+  background-color: transparent;
+  border: none;
+  border-bottom: solid rgb(155, 154, 154);
+  font-family: "Niconne";
+  font-style: italic;
+  color: var(--bargas-gold);
+  font-size: 3rem;
+  margin: 0px !important;
+  padding: 0px 0px 0px 0px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

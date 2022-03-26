@@ -1,0 +1,22 @@
+.testLabel {
+    color: white;
+}
+
+
+.testLabel, .inputTest{
+    display: block;
+}
+
+.inputTest{
+    width: 100%;
+}
+
+.flex{
+    display: flex;
+    flex-direction:row;
+    gap: 15px;
+}
+
+.flexChild {
+    flex-grow: 1;
+}
