@@ -1,10 +1,5 @@
 import React from "react"
 import LazyLoad from "react-lazyload"
-import burrito from "../../images/mansonry/burrito.jpg"
-import ensalada from "../../images/mansonry/ensalada.jpg"
-import hambu from "../../images/mansonry/hamburger2.jpg"
-import papas from "../../images/mansonry/papas.jpg"
-import pan from "../../images/mansonry/emparedadoV.jpg"
 import Container from "react-bootstrap/Container"
 import SubSectionHeader from "../SubSectionHeader/SubSectionHeader"
 import Masonry from "react-masonry-css"
@@ -12,13 +7,8 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import * as styles from "../MenuSection/menuSection.module.css"
 
 
+
 const MenuSection = ({ preview }) => {
-  const masonItems = [
-    { id: 1, image: burrito },
-    { id: 2, image: ensalada },
-    { id: 3, image: pan },
-    { id: 4, image: hambu },
-  ]
 
   console.log(preview)
 

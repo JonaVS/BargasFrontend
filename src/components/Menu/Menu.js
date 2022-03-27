@@ -4,11 +4,7 @@ import Container from "react-bootstrap/Container"
 import Categories from "../Categories/Categories"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
-import Card from "react-bootstrap/Card"
-import LinkBtn from "../LinkBtn/LinkBtn"
-import burrito from "../../images/burrito.jpg"
 import MenuItemCard from "./MenuItemCard/MenuItemCard"
-import * as styles from "../Menu/menu.module.css"
 
 const Menu = () => {
   const data = useStaticQuery(graphql`
@@ -72,23 +68,6 @@ const Menu = () => {
         {filteredMenu.map(item => (
           <Col key={item.strapiId}>
             <MenuItemCard item={item} />
-          </Col>
-        ))}
-
-        {Array.from({ length: 5 }).map((_, idx) => (
-          <Col key={idx}>
-            <Card className={styles.card}>
-              <Card.Img variant="top" src={burrito} />
-              <Card.Body>
-                <Card.Title className={styles.cardTitle}>
-                  El burrito loco
-                </Card.Title>
-                <LinkBtn>Ordenar</LinkBtn>
-                <p className={styles.priceTag}>
-                  <span>₡</span> 5.000
-                </p>
-              </Card.Body>
-            </Card>
           </Col>
         ))}
       </Row>
