@@ -1,12 +1,12 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Seo from "../components/seo"
-import CarouselB from "../components/Carousel/CarouselB"
-import About from "../components/AboutSection/AboutSection"
-import MenuSection from "../components/MenuSection/MenuSection"
-import OrderingSection from "../components/OrderingSection/OrderingSection"
-import ContactBasicInfo from "../components/ContactBasictInfo/ContactBasicInfo"
-import Divider from "../components/Divider/Divider"
+import CarouselB from "../features/carousel/Carousel/CarouselB"
+import About from "../features/businessInfo/components/AboutSection/AboutSection"
+import MenuSection from "../features/businessInfo/components/MenuSection/MenuSection"
+import OrderingSection from "../features/businessInfo/components/OrderingSection/OrderingSection"
+import ContactBasicInfo from "../features/businessInfo/components/ContactBasictInfo/ContactBasicInfo"
+import Divider from "../shared/components/Divider/Divider"
 
 const IndexPage = ({ data }) => {
   console.log(data)
@@ -29,8 +29,8 @@ const IndexPage = ({ data }) => {
 
 export default IndexPage
 
-export const query = graphql`
-  query indexPage {
+export const indexQuery = graphql`
+  query index {
     allStrapiMenuPreviews {
       nodes {
         producto {

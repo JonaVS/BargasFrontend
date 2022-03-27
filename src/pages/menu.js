@@ -1,10 +1,10 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Seo from "../components/seo"
-import HeroContainer from "../components/HeroContainer/HeroContainer"
-import HeroCaption from "../components/HeroContainer/HeroCaption/HeroCaption"
-import Menu from "../components/Menu/Menu"
-import Divider from "../components/Divider/Divider"
+import HeroContainer from "../shared/components/HeroContainer/HeroContainer"
+import HeroCaption from "../shared/components/HeroContainer/HeroCaption/HeroCaption"
+import Menu from "../features/menu/Menu/Menu"
+import Divider from "../shared/components/Divider/Divider"
 
 const MenuPage = ({ data }) => {
 

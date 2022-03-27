@@ -1,5 +1,5 @@
 import React from "react"
-import RegisterForm from "../../components/RegisterForm/RegisterForm"
+import RegisterForm from "../../features/auth/components/RegisterForm/RegisterForm"
 
 const SingUpPage = () => {
   return <RegisterForm />

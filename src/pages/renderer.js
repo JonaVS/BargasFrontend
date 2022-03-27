@@ -1,6 +1,6 @@
 import React from "react"
 import agent from "../API/agent"
-import LoginForm from "../components/LoginForm/LoginForm"
+import LoginForm from "../features/auth/components/LoginForm/LoginForm"
 
 const renderPage = () => {
 

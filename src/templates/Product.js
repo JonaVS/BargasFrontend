@@ -1,9 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
-import HeroContainer from "../components/HeroContainer/HeroContainer"
-import ProductDetails from "../components/ProductDetails/ProductDetails"
-import Divider from "../components/Divider/Divider"
-
+import HeroContainer from "../shared/components/HeroContainer/HeroContainer"
+import ProductDetails from "../features/menu/ProductDetails/ProductDetails"
+import Divider from "../shared/components/Divider/Divider"
 
 const Product = ({ data }) => {
   const productData = data.strapiProductos
