@@ -25,6 +25,18 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Bargas`,
+        short_name: `Bargas`,
+        start_url: `/`,
+        background_color: `#FFFFFF`,
+        theme_color: `#FFFFFF`,
+        display: `minimal-ui`,
+        icon: `src/images/logoN.png`, // This path is relative to the root of the site.
+      }
+    },
+    {
       resolve: `gatsby-source-strapi`,
       options: {
         apiURL: `http://localhost:1337`,
