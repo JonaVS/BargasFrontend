@@ -6,6 +6,7 @@ import BargasTextField from "../../../../shared/components/Form/BargasTextField/
 import BargasCheckBoxField from "../../../../shared/components/Form/BargasCheckBoxField/BargasCheckboxField"
 import * as styles from "./registerForm.module.css"
 import { Link } from "gatsby"
+import LabelLink from "../../../../shared/components/LabelLink/LabelLink"
 
 const RegisterForm = () => {
   return (
@@ -56,12 +57,11 @@ const RegisterForm = () => {
               <button className={styles.generalBtn} type="submit">
                 REGISTRARSE
               </button>
-              <span className={styles.linkLabel}>
-                ¿Ya tienes una cuenta?:
-                <Link to="/auth/login" className={styles.loginLink}>
-                  Inicia sesión aquí
-                </Link>
-              </span>
+              <LabelLink
+                labelText="¿Ya tienes una cuenta?:"
+                linkText="Inicia sesión aquí"
+                to="/auth/login"
+              />
             </Form>
           )}
         </Formik>
