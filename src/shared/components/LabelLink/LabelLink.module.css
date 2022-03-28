@@ -1,0 +1,29 @@
+.linkLabel {
+  display: block;
+  margin: 0px 0px 0px 0px;
+  color: var(--bargas-muted-text1);
+}
+
+.link {
+  text-decoration: underline;
+  cursor: pointer;
+  margin: 0px 0px 0px 5px;
+  color: rgba(255, 255, 255, 0.849);
+  transition: color 0.5s;
+}
+
+.link:hover {
+  color: rgba(255, 255, 255, 0.945);
+}
+
+.extraText {
+  color: var(--bargas-muted-text1);
+}
+
+/*SHARED STYLES*/
+.linkLabel,
+.link,
+.extraText {
+  font-family: "Squada One";
+  font-size: medium;
+}
