@@ -1,6 +1,8 @@
 .authDp {
   color: black !important;
   background-color: black;
+  padding: 0px !important;
+  margin: 0px 5px 0px 0px;
 }
 
 .dpMenu {
@@ -26,8 +28,7 @@
 
 .icon {
   font-size: 26px;
-  margin: 0px 0px 0px 5px;
-  stroke-width: 0.1;
+  margin: 0px 0px 0px 0px;
 }
 
 .authDp::after {
