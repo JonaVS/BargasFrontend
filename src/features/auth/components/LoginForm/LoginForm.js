@@ -5,6 +5,7 @@ import { Form, Formik } from "formik"
 import loginValidation from "./YupLoginValidation"
 import BargasTextField from "../../../../shared/components/Form/BargasTextField/BargasTextField"
 import * as styles from "../RegisterForm/registerForm.module.css"
+import LabelLink from "../../../../shared/components/LabelLink/LabelLink"
 
 const LoginForm = () => {
   return (
@@ -37,12 +38,11 @@ const LoginForm = () => {
               <button className={styles.generalBtn} type="submit">
                 INICIAR SESIÓN
               </button>
-              <span className={styles.linkLabel}>
-                ¿No tienes una cuenta?:
-                <Link to="/auth/signup" className={styles.loginLink}>
-                  Crea una aquí
-                </Link>
-              </span>
+              <LabelLink
+                labelText="¿No tienes una cuenta?:"
+                linkText="Crea una aqui"
+                to="/auth/signup"
+              />
             </Form>
           )}
         </Formik>
