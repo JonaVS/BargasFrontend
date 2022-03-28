@@ -16,7 +16,7 @@ const TopNav = ({ handleShowCart }) => {
             <FiFacebook className={styles.icon} />
           </a>
         </div>
-        <div className={styles.topRight}>
+        <div>
           <AuthDropdown />
           <ShoppingBag handleShowCart={handleShowCart} />
         </div>
