@@ -58,9 +58,13 @@
   color: rgba(255, 255, 255, 0.945);
 }
 
+.extraText {
+  color: var(--bargas-muted-text1);
+}
+
 /*SHARED STYLES*/
 .linkLabel,
-.loginLink {
+.loginLink, .extraText {
   font-family: "Squada One";
   font-size: medium;
 }
