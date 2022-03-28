@@ -4,7 +4,6 @@ import { Form, Formik } from "formik"
 import registerValidation from "./YupRegisterValidation"
 import BargasTextField from "../../../../shared/components/Form/BargasTextField/BargasTextField"
 import BargasCheckBoxField from "../../../../shared/components/Form/BargasCheckBoxField/BargasCheckboxField"
-
 import * as styles from "./registerForm.module.css"
 import { Link } from "gatsby"
 
@@ -12,12 +11,6 @@ const RegisterForm = () => {
   return (
     <Container fluid className={styles.formContainer}>
       <div className={styles.wrapper}>
-        <span className={styles.linkLabel}>
-          ¿Ya tienes una cuenta?:
-          <Link to="/auth/login" className={styles.loginLink}>
-            Inicia sesión aquí
-          </Link>
-        </span>
         <h1 className={styles.formTitle}>Registro</h1>
         <Formik
           initialValues={{
@@ -63,6 +56,12 @@ const RegisterForm = () => {
               <button className={styles.generalBtn} type="submit">
                 REGISTRARSE
               </button>
+              <span className={styles.linkLabel}>
+                ¿Ya tienes una cuenta?:
+                <Link to="/auth/login" className={styles.loginLink}>
+                  Inicia sesión aquí
+                </Link>
+              </span>
             </Form>
           )}
         </Formik>
