@@ -6,6 +6,7 @@ import ShoppingBag from "./ShoppingBag/ShoppingBag"
 import { Link } from "gatsby"
 import SidePanelCart from "../../../features/cart/SidePanelCart/SidePanelCart"
 import * as styles from "../Navbar/navbar.module.css"
+import AuthDropdown from "./AuthDropdown/AuthDropdown"
 
 const NavBar = () => {
   const [showCart, setShowCart] = useState(false)
@@ -14,7 +15,7 @@ const NavBar = () => {
     setShowCart(!showCart)
   }
 
-  console.log('me he renderizdo')
+  console.log("me he renderizdo")
 
   return (
     <>
@@ -35,6 +36,7 @@ const NavBar = () => {
           />
         </Navbar.Brand>
         <div className={styles.mobileRight}>
+          <AuthDropdown />
           <ShoppingBag handleShowCart={handleShowCart} />
           <Navbar.Toggle
             className={"ms-2 me-4 p-0 border-0"}
