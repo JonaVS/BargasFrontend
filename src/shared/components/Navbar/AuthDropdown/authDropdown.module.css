@@ -1,0 +1,46 @@
+.authDp {
+  color: black !important;
+  background-color: black;
+}
+
+.dpMenu {
+  background-color: var(--bargas-gold) !important;
+}
+
+.dpMenu > a {
+  font-family: "Squada One";
+  font-size: 1.2rem;
+  color: rgb(59, 59, 59);
+}
+
+.dpMenu > a:hover {
+  background-color: black;
+  color: rgb(233, 233, 233);
+}
+
+.divider {
+  height: 2px;
+  background-color: black;
+  margin: 2px 0px 2px 0px;
+}
+
+.icon {
+  font-size: 26px;
+  margin: 0px 0px 0px 5px;
+  stroke-width: 0.1;
+}
+
+.authDp::after {
+  content: none !important;
+}
+
+.authDp:active,
+.authDp:hover,
+.authDp:focus {
+  box-shadow: none !important;
+}
+
+.authDp:enabled {
+  background-color: transparent !important;
+  border: none;
+}

@@ -1,9 +1,10 @@
 import React from "react"
 import { FiInstagram, FiFacebook } from "react-icons/fi"
 import ShoppingBag from "../ShoppingBag/ShoppingBag"
+import AuthDropdown from "../AuthDropdown/AuthDropdown"
 import * as styles from "../TopNav/topNav.module.css"
 
-const TopNav = ({handleShowCart}) => {
+const TopNav = ({ handleShowCart }) => {
   return (
     <>
       <div className={styles.topNavWrapper}>
@@ -15,7 +16,10 @@ const TopNav = ({handleShowCart}) => {
             <FiFacebook className={styles.icon} />
           </a>
         </div>
-        <ShoppingBag handleShowCart={handleShowCart} />
+        <div className={styles.topRight}>
+          <AuthDropdown />
+          <ShoppingBag handleShowCart={handleShowCart} />
+        </div>
       </div>
     </>
   )
