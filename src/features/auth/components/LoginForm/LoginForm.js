@@ -43,6 +43,11 @@ const LoginForm = () => {
                 linkText="Crea una aqui"
                 to="/auth/signup"
               />
+              <LabelLink
+                labelText="¿Haz olvidado tu contraseña?:"
+                linkText="Recuperar contraseña"
+                to="/auth/passwordRecovery"
+              />
             </Form>
           )}
         </Formik>
