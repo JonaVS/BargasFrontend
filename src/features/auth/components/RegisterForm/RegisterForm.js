@@ -5,7 +5,7 @@ import registerValidation from "./YupRegisterValidation"
 import BargasTextField from "../../../../shared/components/Form/BargasTextField/BargasTextField"
 import BargasCheckBoxField from "../../../../shared/components/Form/BargasCheckBoxField/BargasCheckboxField"
 import LabelLink from "../../../../shared/components/LabelLink/LabelLink"
-import * as styles from "./registerForm.module.css"
+import * as styles from "../../shared/authForm.module.css"
 
 const RegisterForm = () => {
   return (

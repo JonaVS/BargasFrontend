@@ -3,7 +3,7 @@ import { Container } from "react-bootstrap"
 import { Form, Formik } from "formik"
 import passRecoveryValidation from "./passRecoveryValidation"
 import BargasTextField from "../../../../shared/components/Form/BargasTextField/BargasTextField"
-import * as styles from "../RegisterForm/registerForm.module.css"
+import * as styles from "../../shared/authForm.module.css"
 
 const PassRecoveryForm = () => {
   return (

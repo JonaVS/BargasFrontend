@@ -4,7 +4,7 @@ import { Form, Formik } from "formik"
 import loginValidation from "./YupLoginValidation"
 import BargasTextField from "../../../../shared/components/Form/BargasTextField/BargasTextField"
 import LabelLink from "../../../../shared/components/LabelLink/LabelLink"
-import * as styles from "../RegisterForm/registerForm.module.css"
+import * as styles from "../../shared/authForm.module.css"
 
 const LoginForm = () => {
   return (
