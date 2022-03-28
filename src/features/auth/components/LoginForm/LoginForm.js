@@ -1,11 +1,10 @@
 import React from "react"
 import { Container } from "react-bootstrap"
-import { Link } from "gatsby"
 import { Form, Formik } from "formik"
 import loginValidation from "./YupLoginValidation"
 import BargasTextField from "../../../../shared/components/Form/BargasTextField/BargasTextField"
-import * as styles from "../RegisterForm/registerForm.module.css"
 import LabelLink from "../../../../shared/components/LabelLink/LabelLink"
+import * as styles from "../RegisterForm/registerForm.module.css"
 
 const LoginForm = () => {
   return (

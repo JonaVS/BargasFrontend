@@ -4,9 +4,8 @@ import { Form, Formik } from "formik"
 import registerValidation from "./YupRegisterValidation"
 import BargasTextField from "../../../../shared/components/Form/BargasTextField/BargasTextField"
 import BargasCheckBoxField from "../../../../shared/components/Form/BargasCheckBoxField/BargasCheckboxField"
-import * as styles from "./registerForm.module.css"
-import { Link } from "gatsby"
 import LabelLink from "../../../../shared/components/LabelLink/LabelLink"
+import * as styles from "./registerForm.module.css"
 
 const RegisterForm = () => {
   return (
