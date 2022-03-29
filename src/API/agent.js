@@ -20,7 +20,7 @@ const response = (response) => response.data;
 
 const request = {
   get: (url, config = {}) => axios.get(url, config).then(response),
-  post: (url, body) => axios.post(url, body).then(response),
+  post: (url, body, config={}) => axios.post(url, body, config).then(response),
   put: (url, body) => axios.put(url, body).then(response),
   delete: url => axios.delete(url).then(response),
 }
@@ -31,6 +31,7 @@ const product = {
 
 const user = {
   register: (body) => request.post(`auth/local/register`, body),
+  login: (body, config) => request.post('auth/local', body, config ),
   get: (config) => request.get('/posts', config)
 }
 
