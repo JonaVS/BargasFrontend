@@ -1,4 +1,5 @@
-import React from "react"
+import React, { useContext } from "react"
+import { UserContext } from "../../../../context/UserContext"
 import { Container } from "react-bootstrap"
 import { Form, Formik } from "formik"
 import registerValidation from "./YupRegisterValidation"
@@ -8,6 +9,8 @@ import LabelLink from "../../../../shared/components/LabelLink/LabelLink"
 import * as styles from "../../shared/authForm.module.css"
 
 const RegisterForm = () => {
+  const { register } = useContext(UserContext)
+
   return (
     <Container fluid className={styles.formContainer}>
       <div className={styles.wrapper}>
@@ -22,7 +25,11 @@ const RegisterForm = () => {
           }}
           validationSchema={registerValidation}
           onSubmit={(values, formikBag) => {
-            console.log(values)
+            register({
+              username: values.fullName,
+              email: values.email,
+              password: values.password,
+            })
           }}
         >
           {formik => (
