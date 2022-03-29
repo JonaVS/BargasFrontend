@@ -31,7 +31,7 @@ const product = {
 
 const user = {
   register: (body) => request.post(`auth/local/register`, body),
-  login: (body, config) => request.post('auth/local', body, config ),
+  login: (body) => request.post('/auth/local', body),
   get: (config) => request.get('/posts', config)
 }
 
