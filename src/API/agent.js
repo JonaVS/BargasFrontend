@@ -32,6 +32,7 @@ const product = {
 const user = {
   register: (body) => request.post(`auth/local/register`, body),
   login: (body) => request.post('/auth/local', body),
+  getLoggedInUser: (config) => request.get('/users/me', config)
 }
 
 const agent = {
