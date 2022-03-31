@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react"
+import React, { useContext, useEffect, useLayoutEffect } from "react"
 import agent from "../../../API/agent"
 import NavBar from "../Navbar/Navbar"
 import Footer from "../Footer/Footer"
@@ -10,7 +10,7 @@ import { UserContext } from "../../../context/UserContext"
 const Layout = ({ children }) => {
   const {setUser, setIsloggedIn} = useContext(UserContext)
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const getLoggedInUser = async () => {
       const token = window.localStorage.getItem("bargasJwt")
       if (!token) return
@@ -27,7 +27,7 @@ const Layout = ({ children }) => {
       }
     }
     getLoggedInUser()
-  },[setUser])
+  },[setUser, setIsloggedIn])
 
   return (
     <>
