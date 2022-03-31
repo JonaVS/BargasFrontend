@@ -9,13 +9,16 @@
   background-color: var(--bargas-gold) !important;
 }
 
-.dpMenu > a {
+.dpMenu > a,
+.dpMenu > button {
   font-family: "Squada One";
   font-size: 1.2rem;
   color: rgb(59, 59, 59);
+  transition: all ease .3s;
 }
 
-.dpMenu > a:hover {
+.dpMenu > a:hover,
+.dpMenu > button:hover {
   background-color: black;
   color: rgb(233, 233, 233);
 }
