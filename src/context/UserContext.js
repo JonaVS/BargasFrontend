@@ -25,6 +25,8 @@ export const UserProvider = ({ children }) => {
 
   const logout = () => {
     window.localStorage.removeItem("bargasJwt")
+    setUser(null)
+    setIsloggedIn(false)
     navigate("/")
   }
 
