@@ -38,8 +38,8 @@ export const UserProvider = ({ children }) => {
         username: userCredential.username,
         email: userCredential.email,
         password: userCredential.password,
-      })
-      window.localStorage.setItem("bargasJwt", response.jwt)
+      },
+      {withCredentials: true})
       setUser(response.user)
       setIsloggedIn(true)
       navigate("/")
