@@ -12,13 +12,9 @@ const Layout = ({ children }) => {
 
   useLayoutEffect(() => {
     const getLoggedInUser = async () => {
-      const token = window.localStorage.getItem("bargasJwt")
-      if (!token) return
       try {
         const user = await agent.user.getLoggedInUser({
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
+          withCredentials: true
         })
         setUser(user)
         setIsloggedIn(true)
