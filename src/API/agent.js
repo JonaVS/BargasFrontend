@@ -1,6 +1,6 @@
 import axios from "axios"
 
-axios.defaults.baseURL = "http://192.168.0.3:1337"
+axios.defaults.baseURL = "http://localhost:1337"
 
 const sleep = delay => {
   return new Promise(resolve => {
@@ -19,10 +19,10 @@ const sleep = delay => {
 const response = (response) => response.data;
 
 const request = {
-  get: (url, config = {}) => axios.get(url, config).then(response),
-  post: (url, body, config={}) => axios.post(url, body, config).then(response),
-  put: (url, body) => axios.put(url, body).then(response),
-  delete: url => axios.delete(url).then(response),
+  get: (url, config={}) => axios.get(url, config).then(response),
+  post: (url, body={}, config={}) => axios.post(url, body, config).then(response),
+  put: (url, body={}, config={}) => axios.put(url, body, config).then(response),
+  delete: (url, config={}) => axios.delete(url, config).then(response),
 }
 
 const product = {
@@ -30,9 +30,9 @@ const product = {
 }
 
 const user = {
-  register: (body) => request.post(`auth/local/register`, body),
-  login: (body) => request.post('/auth/local', body),
-  getLoggedInUser: (config) => request.get('/users/me', config)
+  register: (body, config) => request.post(`auth/local/register`, body, config),
+  login: (body, config) => request.post('/auth/local', body, config),
+  getLoggedInUser: (config) => request.get('/users/me', config),
 }
 
 const agent = {
