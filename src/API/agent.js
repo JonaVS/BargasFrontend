@@ -32,6 +32,7 @@ const product = {
 const user = {
   register: (body, config) => request.post(`auth/local/register`, body, config),
   login: (body, config) => request.post('/auth/local', body, config),
+  logout: (body, config) => request.post('/auth/logout', body, config),
   getLoggedInUser: (config) => request.get('/users/me', config),
 }
 
