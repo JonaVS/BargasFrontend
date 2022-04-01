@@ -19,7 +19,7 @@ const Layout = ({ children }) => {
         setUser(user)
         setIsloggedIn(true)
       } catch (err) {
-        window.localStorage.removeItem("bargasJwt")
+        console.log(err) // Pending toast notification
       }
     }
     getLoggedInUser()
