@@ -10,11 +10,13 @@ export const UserProvider = ({ children }) => {
 
   const login = async userCredentials => {
     try {
-      const response = await agent.user.login({
-        identifier: userCredentials.email,
-        password: userCredentials.password,
-      })
-      window.localStorage.setItem("bargasJwt", response.jwt)
+      const response = await agent.user.login(
+        {
+          identifier: userCredentials.email,
+          password: userCredentials.password,
+        },
+        { withCredentials: true }
+      )
       setUser(response.user)
       setIsloggedIn(true)
       navigate("/")
@@ -23,14 +25,14 @@ export const UserProvider = ({ children }) => {
     }
   }
 
-  const logout = () => {
-    window.localStorage.removeItem("bargasJwt")
+  const logout = async () => {
+    await agent.user.logout({},{ withCredentials: true })
     setUser(null)
     setIsloggedIn(false)
     navigate("/")
   }
 
-  const register = async (userCredential) => {
+  const register = async userCredential => {
     try {
       const response = await agent.user.register({
         username: userCredential.username,
