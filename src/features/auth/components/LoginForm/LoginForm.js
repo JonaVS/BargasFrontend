@@ -2,6 +2,7 @@ import React, { useContext } from "react"
 import { UserContext } from "../../../../context/UserContext"
 import { Container } from "react-bootstrap"
 import { Form, Formik } from "formik"
+import LoadingOverlay from "../../../../shared/components/LoadingOverlay/LoadingOverlay"
 import loginValidation from "./YupLoginValidation"
 import BargasTextField from "../../../../shared/components/Form/BargasTextField/BargasTextField"
 import LabelLink from "../../../../shared/components/LabelLink/LabelLink"
@@ -25,6 +26,7 @@ const LoginForm = () => {
         >
           {formik => (
             <Form onSubmit={formik.handleSubmit}>
+            {formik.isSubmitting && <LoadingOverlay/>}
               <BargasTextField
                 label="Email"
                 name="email"
