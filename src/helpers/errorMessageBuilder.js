@@ -10,7 +10,7 @@ export const errorMessageBuilder = (context, errorObject) => {
   if (isNetworkOrServerRelated(errorObject))
     return (message = "No se pudo conectar con el servidor")
 
-  const errorId = errorObject.response.data.message[0].messages[0]
+  const errorId = errorObject.response.data.message[0].messages[0].id
 
   switch (context) {
     case "login":
