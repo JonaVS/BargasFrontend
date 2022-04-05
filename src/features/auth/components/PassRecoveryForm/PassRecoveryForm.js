@@ -2,6 +2,7 @@ import React from "react"
 import { Container } from "react-bootstrap"
 import { Form, Formik } from "formik"
 import passRecoveryValidation from "./passRecoveryValidation"
+import LoadingOverlay from "../../../../shared/components/LoadingOverlay/LoadingOverlay"
 import BargasTextField from "../../../../shared/components/Form/BargasTextField/BargasTextField"
 import * as styles from "../../shared/authForm.module.css"
 
@@ -25,6 +26,7 @@ const PassRecoveryForm = () => {
         >
           {formik => (
             <Form onSubmit={formik.handleSubmit}>
+            {formik.isSubmitting && <LoadingOverlay/>}
               <BargasTextField label="Email" name="email" type="email" />
               <button className={styles.generalBtn} type="submit">
                 RECUPERAR

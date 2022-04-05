@@ -3,6 +3,7 @@ import { UserContext } from "../../../../context/UserContext"
 import { Container } from "react-bootstrap"
 import { Form, Formik } from "formik"
 import registerValidation from "./YupRegisterValidation"
+import LoadingOverlay from "../../../../shared/components/LoadingOverlay/LoadingOverlay"
 import BargasTextField from "../../../../shared/components/Form/BargasTextField/BargasTextField"
 import BargasCheckBoxField from "../../../../shared/components/Form/BargasCheckBoxField/BargasCheckboxField"
 import LabelLink from "../../../../shared/components/LabelLink/LabelLink"
@@ -34,6 +35,7 @@ const RegisterForm = () => {
         >
           {formik => (
             <Form onSubmit={formik.handleSubmit}>
+              {formik.isSubmitting && <LoadingOverlay />}
               <BargasTextField
                 label="Nombre completo"
                 name="fullName"
