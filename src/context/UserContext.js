@@ -1,6 +1,8 @@
 import React, { createContext, useState } from "react"
 import agent from "../API/agent"
 import { navigate } from "gatsby"
+import { toastDispatcher, ToastType } from "../helpers/toastDispatcher"
+import { errorMessageBuilder, ErrorContext} from "../helpers/errorMessageBuilder"
 
 export const UserContext = createContext({})
 
@@ -21,12 +23,15 @@ export const UserProvider = ({ children }) => {
       setIsloggedIn(true)
       navigate("/")
     } catch (error) {
-      console.log(error) //Toast goes here in the future.
+      toastDispatcher(
+        ToastType.ERROR,
+        errorMessageBuilder(ErrorContext.LOGIN, error)
+      )
     }
   }
 
   const logout = async () => {
-    await agent.user.logout({},{ withCredentials: true })
+    await agent.user.logout({}, { withCredentials: true })
     setUser(null)
     setIsloggedIn(false)
     navigate("/")
@@ -34,17 +39,22 @@ export const UserProvider = ({ children }) => {
 
   const register = async userCredential => {
     try {
-      const response = await agent.user.register({
-        username: userCredential.username,
-        email: userCredential.email,
-        password: userCredential.password,
-      },
-      {withCredentials: true})
+      const response = await agent.user.register(
+        {
+          username: userCredential.username,
+          email: userCredential.email,
+          password: userCredential.password,
+        },
+        { withCredentials: true }
+      )
       setUser(response.user)
       setIsloggedIn(true)
       navigate("/")
-    } catch (err) {
-      console.log(err) //Toast goes here in the future.
+    } catch (error) {
+      toastDispatcher(
+        ToastType.ERROR,
+        errorMessageBuilder(ErrorContext.SIGNUP, error)
+      )
     }
   }
 
@@ -64,3 +74,4 @@ export const UserProvider = ({ children }) => {
     </UserContext.Provider>
   )
 }
+
