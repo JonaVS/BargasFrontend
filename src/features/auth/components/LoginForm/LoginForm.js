@@ -20,8 +20,8 @@ const LoginForm = () => {
             password: "",
           }}
           validationSchema={loginValidation}
-          onSubmit={(values, formikBag) => {
-            login({ email: values.email, password: values.password })
+          onSubmit={async(values, formikBag) =>  {
+            await login({ email: values.email, password: values.password })
           }}
         >
           {formik => (
