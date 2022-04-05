@@ -58,3 +58,9 @@ body {
 .toastAddBar {
   background: rgb(36, 36, 36);
 }
+
+.defaultToastBody {
+  font-family: "Squada One";
+  color: rgb(237, 237, 237);
+}
+
