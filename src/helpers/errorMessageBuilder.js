@@ -6,11 +6,11 @@ export const ErrorContext = {
 }
 
 export const errorMessageBuilder = (context, errorObject) => {
+  let message = ""
   if (isNetworkOrServerRelated(errorObject))
     return (message = "No se pudo conectar con el servidor")
 
   const errorId = errorObject.response.data.message[0].messages[0]
-  let message = ""
 
   switch (context) {
     case "login":
