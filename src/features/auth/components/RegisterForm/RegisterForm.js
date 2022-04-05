@@ -25,8 +25,8 @@ const RegisterForm = () => {
             acceptTerms: false,
           }}
           validationSchema={registerValidation}
-          onSubmit={(values, formikBag) => {
-            register({
+          onSubmit={async(values, formikBag) => {
+            await register({
               username: values.fullName,
               email: values.email,
               password: values.password,
