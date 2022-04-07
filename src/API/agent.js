@@ -1,6 +1,6 @@
 import axios from "axios"
 
-axios.defaults.baseURL = "http://localhost:1337"
+axios.defaults.baseURL = "http://localhost:1337/api"
 
 const sleep = delay => {
   return new Promise(resolve => {
