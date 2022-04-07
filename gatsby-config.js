@@ -1,3 +1,7 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   siteMetadata: {
     title: `Bargas`,
@@ -39,9 +43,9 @@ module.exports = {
     {
       resolve: `gatsby-source-strapi`,
       options: {
-        apiURL: `http://localhost:1337`,
-        queryLimit: 1000, // Defaults to 100
-        collectionTypes: [`productos`, `categorias`, 'carousel-items', 'menu-previews'],
+        apiURL: process.env.STRAPI_API_URL,
+        accessToken: process.env.STRAPI_TOKEN,
+        collectionTypes: [`producto`, `categoria`, 'carousel-item', 'menu-preview'],
         singleTypes: ['menu', 'contacto'],
       },
     },

@@ -9,6 +9,8 @@ import Divider from "../shared/components/Divider/Divider"
 
 const Contact = ({ data }) => {
 
+  console.log(data)
+
   return (
     <>
       <Seo title="Menú" />

@@ -18,7 +18,7 @@ const IndexPage = ({ data }) => {
       <Divider />
       <About />
       <Divider />
-      <MenuSection preview={data.allStrapiMenuPreviews.nodes} />
+      <MenuSection preview={data.allStrapiMenuPreview.nodes} />
       <Divider />
       <OrderingSection />
       <Divider />
@@ -31,7 +31,7 @@ export default IndexPage
 
 export const indexQuery = graphql`
   query index {
-    allStrapiMenuPreviews {
+    allStrapiMenuPreview {
       nodes {
         producto {
           slug

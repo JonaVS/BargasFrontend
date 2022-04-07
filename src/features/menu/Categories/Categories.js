@@ -38,7 +38,7 @@ const Categories = ({ categories, handleCategorie, currentCategorie }) => {
           {categories.map(item => {
             return (
               <Button
-                key={item.id}
+                key={item.strapi_id}
                 value={item.nombre}
                 onClick={e => handleCategorie(e)}
                 variant="custom"

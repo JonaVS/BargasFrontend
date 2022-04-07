@@ -19,16 +19,16 @@ const ProductDetails = ({ productData }) => {
     setIsLoading(true)
     const getProductDetails = async () => {
       try {
-        const result = await agent.product.details(productData.strapiId)
+        const result = await agent.product.details(productData.strapi_id)
         setIsLoading(false)
-        setIsAvailable(result.disponible)
+        setIsAvailable(result.data.attributes.disponible)
       } catch (error) {
         console.log(error)
         setIsLoading(false)
       }
     }
     getProductDetails()
-  }, [productData.strapiId])
+  }, [productData.strapi_id])
 
   return (
     <Container>

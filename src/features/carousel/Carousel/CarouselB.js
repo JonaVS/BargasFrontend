@@ -8,9 +8,9 @@ import * as styles from "../Carousel/carousel.module.css"
 const CarouselB = () => {
   const data = useStaticQuery(graphql`
     query {
-      allStrapiCarouselItems {
+      allStrapiCarouselItem {
         nodes {
-          strapiId
+          strapi_id
           titulo
           descripcion
           imagen {
@@ -25,12 +25,12 @@ const CarouselB = () => {
     }
   `)
 
-  const corouselData = data.allStrapiCarouselItems.nodes
+  const corouselData = data.allStrapiCarouselItem.nodes
 
   return (
     <Carousel className={styles.carousel} fade>
       {corouselData.map(item => (
-        <Carousel.Item key={item.strapiId} className={styles.itemWrapper}>
+        <Carousel.Item key={item.strapi_id} className={styles.itemWrapper}>
           <GatsbyImage
             image={item.imagen.localFile.childImageSharp.gatsbyImageData}
             alt="test"

@@ -9,16 +9,16 @@ import MenuItemCard from "./MenuItemCard/MenuItemCard"
 const Menu = () => {
   const data = useStaticQuery(graphql`
     query MyQuery {
-      allStrapiProductos {
+      allStrapiProducto {
         nodes {
-          strapiId
+          strapi_id
           nombre
           precio
           descripcion
           ingredientes
           disponible
           slug
-          categoria {
+          categorias {
             nombre
           }
           imagen {
@@ -30,18 +30,18 @@ const Menu = () => {
           }
         }
       }
-      allStrapiCategorias {
+      allStrapiCategoria {
         nodes {
           nombre
-          strapiId
+          strapi_id
         }
       }
     }
   `)
 
   const productData = {
-    categories: [{id: 999, nombre: 'Todos'}, ...data.allStrapiCategorias.nodes],
-    products: data.allStrapiProductos.nodes 
+    categories: [{strapi_id: 999, nombre: 'Todos'}, ...data.allStrapiCategoria.nodes],
+    products: data.allStrapiProducto.nodes 
   }
 
   const [categorie, setCategorie] = useState('Todos')
@@ -66,7 +66,7 @@ const Menu = () => {
       />
       <Row xs={1} sm={1} md={2} lg={2} xl={2} xxl={3} className="g-4 mt-5">
         {filteredMenu.map(item => (
-          <Col key={item.strapiId}>
+          <Col key={item.strapi_id}>
             <MenuItemCard item={item} />
           </Col>
         ))}

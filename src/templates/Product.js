@@ -5,7 +5,7 @@ import ProductDetails from "../features/menu/ProductDetails/ProductDetails"
 import Divider from "../shared/components/Divider/Divider"
 
 const Product = ({ data }) => {
-  const productData = data.strapiProductos
+  const productData = data.strapiProducto
   return (
     <>
       <HeroContainer
@@ -22,7 +22,7 @@ export default Product
 
 export const query = graphql`
   query productData($slug: String) {
-    strapiProductos(slug: { eq: $slug }) {
+    strapiProducto(slug: { eq: $slug }) {
       imagen {
         localFile {
           childImageSharp {
@@ -48,7 +48,7 @@ export const query = graphql`
         id
         nombre
       }
-      strapiId
+      strapi_id
     }
   }
 `

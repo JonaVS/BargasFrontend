@@ -1,9 +1,8 @@
 import { v4 as uuid } from 'uuid';
 
 export function cartItemBuilder(strapiProductData, formData) {
-    // const strapiURL = 'https://res.cloudinary.com/dwnzq1ta2/image/upload/v1642185682/BargasDemo/'
     let cartItem = {
-        id: strapiProductData.strapiId,
+        id: strapiProductData.strapi_id,
         inCartId: uuid(), 
         name: strapiProductData.nombre,
         price: strapiProductData.precio,
