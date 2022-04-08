@@ -5,19 +5,23 @@ export const ErrorContext = {
   SIGNUP: "signup",
 }
 
-export const errorMessageBuilder = (context, errorObject) => {
+export const errorMessageBuilder = (context, error) => {
   let message = ""
-  if (isNetworkOrServerRelated(errorObject))
+  if (isNetworkOrServerRelated(error))
     return (message = "No se pudo conectar con el servidor")
 
-  const errorId = errorObject.response.data.message[0].messages[0].id
+  const strapiError = error.response.data.error.message
 
   switch (context) {
     case "login":
-      message = StrapiErrors.LOGIN.find(err => err.id === errorId).message
+      message = StrapiErrors.LOGIN.find(
+        err => err.strapiError === strapiError
+      ).translatedMessage
       break
     case "signup":
-      message = StrapiErrors.SIGNUP.find(err => err.id === errorId).message
+      message = StrapiErrors.SIGNUP.find(
+        err => err.strapiError === strapiError
+      ).translatedMessage
       break
     default:
       break
@@ -25,8 +29,8 @@ export const errorMessageBuilder = (context, errorObject) => {
   return message
 }
 
-const isNetworkOrServerRelated = errorObject => {
-  if (!errorObject.response) return true
-  if (errorObject.response.status > 500) return true
+const isNetworkOrServerRelated = error => {
+  if (!error.response) return true
+  if (error.response.status > 500) return true
   return false
 }
