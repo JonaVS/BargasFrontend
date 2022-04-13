@@ -26,7 +26,7 @@ const request = {
 }
 
 const product = {
-  details: (id) => request.get(`/productos/${id}`)
+  details: (id) => request.get(`/products/${id}`)
 }
 
 const user = {

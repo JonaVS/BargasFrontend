@@ -21,7 +21,7 @@ const ProductDetails = ({ productData }) => {
       try {
         const result = await agent.product.details(productData.strapi_id)
         setIsLoading(false)
-        setIsAvailable(result.data.attributes.disponible)
+        setIsAvailable(result.data.attributes.available)
       } catch (error) {
         console.log(error)
         setIsLoading(false)
@@ -43,7 +43,7 @@ const ProductDetails = ({ productData }) => {
           ) : (
             <>
               <ProductPriceAvailability
-                price={productData.precio}
+                price={productData.price}
                 available={isAvailable}
               />
               <ProductForm productData={productData} available={isAvailable} />
@@ -71,7 +71,7 @@ const ProductDetails = ({ productData }) => {
                 style={{width:'1.5rem', height: '1.5rem'}}
               />
           )}
-          {productData.nombre}
+          {productData.name}
         </h1>
       </FixedComponent>
     </Container>

@@ -5,11 +5,11 @@ import ProductDetails from "../features/menu/ProductDetails/ProductDetails"
 import Divider from "../shared/components/Divider/Divider"
 
 const Product = ({ data }) => {
-  const productData = data.strapiProducto
+  const productData = data.strapiProduct
   return (
     <>
       <HeroContainer
-        image={productData.imagen.localFile.childImageSharp.gatsbyImageData}
+        image={productData.image.localFile.childImageSharp.gatsbyImageData}
       >
       </HeroContainer>
       <Divider />
@@ -22,8 +22,8 @@ export default Product
 
 export const query = graphql`
   query productData($slug: String) {
-    strapiProducto(slug: { eq: $slug }) {
-      imagen {
+    strapiProduct(slug: { eq: $slug }) {
+      image {
         localFile {
           childImageSharp {
             gatsbyImageData(placeholder: BLURRED, quality: 50)
@@ -35,18 +35,27 @@ export const query = graphql`
           }
         }
       }
-      nombre
-      precio
-      ingredientes
-      descripcion
-      disponible
-      ing_principales {
+      name
+      price
+      ingredients
+      description
+      available
+      mains {
         id
-        nombre
+        name
       }
-      acompanamientos {
+      sides {
         id
-        nombre
+        name
+      }
+      sauces {
+        id
+        name
+      }
+      sizes {
+        id
+        name
+        alias
       }
       strapi_id
     }

@@ -86,33 +86,33 @@ const EditProductForm = ({ productData, handleCloseModal, currentSort }) => {
   return (
     <form>
       <QuantityInput value={quantity} onChange={quantityOnChange} />
-      {productData.ing_principales.length > 0 && (
+      {productData.mains.length > 0 && (
         <div className={styles.radioGroup}>
           <h2>Ingrediente principal</h2>
-          {productData.ing_principales.map(item => (
+          {productData.mains.map(item => (
             <RadioButton
               key={item.id}
-              label={item.nombre}
+              label={item.name}
               name="mainIng"
-              value={item.nombre}
+              value={item.name}
               defaultChecked={
-                productData.mainItem === item.nombre ? true : false
+                productData.mainItem === item.name ? true : false
               }
               onChange={handleChange}
             />
           ))}
         </div>
       )}
-      {productData.acompanamientos.length > 0 && (
+      {productData.sides.length > 0 && (
         <div className={styles.radioGroup}>
           <h2>Acompanamientos</h2>
-          {productData.acompanamientos.map((item, index) => (
+          {productData.sides.map((item, index) => (
             <RadioButton
               key={item.id}
-              label={item.nombre}
+              label={item.name}
               name="side"
-              value={item.nombre}
-              defaultChecked={productData.sideItem === item.nombre ? true : false}
+              value={item.name}
+              defaultChecked={productData.sideItem === item.name ? true : false}
               onChange={handleChange}
             />
           ))}

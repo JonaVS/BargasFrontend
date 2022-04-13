@@ -45,8 +45,8 @@ module.exports = {
       options: {
         apiURL: process.env.STRAPI_API_URL,
         accessToken: process.env.STRAPI_TOKEN,
-        collectionTypes: [`producto`, `categoria`, 'carousel-item', 'menu-preview'],
-        singleTypes: ['menu', 'contacto'],
+        collectionTypes: [`product`, `categorie`, 'carousel-item', 'menu-preview'],
+        singleTypes: ['menu-page', 'contact-page'],
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

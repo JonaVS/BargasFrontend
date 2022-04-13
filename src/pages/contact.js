@@ -16,7 +16,7 @@ const Contact = ({ data }) => {
       <Seo title="Menú" />
       <HeroContainer
         image={
-          data.strapiContacto.heroImage.localFile.childImageSharp.gatsbyImageData
+          data.strapiContactPage.heroImage.localFile.childImageSharp.gatsbyImageData
         }
       >
         <HeroCaption
@@ -34,7 +34,7 @@ export default Contact
 
 export const query = graphql`
   query contactPage {
-    strapiContacto {
+    strapiContactPage {
       heroImage {
         localFile {
           childImageSharp {

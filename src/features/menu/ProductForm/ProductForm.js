@@ -21,12 +21,12 @@ const ProductForm = ({ productData, available }) => {
     //Set the default pre-selected option for product sides, extras, sauces etc if applicable.
     setMainItem(mainIng)
     setSideItem(side)
-    setSubtotal(productData.precio)
-  }, [mainIng, side, productData.precio])
+    setSubtotal(productData.price)
+  }, [mainIng, side, productData.price])
 
   useEffect(() => {
-    setSubtotal(quantity * productData.precio)
-  }, [quantity, productData.precio])
+    setSubtotal(quantity * productData.price)
+  }, [quantity, productData.price])
 
   const handleChange = e => {
     if (e.target.name === "mainIng") {
@@ -75,7 +75,7 @@ const ProductForm = ({ productData, available }) => {
 
     console.log(cartItem)
     setCart([...cart, cartItem])
-    toast(`${productData.nombre} x ${quantity} agregado.`, {
+    toast(`${productData.name} x ${quantity} agregado.`, {
       className: "toastAdd",
       progressClassName: "toastAddBar",
       autoClose: 50000,
@@ -87,30 +87,30 @@ const ProductForm = ({ productData, available }) => {
   return (
     <form onSubmit={onSubmit}>
       <QuantityInput value={quantity} onChange={quantityOnChange} />
-      {productData.ing_principales.length > 0 && (
+      {productData.mains.length > 0 && (
         <div className={styles.radioGroup}>
           <h2>Ingrediente principal</h2>
-          {productData.ing_principales.map((item, index) => (
+          {productData.mains.map((item, index) => (
             <RadioButton
               key={item.id}
-              label={item.nombre}
+              label={item.name}
               name="mainIng"
-              value={item.nombre}
+              value={item.name}
               defaultChecked={index === 0 ? true : false}
               onChange={handleChange}
             />
           ))}
         </div>
       )}
-      {productData.acompanamientos.length > 0 && (
+      {productData.sides.length > 0 && (
         <div className={styles.radioGroup}>
           <h2>Acompanamientos</h2>
-          {productData.acompanamientos.map((item, index) => (
+          {productData.sides.map((item, index) => (
             <RadioButton
               key={item.id}
-              label={item.nombre}
+              label={item.name}
               name="side"
-              value={item.nombre}
+              value={item.name}
               defaultChecked={index === 0 ? true : false}
               onChange={handleChange}
             />

@@ -39,12 +39,12 @@ const MenuSection = ({ preview }) => {
           >
             {preview.map(item => {
               return (
-                <div key={item.producto.nombre}>
+                <div key={item.product.name}>
                   <GatsbyImage
                     image={
-                      item.imagen.localFile.childImageSharp.gatsbyImageData
+                      item.image.localFile.childImageSharp.gatsbyImageData
                     }
-                    alt={item.producto.nombre}
+                    alt={item.product.name}
                   />
                 </div>
               )

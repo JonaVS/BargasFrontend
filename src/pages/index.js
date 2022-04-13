@@ -33,11 +33,11 @@ export const indexQuery = graphql`
   query index {
     allStrapiMenuPreview {
       nodes {
-        producto {
+        product {
           slug
-          nombre
+          name
         }
-        imagen {
+        image {
           localFile {
             childImageSharp {
               gatsbyImageData(placeholder: BLURRED, quality: 20,  width: 500)

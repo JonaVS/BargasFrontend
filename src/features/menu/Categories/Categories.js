@@ -4,6 +4,7 @@ import { FiArrowLeftCircle, FiArrowRightCircle } from "react-icons/fi"
 import * as styles from "../Categories/categories.module.css"
 
 const Categories = ({ categories, handleCategorie, currentCategorie }) => {
+  console.log(categories)
   const itemToScroll = React.useRef()
 
   function handleScroll(direction) {
@@ -39,12 +40,12 @@ const Categories = ({ categories, handleCategorie, currentCategorie }) => {
             return (
               <Button
                 key={item.strapi_id}
-                value={item.nombre}
+                value={item.name}
                 onClick={e => handleCategorie(e)}
                 variant="custom"
-                className={`${currentCategorie === item.nombre ? styles.selectedBtn : styles.catBtn}`}
+                className={`${currentCategorie === item.name ? styles.selectedBtn : styles.catBtn}`}
               >
-                {item.nombre}
+                {item.name}
               </Button>
             )
           })}

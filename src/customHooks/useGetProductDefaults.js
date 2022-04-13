@@ -4,12 +4,12 @@
 
 export function useGetProductDefaults(product) {
   let side='', mainIng=''
-  if (product.ing_principales.length !== 0) {
-    mainIng = product.ing_principales[0].nombre
+  if (product.mains.length !== 0) {
+    mainIng = product.mains[0].name
   }
 
-  if (product.acompanamientos.length !== 0) {
-    side = product.acompanamientos[0].nombre
+  if (product.sides.length !== 0) {
+    side = product.sides[0].name
   }
 
 

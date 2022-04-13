@@ -11,9 +11,9 @@ const CarouselB = () => {
       allStrapiCarouselItem {
         nodes {
           strapi_id
-          titulo
-          descripcion
-          imagen {
+          title
+          description
+          image {
             localFile {
               childImageSharp {
                 gatsbyImageData(placeholder: BLURRED)
@@ -32,10 +32,10 @@ const CarouselB = () => {
       {corouselData.map(item => (
         <Carousel.Item key={item.strapi_id} className={styles.itemWrapper}>
           <GatsbyImage
-            image={item.imagen.localFile.childImageSharp.gatsbyImageData}
+            image={item.image.localFile.childImageSharp.gatsbyImageData}
             alt="test"
           />
-          <CarouselCaption title={item.titulo} text={item.descripcion} />
+          <CarouselCaption title={item.title} text={item.description} />
         </Carousel.Item>
       ))}
     </Carousel>

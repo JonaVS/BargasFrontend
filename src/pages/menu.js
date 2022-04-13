@@ -13,7 +13,7 @@ const MenuPage = ({ data }) => {
       <Seo title="Menú" />
       <HeroContainer
         image={
-          data.strapiMenu.heroImage.localFile.childImageSharp.gatsbyImageData
+          data.strapiMenuPage.heroImage.localFile.childImageSharp.gatsbyImageData
         }
       >
         <HeroCaption
@@ -32,7 +32,7 @@ export default MenuPage
 
 export const query = graphql`
   query menuPage {
-    strapiMenu {
+    strapiMenuPage {
       heroImage {
         localFile {
           childImageSharp {
