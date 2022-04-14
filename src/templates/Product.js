@@ -37,6 +37,7 @@ export const query = graphql`
       }
       name
       price
+      discount
       ingredients
       description
       available
@@ -56,6 +57,7 @@ export const query = graphql`
         id
         name
         alias
+        price
       }
       strapi_id
     }
