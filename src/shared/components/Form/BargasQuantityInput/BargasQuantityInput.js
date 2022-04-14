@@ -1,7 +1,7 @@
 import { useField } from "formik"
 import React from "react"
 import { FiMinusSquare, FiPlusSquare } from "react-icons/fi"
-import * as styles from "../QuantityInput/quantityInput.module.css"
+import * as styles from "./bargasQuantityInput.module.css"
 
 const BargasQuantityInput = ({ label, ...props }) => {
   const [field, meta, helpers] = useField(props)
