@@ -15,7 +15,7 @@ const Cart = () => {
   const [showModal, setShowModal] = useState(false)
   const [selectedItem, setSelectedItem] = useState({})
   const [order, setOrder] = useState("1")
-  const { cart, setCart } = useContext(CartContext)
+  const { cart, setCart, deleteCartItem } = useContext(CartContext)
   // const isTabletOrMobile = useMediaQuery({ query: "(max-width: 992px)" })
 
   useEffect(() => {
@@ -66,7 +66,7 @@ const Cart = () => {
               <CartItemList
                 cartItems={cart}
                 handleEdit={handleModal}
-                handleDelete={handleDelete}
+                handleDelete={deleteCartItem}
               />
             </Col>
             <Col className="ps-xs-0 mt-5 mt-lg-0 ps-lg-5"  sm={12} lg={6}>

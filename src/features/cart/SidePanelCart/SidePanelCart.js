@@ -9,7 +9,7 @@ import EmptyCartMsg from '../EmptyCartMsg/EmptyCartMsg'
 import * as styles from "../SidePanelCart/sidePanelCart.module.css"
 
 const SidePanelCart = ({ showCart, handleShowCart }) => {
-  const {cart, setCart} = useContext(CartContext)
+  const {cart, deleteCartItem} = useContext(CartContext)
   const [showModal, setShowModal] = useState(false)
   const [selectedItem, setSelectedItem] = useState({})
 
@@ -20,11 +20,6 @@ const SidePanelCart = ({ showCart, handleShowCart }) => {
 
   const handleCloseModal = () => {
     setShowModal(false)
-  }
-
-  const handleDelete = id => {
-    let newCart = cart.filter(item => item.inCartId !== id)
-    setCart(newCart)
   }
 
   const goToCart = () => {
@@ -56,7 +51,7 @@ const SidePanelCart = ({ showCart, handleShowCart }) => {
                       key={item.inCartId}
                       product={item}
                       handleEdit={handleModal}
-                      handleDelete={handleDelete}
+                      handleDelete={deleteCartItem}
                     />
                   ))}
             </div>
