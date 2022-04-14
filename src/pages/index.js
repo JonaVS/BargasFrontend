@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Seo from "../components/seo"
+import Seo from "../shared/components/Seo/seo"
 import CarouselB from "../features/carousel/Carousel/CarouselB"
 import About from "../features/businessInfo/components/AboutSection/AboutSection"
 import MenuSection from "../features/businessInfo/components/MenuSection/MenuSection"
