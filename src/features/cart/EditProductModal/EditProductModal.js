@@ -4,11 +4,17 @@ import Badge from "react-bootstrap/Badge"
 import { GatsbyImage } from "gatsby-plugin-image"
 import EditProductForm from "../EditProductForm/EditProductForm"
 import *as styles from "./editProductModal.module.css"
+import ProductForm from "../../../shared/components/Form/ProductForm/ProductForm"
 
 const EditProductModal = ({ showModal, onHide, product, currentSort }) => {
   return (
     <>
-      <Modal contentClassName="p-0 border-0" centered show={showModal} onHide={onHide}>
+      <Modal
+        contentClassName="p-0 border-0"
+        centered
+        show={showModal}
+        onHide={onHide}
+      >
         <Modal.Header className={styles.modalHeader} closeButton>
           <h4 className={styles.modalTittle}>
             <span className={styles.productName}>{product.name}</span>
@@ -21,10 +27,10 @@ const EditProductModal = ({ showModal, onHide, product, currentSort }) => {
           {product.qualityImg && (
             <GatsbyImage alt="Product image" image={product.qualityImg} />
           )}
-          <EditProductForm
-            handleCloseModal={onHide}
+          <ProductForm
             productData={product}
-            currentSort={currentSort}
+            isEditMode
+            handleCloseEditModal={onHide}
           />
         </Modal.Body>
       </Modal>

@@ -4,7 +4,7 @@ import { Container, Row, Col, Spinner } from "react-bootstrap"
 import ProductFormPlaceholder from "../ProductForm/Placeholder/ProductFormPlaceHolder/ProductFormPlaceHolder"
 import ProductTagsPlaceHolder from "../ProductForm/Placeholder/ProductFormPlaceHolder/ProductTagsPlaceHolder"
 import ProductPriceAvailability from "./ProductPriceAvailability/ProductPriceAvailability"
-import ProductForm from "../ProductForm/ProductForm"
+import ProductForm from "../../../shared/components/Form/ProductForm/ProductForm"
 import ProductDescription from "./ProductDescription/ProductDescription"
 import FixedComponent from "../../../shared/components/FixedComponent/FixedComponent"
 import LinkBtn from "../../../shared/components/LinkBtn/LinkBtn"
@@ -46,7 +46,7 @@ const ProductDetails = ({ productData }) => {
                 price={productData.price}
                 available={isAvailable}
               />
-              <ProductForm productData={productData} available={isAvailable} />
+              {isAvailable && <ProductForm productData={productData}/>}
             </>
           )}
         </Col>
