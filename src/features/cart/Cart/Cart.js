@@ -16,7 +16,6 @@ const Cart = () => {
   const [selectedItem, setSelectedItem] = useState({})
   const [order, setOrder] = useState("1")
   const { cart, setCart, deleteCartItem } = useContext(CartContext)
-  // const isTabletOrMobile = useMediaQuery({ query: "(max-width: 992px)" })
 
   useEffect(() => {
     if (cart.length > 0) {
@@ -32,19 +31,6 @@ const Cart = () => {
 
   const handleCloseModal = () => {
     setShowModal(false)
-  }
-
-  // const handleSelectedItem = e => {
-  //   const id = e.target.getAttribute("cart-id")
-  //   const item = cart.find(item => item.inCartId == id)
-  //   setSelectedItem(item)
-  //   setShowModal(true)
-  // }
-
-  const handleDelete = id => {
-    let newCart = cart.filter(item => item.inCartId !== id)
-    newCart = cartSort(newCart, order)
-    setCart(newCart)
   }
 
   const handleSort = order => {
