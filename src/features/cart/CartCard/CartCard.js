@@ -18,7 +18,7 @@ const CartCard = ({ product, handleEdit, handleDelete }) => {
         <div className={styles.infoWrapper}>
           <div
             className={styles.imgWrapper}
-            style={{ backgroundImage: `url(${product.thumbnail})` }}
+            style={{ backgroundImage: `url(${product.thumbnail})`}}
           >
             <div className={styles.itemCount}>{product.quantity}</div>
           </div>
@@ -28,7 +28,7 @@ const CartCard = ({ product, handleEdit, handleDelete }) => {
             </h3>
             <Badge bg="success" className='fw-normal p-1 fs-6'>{`₡ ${product.price}`}</Badge>
             <p style={{ color: "#fff" }}>
-            {`${product.mainItem && product.mainItem + ' -'} ${product.sideItem}`}
+            {`${product.main && product.main + ' -'} ${product.side}`}
             </p>
             <p style={{ color: "#fff" }}>
               {product.extraInfo === '' ? 'Sin instrucciones especiales' : product.extraInfo}
@@ -56,7 +56,6 @@ const CartCard = ({ product, handleEdit, handleDelete }) => {
               Editar
             </Button>
           </div>
-
           <span className={styles.subTotal}>Subtotal: ₡ {product.subTotal}</span>
         </div>
       </div>
