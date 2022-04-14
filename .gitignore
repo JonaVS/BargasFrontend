@@ -70,3 +70,6 @@ yarn-error.log
 
 #Test src code
 srcTest/
+
+#dummy test pages
+testPages/
