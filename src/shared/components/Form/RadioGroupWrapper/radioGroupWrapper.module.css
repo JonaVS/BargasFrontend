@@ -1,0 +1,10 @@
+.radioGroup {
+  margin: 0px 0px 0px 0px;
+}
+
+.radioGroup h2 {
+  margin: 20px 0px 10px 0px;
+  font-family: "Squada One";
+  color: var(--bargas-muted-text2);
+  font-size: 1.2rem;
+}
