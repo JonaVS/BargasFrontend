@@ -2,7 +2,6 @@ import React from "react"
 import Modal from "react-bootstrap/Modal"
 import Badge from "react-bootstrap/Badge"
 import { GatsbyImage } from "gatsby-plugin-image"
-import EditProductForm from "../EditProductForm/EditProductForm"
 import *as styles from "./editProductModal.module.css"
 import ProductForm from "../../../shared/components/Form/ProductForm/ProductForm"
 
