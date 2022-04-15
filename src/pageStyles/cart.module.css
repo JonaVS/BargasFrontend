@@ -5,12 +5,21 @@
 }
 
 .descriptor > h1 {
-    font-size: 3.5rem;
+  font-size: 3.5rem;
 }
 
 .descriptor > p {
-    font-style: italic;
+  font-style: italic;
 }
-  
 
-  
+@media (min-width: 320px) {
+  .descriptor {
+    margin: 20px 0px 50px 0px;
+  }
+}
+
+@media (min-width: 991px) {
+  .descriptor {
+    margin: 120px 0px 50px 0px;
+  }
+}
