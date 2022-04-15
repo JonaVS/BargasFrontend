@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react"
+import {toastDispatcher, ToastType} from '../../../helpers/toastDispatcher'
+import {errorMessageBuilder, ErrorContext} from '../../../helpers/errorMessageBuilder'
 import agent from "../../../API/agent"
 import { Container, Row, Col, Spinner } from "react-bootstrap"
 import ProductFormPlaceholder from "../../../shared/components/Form/ProductForm/Placeholder/ProductFormPlaceHolder/ProductFormPlaceHolder"
@@ -38,7 +40,10 @@ const ProductDetails = ({ productData }) => {
         setApiProductData(productObjectBuilder(productData, result.data.attributes))
         setIsAvailable(result.data.attributes.available)
       } catch (error) {
-        console.log(error)
+        toastDispatcher(
+          ToastType.ERROR,
+          errorMessageBuilder(ErrorContext.PRODUCT_DETAILS, error)
+        )
         setIsLoading(false)
       }
     }
