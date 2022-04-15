@@ -7,7 +7,7 @@ const BargasTextAreaField = ({ label, ...props }) => {
 
   return (
     <>
-      <div className={styles.inputWrapper}>
+      <div className={`${styles.inputWrapper} ${props.wrapperClass}`}>
         <label className={styles.formLabel} htmlFor={props.id || props.name}>
           {label}
         </label>
