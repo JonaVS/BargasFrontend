@@ -63,6 +63,7 @@ const ProductForm = ({
             label="Solicitud especial"
             name="extraInfo"
             placeholder="Escribe en este espacio si deseas eliminar alguno de los ingredientes mostrados"
+            wrapperClass={styles.textArea}
             rows="5"
           />
           <span className={styles.subTotal}>
