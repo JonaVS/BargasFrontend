@@ -19,4 +19,11 @@ export const StrapiErrors = {
       translatedMessage: "El email ya ha sido utilizado"
     },
   ],
+  PRODUCT_DETAILS: [
+    {
+      /*This error is extremely rare to happen, but just in case*/
+      strapiError: "Not Found",
+      translatedMessage: "No se pudo verificar la disponibilidad del producto" 
+    },
+  ]
 }
