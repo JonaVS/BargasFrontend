@@ -26,7 +26,9 @@ const CartCard = ({ product, handleEdit, handleDelete }) => {
             <h3 className={styles.itemTittle}>
               {product.name}
             </h3>
-            <Badge bg="success" className='fw-normal p-1 fs-6'>{`₡ ${product.price}`}</Badge>
+            <Badge bg="success" className='fw-normal p-1 fs-6'>
+              {`₡ ${new Intl.NumberFormat("CRC").format(product.price)}`}
+            </Badge>
             <p style={{ color: "#fff" }}>
             {`${product.main && product.main + ' -'} ${product.side}`}
             </p>
@@ -56,7 +58,9 @@ const CartCard = ({ product, handleEdit, handleDelete }) => {
               Editar
             </Button>
           </div>
-          <span className={styles.subTotal}>Subtotal: ₡ {product.subTotal}</span>
+          <span className={styles.subTotal}>
+            Subtotal: ₡ {new Intl.NumberFormat("CRC").format(product.subTotal)}
+          </span>
         </div>
       </div>
     </Fade>
