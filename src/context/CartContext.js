@@ -1,6 +1,7 @@
 import React, { createContext } from "react"
 import { useLocalStorage } from "../customHooks/useLocalStorage"
 import { v4 as uuid } from "uuid"
+import {ToastType, toastDispatcher} from '../helpers/toastDispatcher'
 
 export const CartContext = createContext([{}])
 
@@ -30,6 +31,10 @@ export const CartProvider = ({ children }) => {
       ...formData,
     }
     setCart([...cart, cartItem])
+    toastDispatcher(
+      ToastType.SUCCESS,
+      `${productData.name} x ${formData.quantity} agregado`
+    )
   }
 
   const editCartItem = (productData, formData) => {
