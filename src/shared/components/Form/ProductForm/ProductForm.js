@@ -27,7 +27,7 @@ const ProductForm = ({
       onSubmit={(values, formikBag) => {
         values.subTotal = helper.getSubTotal(productData, values)
         isEditMode
-          ? editCartItem(productData, values)
+          ? editCartItem(productData, values, handleCloseEditModal)
           : addToCart(productData, values)
       }}
     >

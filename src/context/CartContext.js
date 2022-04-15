@@ -37,7 +37,7 @@ export const CartProvider = ({ children }) => {
     )
   }
 
-  const editCartItem = (productData, formData) => {
+  const editCartItem = (productData, formData, handleCloseEditModal) => {
     let updatedCart = cart.map(item => {
       if (item.inCartId === productData.inCartId) {
         return {
@@ -53,6 +53,7 @@ export const CartProvider = ({ children }) => {
       }
       return item
     })
+    handleCloseEditModal()
     setCart(updatedCart)
   }
 
