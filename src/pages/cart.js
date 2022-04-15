@@ -3,7 +3,6 @@ import Container from 'react-bootstrap/Container'
 import SectionHeader from "../shared/components/SectionHeader/SectionHeader"
 import SectionDescriptor from "../shared/components/SectionDescriptor/SectionDescriptor"
 import Cart from "../features/cart/Cart/Cart"
-import Divider from "../shared/components/Divider/Divider"
 import * as styles from "../pageStyles/cart.module.css"
 
 
@@ -19,7 +18,6 @@ const CartPage = () => {
             className={styles.descriptor}
           />
         </SectionHeader>
-        <Divider />
         <Cart />
       </Container>
     </>
