@@ -1,7 +1,5 @@
 .modalContent {
-  /* background-color: rgb(27, 27, 27); */
   overflow-x: auto;
-  /* max-height: 600px; */
 }
 
 .modalHeader,
@@ -23,9 +21,12 @@
   margin: 0px;
 }
 
-
 .modalBody {
-  padding: 0px;
-  background-color: rgb(27, 27, 27);
+  padding: 0px !important;
+  background-color: rgb(15, 15, 15) !important;
+}
+
+.formWrapper {
+  padding: 15px;
 }
 

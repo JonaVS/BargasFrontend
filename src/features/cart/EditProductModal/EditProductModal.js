@@ -22,15 +22,17 @@ const EditProductModal = ({ showModal, onHide, product, currentSort }) => {
             </Badge>
           </h4>
         </Modal.Header>
-        <Modal.Body className="p-0 bg-dark border-0">
+        <Modal.Body className={styles.modalBody}>
           {product.qualityImg && (
             <GatsbyImage alt="Product image" image={product.qualityImg} />
           )}
-          <ProductForm
-            productData={product}
-            isEditMode
-            handleCloseEditModal={onHide}
-          />
+          <div className={styles.formWrapper}>
+            <ProductForm
+              productData={product}
+              isEditMode
+              handleCloseEditModal={onHide}
+            />
+          </div>
         </Modal.Body>
       </Modal>
     </>
