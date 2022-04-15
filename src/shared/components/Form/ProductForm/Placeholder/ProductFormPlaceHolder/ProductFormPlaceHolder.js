@@ -8,14 +8,12 @@ const ProductFormPlaceholder = () => {
         <span className="placeholder col-3 bg-warning"></span>
       </div>
       {Array.from({ length: 3 }).map((_, idx) => (
-        <>
-          <div key={idx} className="placeholder-glow mb-4">
-            <span className="placeholder col-4 bg-warning d-block"></span>
-            <span className="placeholder col-2 bg-warning"></span>
-            <span className="placeholder col-2 bg-warning ms-2"></span>
-            <span className="placeholder col-2 bg-warning ms-2"></span>
-          </div>
-        </>
+        <div key={idx} className="placeholder-glow mb-4">
+          <span className="placeholder col-4 bg-warning d-block"></span>
+          <span className="placeholder col-2 bg-warning"></span>
+          <span className="placeholder col-2 bg-warning ms-2"></span>
+          <span className="placeholder col-2 bg-warning ms-2"></span>
+        </div>
       ))}
       <div className="placeholder-glow">
         <span
