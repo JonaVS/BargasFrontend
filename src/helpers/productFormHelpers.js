@@ -15,10 +15,10 @@ const getInitialValues = (productData, isEditMode) => {
   const { sides, mains, sauces, sizes } = productData
   const initialValues = {
     quantity: 1,
-    main: mains.length > 0 ? mains[0].name : "",
-    side: sides.length > 0 ? sides[0].name : "",
-    sauce: sauces.length > 0 ? sauces[0].name : "",
-    size: sizes.length > 0 ? sizes[0].name : "",
+    main: mains.data.length > 0 ? mains.data[0].attributes.name : "",
+    side: sides.data.length > 0 ? sides.data[0].attributes.name : "",
+    sauce: sauces.data.length > 0 ? sauces.data[0].attributes.name : "",
+    size: sizes.data.length > 0 ? sizes.data[0].attributes.name : "",
     extraInfo: "",
     subTotal: productData.price,
   }
@@ -68,9 +68,9 @@ const isCheckedByDefault = (isEditMode, productData, radioItemInfo) => {
 const getSubTotal = (productData, formValues) => {
   let productPrice = productData.price
   if (formValues.size !== "") {
-    const selectedSizePrice = productData.sizes.find(
-      x => x.name === formValues.size
-    ).price
+    const selectedSizePrice = productData.sizes.data.find(
+      x => x.attributes.name === formValues.size
+    ).attributes.price
     if (selectedSizePrice) productPrice = selectedSizePrice
   }
   productPrice = productPrice - (productPrice * productData.discount) / 100

@@ -25,8 +25,8 @@ export const CartProvider = ({ children }) => {
       sides: productData.sides,
       sauces: productData.sauces,
       sizes: productData.sizes,
-      thumbnail: productData.image.formats.thumbnail.url,
-      qualityImg: productData.image.localFile.childImageSharp.gatsbyImageData,
+      thumbnail: productData.thumbnail,
+      qualityImg: productData.qualityImg,
       ...formData,
     }
     setCart([...cart, cartItem])

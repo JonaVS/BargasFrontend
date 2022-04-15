@@ -16,10 +16,10 @@ const ProductForm = ({
 }) => {
     const {addToCart, editCartItem} = useContext(CartContext)
     const productOptions = [
-      productData.sides,
-      productData.mains,
-      productData.sauces,
-      productData.sizes,
+      productData.sides.data,
+      productData.mains.data,
+      productData.sauces.data,
+      productData.sizes.data,
     ]
   return (
     <Formik
@@ -44,15 +44,15 @@ const ProductForm = ({
                   {optionsGroup.map((item, groupItemIndex) => (
                     <BargasRadioButton
                       key={item.id}
-                      id={item.name}
+                      id={item.attributes.name}
                       type="radio"
                       name={helper.getRadioGroupInfo(groupIndex, "getName")}
-                      label={item.name}
-                      value={item.name}
+                      label={item.attributes.name}
+                      value={item.attributes.name}
                       defaultChecked={helper.isCheckedByDefault(
                         isEditMode,
                         productData,
-                        { itemName: item.name, itemIdx: groupItemIndex }
+                        { itemName: item.attributes.name, itemIdx: groupItemIndex }
                       )}
                     />
                   ))}
