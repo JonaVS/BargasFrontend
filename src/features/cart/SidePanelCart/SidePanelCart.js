@@ -24,7 +24,7 @@ const SidePanelCart = ({ showCart, handleShowCart }) => {
 
   const goToCart = () => {
     handleShowCart()
-    navigate("/cart")
+    navigate("/app/cart")
   }
 
   return (
