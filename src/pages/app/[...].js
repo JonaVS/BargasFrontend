@@ -1,5 +1,6 @@
 import React from "react"
 import { Router } from "@reach/router"
+import NotFoundPage from "../404"
 import CartPage from "../../features/cart/pages/CartPage"
 
 /*This special page handles client only routes (Gatsby will not 
@@ -11,6 +12,7 @@ const App = () => {
   return (
     <Router>
       <CartPage path="app/cart"/>
+      <NotFoundPage default/>
     </Router>
   )
 }
