@@ -68,7 +68,7 @@ const RegisterForm = () => {
               <LabelLink
                 labelText="¿Ya tienes una cuenta?:"
                 linkText="Inicia sesión aquí"
-                to="/auth/login"
+                to="/app/login"
               />
             </Form>
           )}

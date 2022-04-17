@@ -44,12 +44,12 @@ const LoginForm = () => {
               <LabelLink
                 labelText="¿No tienes una cuenta?:"
                 linkText="Crea una aqui"
-                to="/auth/signup"
+                to="/app/signup"
               />
               <LabelLink
                 labelText="¿Haz olvidado tu contraseña?:"
                 linkText="Recuperar contraseña"
-                to="/auth/passwordRecovery"
+                to="/app/forgot-password"
               />
             </Form>
           )}
