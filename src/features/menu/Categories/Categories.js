@@ -4,7 +4,6 @@ import { FiArrowLeftCircle, FiArrowRightCircle } from "react-icons/fi"
 import * as styles from "../Categories/categories.module.css"
 
 const Categories = ({ categories, handleCategorie, currentCategorie }) => {
-  console.log(categories)
   const itemToScroll = React.useRef()
 
   function handleScroll(direction) {

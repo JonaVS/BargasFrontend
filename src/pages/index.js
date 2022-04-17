@@ -9,8 +9,6 @@ import ContactBasicInfo from "../features/businessInfo/components/ContactBasictI
 import Divider from "../shared/components/Divider/Divider"
 
 const IndexPage = ({ data }) => {
-  console.log(data)
-
   return (
     <>
       <Seo title="Home" />

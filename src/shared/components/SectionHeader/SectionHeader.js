@@ -9,9 +9,6 @@ const SectionHeader = ({
   to,
   className,
 }) => {
-
-  
-  console.log('home menu se ha renderizado')
   return (
     <div className={`${styles.sectionHeader} ${className}`}>
       {children}

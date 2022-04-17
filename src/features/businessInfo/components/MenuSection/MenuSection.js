@@ -10,8 +10,6 @@ import * as styles from "../MenuSection/menuSection.module.css"
 
 const MenuSection = ({ preview }) => {
 
-  console.log(preview)
-
   //Breakpoints for Masonry
   const breakPoints = {
     default: 2,

@@ -15,8 +15,6 @@ const NavBar = () => {
     setShowCart(!showCart)
   }
 
-  console.log("me he renderizdo")
-
   return (
     <>
       <Navbar
