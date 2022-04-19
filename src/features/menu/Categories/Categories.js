@@ -1,6 +1,7 @@
 import React from "react"
 import Button from "react-bootstrap/Button"
 import { FiArrowLeftCircle, FiArrowRightCircle } from "react-icons/fi"
+import CategorieList from "./CategorieList/CategorieList"
 import * as styles from "../Categories/categories.module.css"
 
 const Categories = ({ categories, handleCategorie, currentCategorie }) => {
@@ -34,21 +35,12 @@ const Categories = ({ categories, handleCategorie, currentCategorie }) => {
         >
           <FiArrowLeftCircle className={styles.icon} />
         </Button>
-        <div ref={itemToScroll} className={styles.scrollingWrapper}>
-          {categories.map(item => {
-            return (
-              <Button
-                key={item.strapi_id}
-                value={item.name}
-                onClick={e => handleCategorie(e)}
-                variant="custom"
-                className={`${currentCategorie === item.name ? styles.selectedBtn : styles.catBtn}`}
-              >
-                {item.name}
-              </Button>
-            )
-          })}
-        </div>
+        <CategorieList
+          ref={itemToScroll}
+          categories={categories}
+          handleCategorie={handleCategorie}
+          currentCategorie={currentCategorie}
+        />
         <Button
           onClick={() => handleScroll("right")}
           variant="default"
