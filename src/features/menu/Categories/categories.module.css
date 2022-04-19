@@ -10,45 +10,6 @@
   align-items: center;
 }
 
-.scrollingWrapper {
-  white-space: nowrap;
-  overflow: auto;
-  max-width: 640px;
-  -ms-overflow-style: none; /* for Internet Explorer, Edge */
-  scrollbar-width: none; /* for Firefox */
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */
-  -khtml-user-select: none; /* Konqueror HTML */
-  -moz-user-select: none; /* Old versions of Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
-  user-select: none; /* Non-prefixed version, currently                               supported by Chrome, Edge, Opera and Firefox */
-}
-
-.scrollingWrapper::-webkit-scrollbar {
-  display: none;
-}
-
-.catBtn {
-  background-color: rgba(0, 0, 0, 0.342);
-  border: solid rgb(216, 183, 35) 2px;
-  color: var(--bargas-muted-text1);
-}
-
-.catBtn:hover {
-  background-color: rgba(47, 47, 47, 0.342);
-  color: white;
-}
-
-.selectedBtn {
-  background-color: var(--bargas-gold);
-  color: black;
-}
-
-.selectedBtn:focus {
-  outline: none;
-  box-shadow: none;
-}
-
 .controlBtn:active {
   outline: none !important;
 }
@@ -63,37 +24,13 @@
   color: rgba(255, 255, 255, 0.883);
 }
 
-/*SHARED CSS*/
-.catBtn,
-.selectedBtn {
-  border-radius: 10px;
-  padding: 5px;
-  font-family: "Squada One";
-  margin: 0px 5px 0px 5px;
-  transition: all 0.5;
-  font-weight: 200;
-}
-
 @media (min-width: 320px) {
-  .catBtn,
-  .selectedBtn {
-    font-size: 1.1rem;
-    min-width: 110px;
-    max-width: 110px;
-  }
-
   .controlBtn {
     display: none;
   }
 }
 
 @media (min-width: 991px) {
-  .catBtn,
-  .selectedBtn {
-    font-size: 1.3rem;
-    min-width: 150px;
-    max-width: 150px;
-  }
   .controlBtn {
     display: inline-block;
   }
