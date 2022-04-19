@@ -1,0 +1,13 @@
+.wrapper {
+  background-color: rgba(0, 0, 0, 0.704);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper > h3 {
+  color: rgb(198, 196, 196);
+  font-family: "Squada One";
+}
