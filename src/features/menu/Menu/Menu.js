@@ -4,6 +4,8 @@ import Container from "react-bootstrap/Container"
 import Categories from "../Categories/Categories"
 import Row from "react-bootstrap/Row"
 import MenuItemList from "./MenuItemList/MenuItemList"
+import NoContentMessage from "../../../shared/components/NoContentMessage/NoContentMessage"
+import *as styles from './menu.module.css'
 
 const Menu = () => {
   const data = useStaticQuery(graphql`
@@ -62,9 +64,22 @@ const Menu = () => {
         categories={productData.categories}
         currentCategorie={categorie}
       />
-      <Row as='ul' xs={1} sm={1} md={2} lg={2} xl={2} xxl={3} className="g-4 mt-5 list-unstyled">
-        <MenuItemList menu={filteredMenu} />
-      </Row>
+      {filteredMenu.length === 0 ? (
+        <NoContentMessage messageClass={styles.noContentMsg}/>
+      ) : (
+        <Row
+          as="ul"
+          xs={1}
+          sm={1}
+          md={2}
+          lg={2}
+          xl={2}
+          xxl={3}
+          className="g-4 mt-5 list-unstyled"
+        >
+          <MenuItemList menu={filteredMenu} />
+        </Row>
+      )}
     </Container>
   )
 }
