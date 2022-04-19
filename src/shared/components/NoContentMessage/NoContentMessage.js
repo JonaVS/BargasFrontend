@@ -6,6 +6,7 @@ const NoContentMessage = ({
   message,
   link,
   linkText,
+  linkCallback,
   messageClass,
   linkClass,
 }) => {
@@ -13,7 +14,7 @@ const NoContentMessage = ({
     <div className={`${styles.wrapper} ${messageClass}`}>
       <h3>{message}</h3>
       {link && (
-        <LinkBtn link={link} className={linkClass}>
+        <LinkBtn callback={linkCallback} link={link} className={linkClass}>
           {linkText}
         </LinkBtn>
       )}
@@ -24,7 +25,8 @@ const NoContentMessage = ({
 NoContentMessage.defaultProps = {
   message: "No hay resultados",
   linkClass: "",
-  messageClass: ""
+  messageClass: "",
+  linkCallback: () => {}
 }
 
 export default NoContentMessage
