@@ -1,0 +1,53 @@
+.listItem {
+  display: inline;
+}
+
+.catBtn {
+  background-color: rgba(0, 0, 0, 0.342);
+  border: solid rgb(216, 183, 35) 2px;
+  color: var(--bargas-muted-text1);
+}
+
+.catBtn:hover {
+  background-color: rgba(47, 47, 47, 0.342);
+  color: white;
+}
+
+.selectedCat {
+  background-color: var(--bargas-gold);
+  color: black;
+}
+
+.selectedCat:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/*SHARED CSS*/
+.catBtn,
+.selectedCat {
+  border-radius: 10px;
+  padding: 5px;
+  font-family: "Squada One";
+  margin: 0px 5px 0px 5px;
+  transition: all 0.5;
+  font-weight: 200;
+}
+
+@media (min-width: 320px) {
+  .catBtn,
+  .selectedCat {
+    font-size: 1.1rem;
+    min-width: 110px;
+    max-width: 110px;
+  }
+}
+
+@media (min-width: 991px) {
+  .catBtn,
+  .selectedCat {
+    font-size: 1.3rem;
+    min-width: 150px;
+    max-width: 150px;
+  }
+}
