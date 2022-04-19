@@ -3,8 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Container from "react-bootstrap/Container"
 import Categories from "../Categories/Categories"
 import Row from "react-bootstrap/Row"
-import Col from "react-bootstrap/Col"
-import MenuItemCard from "./MenuItemCard/MenuItemCard"
+import MenuItemList from "./MenuItemList/MenuItemList"
 
 const Menu = () => {
   const data = useStaticQuery(graphql`
@@ -63,12 +62,8 @@ const Menu = () => {
         categories={productData.categories}
         currentCategorie={categorie}
       />
-      <Row xs={1} sm={1} md={2} lg={2} xl={2} xxl={3} className="g-4 mt-5">
-        {filteredMenu.map(item => (
-          <Col key={item.strapi_id}>
-            <MenuItemCard item={item} />
-          </Col>
-        ))}
+      <Row as='ul' xs={1} sm={1} md={2} lg={2} xl={2} xxl={3} className="g-4 mt-5 list-unstyled">
+        <MenuItemList menu={filteredMenu} />
       </Row>
     </Container>
   )
