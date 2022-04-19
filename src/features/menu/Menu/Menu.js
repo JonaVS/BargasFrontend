@@ -43,7 +43,6 @@ const Menu = () => {
     categories: [{strapi_id: 999, name: 'Todos'}, ...data.allStrapiCategorie.nodes],
     products: data.allStrapiProduct.nodes 
   }
-
   const [categorie, setCategorie] = useState('Todos')
   const [filteredMenu, setFilteredMenu] = useState(productData.products)
 
@@ -52,7 +51,7 @@ const Menu = () => {
       setFilteredMenu(productData.products) 
     }else {
       setFilteredMenu(productData.products
-        .filter(x => x.categorie.name === e.target.value)) 
+        .filter(x => x.categories.find(x => x.name === e.target.value))) 
     }
     setCategorie(e.target.value)
   }
