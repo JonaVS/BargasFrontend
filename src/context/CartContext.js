@@ -11,7 +11,7 @@ export const CartProvider = ({ children }) => {
   const getCartTotal = () => {
     let subTotal = 0
     //The total for products only
-    cart.forEach(item => (subTotal += parseInt(item.price) * item.quantity))
+    cart.forEach(item => (subTotal += parseInt(item.subTotal)))
     return new Intl.NumberFormat("CRC").format(subTotal)
   }
 
