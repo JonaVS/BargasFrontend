@@ -9,7 +9,7 @@ import * as styles from "./sidePanelCart.module.css"
 
 
 const SidePanelCart = ({ showCart, handleShowCart }) => {
-  const { cart, deleteCartItem} = useContext(CartContext)
+  const { cart, deleteCartItem, cartTotal} = useContext(CartContext)
   const [showModal, setShowModal] = useState(false)
   const [selectedItem, setSelectedItem] = useState({})
 
@@ -62,7 +62,7 @@ const SidePanelCart = ({ showCart, handleShowCart }) => {
                 callback={handleShowCart}
                 className={styles.cartBtn}
               >
-                ORDENAR
+                ORDENAR {`(₡${cartTotal})`}
               </LinkBtn>
             </div>
           )}
