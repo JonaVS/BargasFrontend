@@ -1,11 +1,11 @@
 import React, { useContext, useState } from "react"
 import { CartContext } from "../../../../context/CartContext"
 import Offcanvas from "react-bootstrap/Offcanvas"
-import CartCard from "../CartCard/CartCard"
 import EditProductModal from "../EditProductModal/EditProductModal"
 import { navigate } from "gatsby"
 import { Button } from "react-bootstrap"
 import NoContentMessage from "../../../../shared/components/NoContentMessage/NoContentMessage"
+import CartItemList from "../CartItemList/CartItemList"
 import * as styles from "./sidePanelCart.module.css"
 
 const SidePanelCart = ({ showCart, handleShowCart }) => {
@@ -52,14 +52,11 @@ const SidePanelCart = ({ showCart, handleShowCart }) => {
                   messageClass={styles.msgContainer}
                 />
               ) : (
-                cart.map(item => (
-                  <CartCard
-                    key={item.inCartId}
-                    product={item}
-                    handleEdit={handleModal}
-                    handleDelete={deleteCartItem}
-                  />
-                ))
+                <CartItemList
+                  cartItems={cart}
+                  handleEdit={handleModal}
+                  handleDelete={deleteCartItem}
+                />
               )}
             </div>
           </Offcanvas.Body>
