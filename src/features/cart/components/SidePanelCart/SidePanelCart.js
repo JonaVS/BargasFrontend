@@ -2,14 +2,14 @@ import React, { useContext, useState } from "react"
 import { CartContext } from "../../../../context/CartContext"
 import Offcanvas from "react-bootstrap/Offcanvas"
 import EditProductModal from "../EditProductModal/EditProductModal"
-import { navigate } from "gatsby"
-import { Button } from "react-bootstrap"
 import NoContentMessage from "../../../../shared/components/NoContentMessage/NoContentMessage"
+import LinkBtn from "../../../../shared/components/LinkBtn/LinkBtn"
 import CartItemList from "../CartItemList/CartItemList"
 import * as styles from "./sidePanelCart.module.css"
 
+
 const SidePanelCart = ({ showCart, handleShowCart }) => {
-  const { cart, deleteCartItem } = useContext(CartContext)
+  const { cart, deleteCartItem} = useContext(CartContext)
   const [showModal, setShowModal] = useState(false)
   const [selectedItem, setSelectedItem] = useState({})
 
@@ -20,11 +20,6 @@ const SidePanelCart = ({ showCart, handleShowCart }) => {
 
   const handleCloseModal = () => {
     setShowModal(false)
-  }
-
-  const goToCart = () => {
-    handleShowCart()
-    navigate("/app/cart")
   }
 
   return (
@@ -62,13 +57,13 @@ const SidePanelCart = ({ showCart, handleShowCart }) => {
           </Offcanvas.Body>
           {cart.length !== 0 && (
             <div className={styles.btnWrapper}>
-              <Button
-                bsPrefix="cartBtn"
-                onClick={goToCart}
+              <LinkBtn
+                link="/app/cart"
+                callback={handleShowCart}
                 className={styles.cartBtn}
               >
                 ORDENAR
-              </Button>
+              </LinkBtn>
             </div>
           )}
         </div>
