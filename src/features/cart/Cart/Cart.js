@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from "react"
 import { CartContext } from "../../../context/CartContext"
 import { cartSort } from "../../../helpers/cartSort"
 import Container from "react-bootstrap/Container"
-import EmptyCartMsg from "../EmptyCartMsg/EmptyCartMsg"
+import NoContentMessage from "../../../shared/components/NoContentMessage/NoContentMessage"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import CartDivider from "../Cart/CartDivider/CartDivider"
@@ -43,9 +43,13 @@ const Cart = () => {
     <>
       <Container fluid>
         {cart.length === 0 || cart.length === undefined ? (
-          <EmptyCartMsg msg="Tu bolsa de pedido está vacia" />
+          <NoContentMessage
+            message="Bolsa de pedido vacía"
+            link="/menu"
+            linkText="Ir al menú"
+          />
         ) : (
-          <Row xxl={2} xl={2} sm={2}> 
+          <Row xxl={2} xl={2} sm={2}>
             <Col sm={12} lg={6} className="p-0 me-0">
               <CartDivider text="Pedido" />
               <CartActions handleSort={handleSort} />
@@ -55,7 +59,7 @@ const Cart = () => {
                 handleDelete={deleteCartItem}
               />
             </Col>
-            <Col className="ps-xs-0 mt-5 mt-lg-0 ps-lg-5"  sm={12} lg={6}>
+            <Col className="ps-xs-0 mt-5 mt-lg-0 ps-lg-5" sm={12} lg={6}>
               <CartDivider text="Datos de entrega" />
               <ClientInfoForm />
             </Col>
