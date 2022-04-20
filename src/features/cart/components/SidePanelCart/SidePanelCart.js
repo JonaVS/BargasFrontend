@@ -13,7 +13,7 @@ const SidePanelCart = ({ showCart, handleShowCart }) => {
   const [showModal, setShowModal] = useState(false)
   const [selectedItem, setSelectedItem] = useState({})
 
-  const handleModal = item => {
+  const handleEditModal = item => {
     setSelectedItem(item)
     setShowModal(true)
   }
@@ -54,7 +54,7 @@ const SidePanelCart = ({ showCart, handleShowCart }) => {
               ) : (
                 <CartItemList
                   cartItems={cart}
-                  handleEdit={handleModal}
+                  handleEdit={handleEditModal}
                   handleDelete={deleteCartItem}
                 />
               )}
