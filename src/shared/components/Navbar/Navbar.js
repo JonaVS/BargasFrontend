@@ -4,7 +4,7 @@ import TopNav from "./TopNav/TopNav"
 import { StaticImage } from "gatsby-plugin-image"
 import ShoppingBag from "./ShoppingBag/ShoppingBag"
 import { Link } from "gatsby"
-import SidePanelCart from "../../../features/cart/SidePanelCart/SidePanelCart"
+import SidePanelCart from "../../../features/cart/components/SidePanelCart/SidePanelCart"
 import * as styles from "../Navbar/navbar.module.css"
 import AuthDropdown from "./AuthDropdown/AuthDropdown"
 

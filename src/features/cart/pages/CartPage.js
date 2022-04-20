@@ -2,7 +2,7 @@ import React from "react"
 import Container from 'react-bootstrap/Container'
 import SectionHeader from "../../../shared/components/SectionHeader/SectionHeader"
 import SectionDescriptor from "../../../shared/components/SectionDescriptor/SectionDescriptor"
-import Cart from "../Cart/Cart"
+import Cart from "../components/Cart/Cart"
 import * as styles from "./cartPage.module.css"
 
 const CartPage = () => {

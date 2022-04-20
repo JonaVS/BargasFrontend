@@ -1,12 +1,12 @@
 import React, { useContext, useState } from "react"
-import { CartContext } from "../../../context/CartContext"
+import { CartContext } from "../../../../context/CartContext"
 import Offcanvas from "react-bootstrap/Offcanvas"
 import CartCard from "../CartCard/CartCard"
 import EditProductModal from "../EditProductModal/EditProductModal"
 import { navigate } from "gatsby"
 import { Button } from "react-bootstrap"
-import NoContentMessage from "../../../shared/components/NoContentMessage/NoContentMessage"
-import * as styles from "../SidePanelCart/sidePanelCart.module.css"
+import NoContentMessage from "../../../../shared/components/NoContentMessage/NoContentMessage"
+import * as styles from "./sidePanelCart.module.css"
 
 const SidePanelCart = ({ showCart, handleShowCart }) => {
   const { cart, deleteCartItem } = useContext(CartContext)

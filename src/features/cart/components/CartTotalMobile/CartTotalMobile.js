@@ -1,5 +1,5 @@
 import React, { useContext } from "react"
-import { CartContext } from "../../../context/CartContext"
+import { CartContext } from "../../../../context/CartContext"
 import Button from "react-bootstrap/Button"
 import * as styles from "../CartTotalMobile/cartTotalMobile.module.css"
 

@@ -5,7 +5,7 @@ import BargasTextField from "../../../../shared/components/Form/BargasTextField/
 import BargasTextAreaField from "../../../../shared/components/Form/BargasTextAreaField/BargasTextAreaField"
 import BargasSelectField from "../../../../shared/components/Form/BargasSelectField/BargasSelectField"
 import BargasCheckBoxField from "../../../../shared/components/Form/BargasCheckBoxField/BargasCheckboxField"
-import CartTotalMobile from "../../../cart/CartTotalMobile/CartTotalMobile"
+import CartTotalMobile from "../../../cart/components/CartTotalMobile/CartTotalMobile"
 import { ConnectedFocusError } from "focus-formik-error"
 
 const ClientInfoForm = () => {

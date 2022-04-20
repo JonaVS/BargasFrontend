@@ -1,6 +1,6 @@
 import React from "react"
-import CartCard from "../../CartCard/CartCard"
-import *as styles from '../CartItemList/cartItemList.module.css'
+import CartCard from "../CartCard/CartCard"
+import *as styles from './cartItemList.module.css'
 
 const CartItemList = ({ cartItems, handleEdit, handleDelete }) => {
   return (

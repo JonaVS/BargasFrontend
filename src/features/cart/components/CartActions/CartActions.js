@@ -2,7 +2,7 @@ import React from "react"
 import Dropdown from "react-bootstrap/Dropdown"
 import ButtonGroup from "react-bootstrap/ButtonGroup"
 import { BsFilterRight } from "react-icons/bs"
-import * as styles from "../CartActions/cartActions.module.css"
+import * as styles from "./cartActions.module.css"
 
 const CartActions = ({handleSort}) => {
 

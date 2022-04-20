@@ -1,15 +1,15 @@
 import React, { useEffect, useState, useContext } from "react"
-import { CartContext } from "../../../context/CartContext"
-import { cartSort } from "../../../helpers/cartSort"
+import { CartContext } from "../../../../context/CartContext"
+import { cartSort } from "../../../../helpers/cartSort"
 import Container from "react-bootstrap/Container"
-import NoContentMessage from "../../../shared/components/NoContentMessage/NoContentMessage"
+import NoContentMessage from "../../../../shared/components/NoContentMessage/NoContentMessage"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
-import CartDivider from "../Cart/CartDivider/CartDivider"
+import CartDivider from "../CartDivider/CartDivider"
 import CartActions from "../CartActions/CartActions"
 import EditProductModal from "../EditProductModal/EditProductModal"
-import ClientInfoForm from "../../ordering/components/ClientInfoForm/ClientInfoForm"
-import CartItemList from "./CartItemList/CartItemList"
+import ClientInfoForm from "../../../ordering/components/ClientInfoForm/ClientInfoForm"
+import CartItemList from "../CartItemList/CartItemList"
 
 const Cart = () => {
   const [showModal, setShowModal] = useState(false)

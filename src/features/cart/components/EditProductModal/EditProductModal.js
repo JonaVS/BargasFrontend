@@ -3,7 +3,7 @@ import Modal from "react-bootstrap/Modal"
 import Badge from "react-bootstrap/Badge"
 import { GatsbyImage } from "gatsby-plugin-image"
 import *as styles from "./editProductModal.module.css"
-import ProductForm from "../../../shared/components/Form/ProductForm/ProductForm"
+import ProductForm from "../../../../shared/components/Form/ProductForm/ProductForm"
 
 const EditProductModal = ({ showModal, onHide, product, currentSort }) => {
   return (
