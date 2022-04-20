@@ -5,11 +5,11 @@ import CartCard from "../CartCard/CartCard"
 import EditProductModal from "../EditProductModal/EditProductModal"
 import { navigate } from "gatsby"
 import { Button } from "react-bootstrap"
-import EmptyCartMsg from '../EmptyCartMsg/EmptyCartMsg'
+import NoContentMessage from "../../../shared/components/NoContentMessage/NoContentMessage"
 import * as styles from "../SidePanelCart/sidePanelCart.module.css"
 
 const SidePanelCart = ({ showCart, handleShowCart }) => {
-  const {cart, deleteCartItem} = useContext(CartContext)
+  const { cart, deleteCartItem } = useContext(CartContext)
   const [showModal, setShowModal] = useState(false)
   const [selectedItem, setSelectedItem] = useState({})
 
@@ -41,31 +41,39 @@ const SidePanelCart = ({ showCart, handleShowCart }) => {
           </Offcanvas.Title>
         </Offcanvas.Header>
         <div className={styles.wrapper}>
-        {(cart.length === 0 || cart.length === undefined) && <EmptyCartMsg msg="Tu pedido está vacio"/>}
           <Offcanvas.Body className="p-0">
             <div className={styles.contentWrapper}>
-              {cart == null
-                ? null
-                : cart.map(item => (
-                    <CartCard
-                      key={item.inCartId}
-                      product={item}
-                      handleEdit={handleModal}
-                      handleDelete={deleteCartItem}
-                    />
-                  ))}
+              {cart.length === 0 || cart.length === undefined ? (
+                <NoContentMessage
+                  message="Bolsa de pedido vacía"
+                  link="/menu"
+                  linkText="Ir al menú"
+                  linkCallback={handleShowCart}
+                  messageClass={styles.msgContainer}
+                />
+              ) : (
+                cart.map(item => (
+                  <CartCard
+                    key={item.inCartId}
+                    product={item}
+                    handleEdit={handleModal}
+                    handleDelete={deleteCartItem}
+                  />
+                ))
+              )}
             </div>
           </Offcanvas.Body>
-          {cart.length !== 0 &&
-          <div className={styles.btnWrapper}>
-            <Button
-              bsPrefix="cartBtn"
-              onClick={goToCart}
-              className={styles.cartBtn}
-            >
-              ORDENAR
-            </Button>
-          </div>}
+          {cart.length !== 0 && (
+            <div className={styles.btnWrapper}>
+              <Button
+                bsPrefix="cartBtn"
+                onClick={goToCart}
+                className={styles.cartBtn}
+              >
+                ORDENAR
+              </Button>
+            </div>
+          )}
         </div>
       </Offcanvas>
       <EditProductModal
