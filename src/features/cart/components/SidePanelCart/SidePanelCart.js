@@ -31,7 +31,7 @@ const SidePanelCart = ({ showCart, handleShowCart }) => {
         placement="end"
       >
         <Offcanvas.Header className={styles.header} closeButton>
-          <Offcanvas.Title className={`${styles.title} display-6`}>
+          <Offcanvas.Title className={styles.title}>
             Mi pedido
           </Offcanvas.Title>
         </Offcanvas.Header>

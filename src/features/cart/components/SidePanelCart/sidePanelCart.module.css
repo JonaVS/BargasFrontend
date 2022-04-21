@@ -11,7 +11,7 @@
 .title {
   font-family: "Niconne";
   color: rgb(216, 183, 35);
-  font-size: 10px;
+  font-size: 2rem !important;
 }
 
 .cartListWrapper {
@@ -22,6 +22,11 @@
 .contentWrapper{
  padding-bottom: 100px;
 }
+
+.wrapper{
+  overflow: auto;
+}
+
 
 .btnWrapper 
 {
@@ -49,10 +54,6 @@
 
 .cartBtn:hover {
   background-color: var(--bargas-gold-hover);
-}
-
-.wrapper{
-  overflow: auto;
 }
 
 .msgContainer {
