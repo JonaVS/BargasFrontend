@@ -14,6 +14,11 @@
   font-size: 10px;
 }
 
+.cartListWrapper {
+  overflow: initial;
+  max-height: 100%;
+}
+
 .contentWrapper{
  padding-bottom: 100px;
 }

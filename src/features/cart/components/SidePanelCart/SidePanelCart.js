@@ -51,6 +51,7 @@ const SidePanelCart = ({ showCart, handleShowCart }) => {
                   cartItems={cart}
                   handleEdit={handleEditModal}
                   handleDelete={deleteCartItem}
+                  wrapperClass={styles.cartListWrapper}
                 />
               )}
             </div>
