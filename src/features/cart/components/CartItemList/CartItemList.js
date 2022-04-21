@@ -1,10 +1,15 @@
 import React from "react"
 import CartCard from "../CartCard/CartCard"
-import *as styles from './cartItemList.module.css'
+import * as styles from "./cartItemList.module.css"
 
-const CartItemList = ({ cartItems, handleEdit, handleDelete }) => {
+const CartItemList = ({
+  cartItems,
+  handleEdit,
+  handleDelete,
+  wrapperClass,
+}) => {
   return (
-    <div className={styles.cartListWrapper}>
+    <div className={`${styles.cartListWrapper} ${wrapperClass}`}>
       {cartItems.map(item => (
         <CartCard
           key={item.inCartId}
