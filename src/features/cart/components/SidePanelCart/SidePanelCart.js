@@ -31,9 +31,7 @@ const SidePanelCart = ({ showCart, handleShowCart }) => {
         placement="end"
       >
         <Offcanvas.Header className={styles.header} closeButton>
-          <Offcanvas.Title className={styles.title}>
-            Mi pedido
-          </Offcanvas.Title>
+          <Offcanvas.Title className={styles.title}>Mi pedido</Offcanvas.Title>
         </Offcanvas.Header>
         <div className={styles.wrapper}>
           <Offcanvas.Body className="p-0">
@@ -57,15 +55,13 @@ const SidePanelCart = ({ showCart, handleShowCart }) => {
             </div>
           </Offcanvas.Body>
           {cart.length !== 0 && (
-            <div className={styles.btnWrapper}>
-              <LinkBtn
-                link="/app/cart"
-                callback={handleShowCart}
-                className={styles.cartBtn}
-              >
-                ORDENAR {`(₡${cartTotal})`}
-              </LinkBtn>
-            </div>
+            <LinkBtn
+              link="/app/cart"
+              callback={handleShowCart}
+              className={styles.cartBtn}
+            >
+              ORDENAR {`(₡${cartTotal})`}
+            </LinkBtn>
           )}
         </div>
       </Offcanvas>
