@@ -28,7 +28,7 @@ const CartActions = ({handleSort}) => {
 }
 
 CartActions.defaultProps = {
-  handleFilterKey: () => {}
+  handleSort: () => {}
 }
 
 export default CartActions
