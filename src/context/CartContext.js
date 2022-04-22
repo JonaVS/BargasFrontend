@@ -62,6 +62,16 @@ export const CartProvider = ({ children }) => {
     setCart(newCart)
   }
 
+  const sortCart = keyToSort => {
+    let newCart = [...cart]  
+    newCart.sort((b, a) => {
+      if (a[keyToSort] > b[keyToSort]) return 1
+      if (a[keyToSort] < b[keyToSort]) return -1
+      return 0
+    })
+    setCart(newCart)
+  } 
+
   const cartTotal = getCartTotal()
 
   return (
@@ -73,6 +83,7 @@ export const CartProvider = ({ children }) => {
         addToCart,
         editCartItem,
         deleteCartItem,
+        sortCart
       }}
     >
       {children}

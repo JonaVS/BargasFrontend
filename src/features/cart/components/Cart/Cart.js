@@ -1,6 +1,5 @@
-import React, { useEffect, useState, useContext } from "react"
+import React, { useState, useContext } from "react"
 import { CartContext } from "../../../../context/CartContext"
-import { cartSort } from "../../../../helpers/cartSort"
 import Container from "react-bootstrap/Container"
 import NoContentMessage from "../../../../shared/components/NoContentMessage/NoContentMessage"
 import Row from "react-bootstrap/Row"
@@ -14,15 +13,7 @@ import CartItemList from "../CartItemList/CartItemList"
 const Cart = () => {
   const [showModal, setShowModal] = useState(false)
   const [selectedItem, setSelectedItem] = useState({})
-  const [order, setOrder] = useState("1")
-  const { cart, setCart, deleteCartItem } = useContext(CartContext)
-
-  useEffect(() => {
-    if (cart.length > 0) {
-      const defaultSortedCart = cartSort(cart, order)
-      setCart(defaultSortedCart)
-    }
-  })
+  const { cart, deleteCartItem, sortCart } = useContext(CartContext)
 
   const handleModal = item => {
     setSelectedItem(item)
@@ -33,10 +24,8 @@ const Cart = () => {
     setShowModal(false)
   }
 
-  const handleSort = order => {
-    const sortedCart = cartSort(cart, order)
-    setOrder(order)
-    setCart(sortedCart)
+  const handleSort = (order) => {
+    sortCart(order)
   }
 
   return (
@@ -70,7 +59,6 @@ const Cart = () => {
         onHide={handleCloseModal}
         showModal={showModal}
         product={selectedItem}
-        currentSort={order}
       />
     </>
   )

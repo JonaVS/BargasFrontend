@@ -2,7 +2,8 @@ import React from "react"
 import Dropdown from "react-bootstrap/Dropdown"
 import ButtonGroup from "react-bootstrap/ButtonGroup"
 import { BsFilterRight } from "react-icons/bs"
-import * as styles from "./cartActions.module.css"
+import { SortBy } from "../../../../helpers/cartSort"
+import * as styles from "../CartActions/cartActions.module.css"
 
 const CartActions = ({handleSort}) => {
 
@@ -17,9 +18,9 @@ const CartActions = ({handleSort}) => {
           <BsFilterRight className={styles.icon}/>
         </Dropdown.Toggle>
         <Dropdown.Menu className={styles.dpMenu}>
-          <Dropdown.Item eventKey="1">Subtotal</Dropdown.Item>
-          <Dropdown.Item eventKey="2">Precio</Dropdown.Item>
-          <Dropdown.Item eventKey="3">Cantidad</Dropdown.Item>
+          <Dropdown.Item eventKey={SortBy.SUBTOTAL}>Subtotal</Dropdown.Item>
+          <Dropdown.Item eventKey={SortBy.PRICE}>Precio</Dropdown.Item>
+          <Dropdown.Item eventKey={SortBy.QUANTITY}>Cantidad</Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
     </div>
