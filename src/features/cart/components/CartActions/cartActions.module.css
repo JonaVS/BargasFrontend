@@ -3,7 +3,7 @@
   padding: 10px;
 }
 
-.filterDp {
+.sortDp {
   font-family: "Squada One";
   color: rgb(200, 200, 200);
   border: solid rgb(216, 183, 35) 1px !important;
@@ -33,22 +33,22 @@
   margin: 0px 0px 0px 5px;
 }
 
-.filterDp::after {
+.sortDp::after {
   content: none;
 }
 
-.filterDp:active,
-.filterDp:hover,
-.filterDp:focus {
+.sortDp:active,
+.sortDp:hover,
+.sortDp:focus {
   box-shadow: none !important;
 }
 
-.filterDp:hover {
+.sortDp:hover {
   background-color: rgb(190, 190, 190);
   border: solid rgba(216, 183, 35, 0.664) 1px;
 }
 
-.filterDp:enabled {
+.sortDp:enabled {
   background-color: rgb(0, 0, 0) !important;
   border: solid rgb(216, 183, 35) 1px !important;
 }

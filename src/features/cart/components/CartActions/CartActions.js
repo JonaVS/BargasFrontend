@@ -13,7 +13,7 @@ const CartActions = ({handleSort}) => {
   return (
     <div className={styles.actions}>
       <Dropdown onSelect={handleFilterKey} as={ButtonGroup}>
-        <Dropdown.Toggle className={styles.filterDp} id="dropdown-custom-1">
+        <Dropdown.Toggle className={styles.sortDp} id="dropdown-custom-1">
           Ordenar
           <BsFilterRight className={styles.icon}/>
         </Dropdown.Toggle>
