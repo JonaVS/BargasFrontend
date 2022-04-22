@@ -1,10 +1,11 @@
-import React, { useContext, useEffect, useLayoutEffect } from "react"
+import "bootstrap/dist/css/bootstrap.min.css"
+import React, { useContext, useLayoutEffect } from "react"
+import { UserContext } from "../../../context/UserContext"
 import agent from "../../../API/agent"
 import NavBar from "../Navbar/Navbar"
 import Footer from "../Footer/Footer"
 import { ToastContainer, Zoom } from "react-toastify"
 import * as styles from "../Layout/layout.module.css"
-import { UserContext } from "../../../context/UserContext"
 // import Crisp from "../../../features/chat/components/Crisp/Crisp"
 
 const Layout = ({ children }) => {
