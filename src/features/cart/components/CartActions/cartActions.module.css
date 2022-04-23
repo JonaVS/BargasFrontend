@@ -4,7 +4,6 @@
 }
 
 .sortDp {
-  font-family: "Squada One";
   color: rgb(200, 200, 200);
   border: solid rgb(216, 183, 35) 1px !important;
 }
@@ -14,7 +13,6 @@
 }
 
 .dpMenu > a{
-  font-family: 'Squada One';
   font-size: 1.2rem;
   color: rgb(59, 59, 59);
 }
@@ -22,10 +20,6 @@
 .dpMenu > a:hover{
   background-color: black;
   color: rgb(233, 233, 233);
-}
-
-.dbItem{
-  font-size: 2rem;
 }
 
 .icon {
@@ -43,11 +37,6 @@
   box-shadow: none !important;
 }
 
-.sortDp:hover {
-  background-color: rgb(190, 190, 190);
-  border: solid rgba(216, 183, 35, 0.664) 1px;
-}
-
 .sortDp:enabled {
   background-color: rgb(0, 0, 0) !important;
   border: solid rgb(216, 183, 35) 1px !important;
@@ -58,10 +47,14 @@
   background-color: transparent;
   border: solid rgb(220, 53, 69) 1px;
   color: rgb(220, 53, 69);
-  font-family: 'Squada One';
 }
 
 .emptyCartBtn:hover {
   color: rgb(229, 17, 39);
   border: solid rgb(229, 17, 39) 1px;
+}
+
+/*SHARED CSS*/
+.sortDp, .dpMenu, .emptyCartBtn  {
+  font-family: "Squada One";
 }
