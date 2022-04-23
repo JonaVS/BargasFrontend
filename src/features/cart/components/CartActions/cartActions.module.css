@@ -52,3 +52,16 @@
   background-color: rgb(0, 0, 0) !important;
   border: solid rgb(216, 183, 35) 1px !important;
 }
+
+.emptyCartBtn {
+  margin: 0px 0px 0px 8px;
+  background-color: transparent;
+  border: solid rgb(220, 53, 69) 1px;
+  color: rgb(220, 53, 69);
+  font-family: 'Squada One';
+}
+
+.emptyCartBtn:hover {
+  color: rgb(229, 17, 39);
+  border: solid rgb(229, 17, 39) 1px;
+}

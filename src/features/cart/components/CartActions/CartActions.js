@@ -2,15 +2,20 @@ import React, { useContext } from "react"
 import { CartContext } from "../../../../context/CartContext"
 import Dropdown from "react-bootstrap/Dropdown"
 import ButtonGroup from "react-bootstrap/ButtonGroup"
-import { BsFilterRight } from "react-icons/bs"
+import { BsFilterRight, BsTrash } from "react-icons/bs"
 import { SortBy } from "../../../../helpers/cartSort"
+import { Button } from "react-bootstrap"
 import * as styles from "../CartActions/cartActions.module.css"
 
 const CartActions = () => {
-  const { sortCart } = useContext(CartContext)
+  const { sortCart, setCart } = useContext(CartContext)
 
   const handleFilterKey = (key) => {
      sortCart(key)
+  }
+
+  const handleDelete = () => {
+    setCart([])
   }
 
   return (
@@ -26,6 +31,9 @@ const CartActions = () => {
           <Dropdown.Item eventKey={SortBy.QUANTITY}>Cantidad</Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
+      <Button variant="custom" className={styles.emptyCartBtn} onClick={handleDelete}>
+        Eliminar todo <BsTrash />
+      </Button>
     </div>
   )
 }
