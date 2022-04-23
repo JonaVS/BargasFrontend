@@ -13,7 +13,7 @@ import CartItemList from "../CartItemList/CartItemList"
 const Cart = () => {
   const [showModal, setShowModal] = useState(false)
   const [selectedItem, setSelectedItem] = useState({})
-  const { cart, deleteCartItem, sortCart } = useContext(CartContext)
+  const { cart, deleteCartItem } = useContext(CartContext)
 
   const handleModal = item => {
     setSelectedItem(item)
@@ -22,10 +22,6 @@ const Cart = () => {
 
   const handleCloseModal = () => {
     setShowModal(false)
-  }
-
-  const handleSort = (order) => {
-    sortCart(order)
   }
 
   return (
@@ -41,7 +37,7 @@ const Cart = () => {
           <Row xxl={2} xl={2} sm={2}>
             <Col sm={12} lg={6} className="p-0 me-0">
               <CartDivider text="Pedido" />
-              <CartActions handleSort={handleSort} />
+              <CartActions/>
               <CartItemList
                 cartItems={cart}
                 handleEdit={handleModal}
