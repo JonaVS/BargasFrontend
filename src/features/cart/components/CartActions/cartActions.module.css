@@ -5,11 +5,11 @@
 
 .sortDp {
   color: rgb(200, 200, 200);
-  border: solid rgb(216, 183, 35) 1px !important;
+  border: solid var(--bargas-gold) 1px !important;
 }
 
 .dpMenu{
-  background-color:rgb(216, 183, 35);
+  background-color:var(--bargas-gold);
 }
 
 .dpMenu > a{
@@ -39,7 +39,7 @@
 
 .sortDp:enabled {
   background-color: rgb(0, 0, 0) !important;
-  border: solid rgb(216, 183, 35) 1px !important;
+  border: solid var(--bargas-gold) 1px !important;
 }
 
 .emptyCartBtn {
