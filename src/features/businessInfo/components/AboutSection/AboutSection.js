@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import LazyLoad from "react-lazyload"
 import Container from "react-bootstrap/Container"
 import SubSectionHeader from "../../../../shared/components/SubSectionHeader/SubSectionHeader"
-import { StaticImage } from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import AboutCols from "./AboutCols/AboutCols"
 import * as styles from "./aboutSection.module.css"
 
@@ -26,6 +26,7 @@ const About = () => {
   `)
 
   const sectionDesc = data.strapiHomePage.aboutUs.description
+  const aboutImage = data.strapiHomePage.aboutImage.localFile.childImageSharp.gatsbyImageData
 
   return (
     <LazyLoad once offset={100} height={400}>
@@ -36,15 +37,10 @@ const About = () => {
               title="Sobre nosotros"
               className={styles.aboutContainer}
             >
-            {sectionDesc}
+              {sectionDesc}
             </SubSectionHeader>
           </div>
-          <StaticImage
-            src="../../../../images/local.jpg"
-            alt="Bargas"
-            placeholder="blurred"
-            width={650}
-          />
+          <GatsbyImage image={aboutImage} alt="local" />
         </div>
         <AboutCols />
       </Container>
