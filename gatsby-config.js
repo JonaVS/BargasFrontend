@@ -1,6 +1,6 @@
-require('dotenv').config({
+require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
-});
+})
 
 module.exports = {
   siteMetadata: {
@@ -38,15 +38,29 @@ module.exports = {
         theme_color: `#FFFFFF`,
         display: `minimal-ui`,
         icon: `src/images/logoN.png`, // This path is relative to the root of the site.
-      }
+      },
     },
     {
       resolve: `gatsby-source-strapi`,
       options: {
-        apiURL: process.env.STRAPI_API_URL,
+        apiURL: "http://localhost:1337",
         accessToken: process.env.STRAPI_TOKEN,
-        collectionTypes: [`product`, `categorie`, 'carousel-item', 'menu-preview'],
-        singleTypes: ['menu-page', 'contact-page'],
+        collectionTypes: [
+          "product",
+          "categorie",
+          "carousel-item",
+          "menu-preview",
+        ],
+        singleTypes: [
+          "menu-page",
+          "contact-page",
+          "home-page",
+          "events-page",
+          "terms-and-conditions-page",
+          "privacy-page",
+          "ordering-help-page",
+          "general-website-info",
+        ],
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
