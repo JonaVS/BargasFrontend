@@ -22,6 +22,7 @@ const OrderingSection = () => {
   `)
 
   const sectionDesc = data.strapiHomePage.aboutOrdering.description
+  const colData = data.strapiHomePage.aboutOrderingCols
 
   return (
     <LazyLoad once offset={50} height={500}>
@@ -34,7 +35,7 @@ const OrderingSection = () => {
         >
           {sectionDesc}
         </SubSectionHeader>
-        <OrderingCols />
+        <OrderingCols colData={colData} />
       </Container>
     </LazyLoad>
   )
