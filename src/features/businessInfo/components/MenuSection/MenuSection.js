@@ -1,4 +1,5 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import LazyLoad from "react-lazyload"
 import Container from "react-bootstrap/Container"
 import SubSectionHeader from "../../../../shared/components/SubSectionHeader/SubSectionHeader"
@@ -6,14 +7,39 @@ import Masonry from "react-masonry-css"
 import { GatsbyImage } from "gatsby-plugin-image"
 import * as styles from "../MenuSection/menuSection.module.css"
 
-
-
-const MenuSection = ({ preview }) => {
+const MenuSection = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      strapiHomePage {
+        aboutMenu {
+          description
+        }
+      }
+      allStrapiMenuPreview {
+        nodes {
+          product {
+            name
+            slug
+          }
+          image {
+            localFile {
+              childImageSharp {
+                gatsbyImageData(placeholder: BLURRED, quality: 50, width: 500)
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
 
   //Breakpoints for Masonry
   const breakPoints = {
     default: 2,
   }
+
+  const sectionDesc = data.strapiHomePage.aboutMenu.description
+  const menuPreview = data.allStrapiMenuPreview.nodes
 
   return (
     <LazyLoad once offset={50} height={500}>
@@ -24,10 +50,7 @@ const MenuSection = ({ preview }) => {
           link="/menu"
           linkText="Ver menú"
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-          veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-          ea commodo consequat.
+          {sectionDesc}
         </SubSectionHeader>
         <div className={styles.masonryWrapper}>
           <Masonry
@@ -35,13 +58,11 @@ const MenuSection = ({ preview }) => {
             className={styles.masonryGrid}
             columnClassName={styles.masonryCol}
           >
-            {preview.map(item => {
+            {menuPreview.map(item => {
               return (
                 <div key={item.product.name}>
                   <GatsbyImage
-                    image={
-                      item.image.localFile.childImageSharp.gatsbyImageData
-                    }
+                    image={item.image.localFile.childImageSharp.gatsbyImageData}
                     alt={item.product.name}
                   />
                 </div>
