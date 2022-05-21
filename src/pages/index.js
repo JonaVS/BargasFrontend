@@ -19,7 +19,7 @@ const IndexPage = ({ data }) => {
       <Divider />
       <About />
       <Divider />
-      <MenuSection preview={data.allStrapiMenuPreview.nodes} />
+      <MenuSection />
       <Divider />
       <OrderingSection />
       <Divider />
@@ -36,21 +36,6 @@ export const indexQuery = graphql`
       seoData {
         title
         description
-      }
-    }
-    allStrapiMenuPreview {
-      nodes {
-        product {
-          name
-          slug
-        }
-        image {
-          localFile {
-            childImageSharp {
-              gatsbyImageData(placeholder: BLURRED, quality: 50, width: 500)
-            }
-          }
-        }
       }
     }
   }
