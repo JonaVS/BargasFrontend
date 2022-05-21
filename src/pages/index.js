@@ -9,9 +9,12 @@ import ContactBasicInfo from "../features/businessInfo/components/ContactBasictI
 import Divider from "../shared/components/Divider/Divider"
 
 const IndexPage = ({ data }) => {
+  
+  const { seoData } = data.strapiHomePage
+
   return (
     <>
-      <Seo title="Home" />
+      <Seo title={seoData.title} description={seoData.description} />
       <CarouselB />
       <Divider />
       <About />
@@ -28,17 +31,23 @@ const IndexPage = ({ data }) => {
 export default IndexPage
 
 export const indexQuery = graphql`
-  query index {
+  query HomePageData {
+    strapiHomePage {
+      seoData {
+        title
+        description
+      }
+    }
     allStrapiMenuPreview {
       nodes {
         product {
-          slug
           name
+          slug
         }
         image {
           localFile {
             childImageSharp {
-              gatsbyImageData(placeholder: BLURRED, quality: 20,  width: 500)
+              gatsbyImageData(placeholder: BLURRED, quality: 50, width: 500)
             }
           }
         }
