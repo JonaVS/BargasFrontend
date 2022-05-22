@@ -3,19 +3,19 @@
   margin-top: 150px;
 }
 
-.infoBody {
+.markdownWrapper {
   padding: 15px;
   margin: auto;
 }
 
-.paragraph {
+.markdownWrapper > p {
   color: white;
   font-family: "Josefin Slab";
   text-align: justify;
 }
 
-.title,
-.createdAt {
+.markdownWrapper > h1,
+.markdownWrapper > h3 {
   font-family: "Squada One";
   color: var(--bargas-gold);
 }
