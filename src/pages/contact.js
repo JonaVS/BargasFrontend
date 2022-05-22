@@ -6,23 +6,22 @@ import HeroCaption from "../shared/components/HeroContainer/HeroCaption/HeroCapt
 import ContactPanel from "../features/businessInfo/components/ContactPanel/ContactPanel"
 import Divider from "../shared/components/Divider/Divider"
 
-
 const Contact = ({ data }) => {
+  
+  const heroImage =
+    data.strapiContactPage.heroImage.localFile.childImageSharp.gatsbyImageData
+
   return (
     <>
       <Seo title="Menú" />
-      <HeroContainer
-        image={
-          data.strapiContactPage.heroImage.localFile.childImageSharp.gatsbyImageData
-        }
-      >
+      <HeroContainer image={heroImage}>
         <HeroCaption
           title="Contacto"
           text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
         />
       </HeroContainer>
       <Divider />
-      <ContactPanel/>
+      <ContactPanel />
     </>
   )
 }
