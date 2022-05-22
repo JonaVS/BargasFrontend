@@ -7,17 +7,18 @@ import ContactPanel from "../features/businessInfo/components/ContactPanel/Conta
 import Divider from "../shared/components/Divider/Divider"
 
 const Contact = ({ data }) => {
-  
+
+  const seoData = data.strapiContactPage.seoData
   const heroImage =
     data.strapiContactPage.heroImage.localFile.childImageSharp.gatsbyImageData
 
   return (
     <>
-      <Seo title="Menú" />
+      <Seo title={seoData.title} description={seoData.description} />
       <HeroContainer image={heroImage}>
         <HeroCaption
-          title="Contacto"
-          text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
+          title={seoData.title}
+          text={seoData.description}
         />
       </HeroContainer>
       <Divider />
@@ -31,6 +32,10 @@ export default Contact
 export const query = graphql`
   query contactPage {
     strapiContactPage {
+      seoData {
+        title
+        description
+      }
       heroImage {
         localFile {
           childImageSharp {
