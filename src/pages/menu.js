@@ -7,15 +7,14 @@ import Menu from "../features/menu/Menu/Menu"
 import Divider from "../shared/components/Divider/Divider"
 
 const MenuPage = ({ data }) => {
+  
+  const heroImage =
+    data.strapiMenuPage.heroImage.localFile.childImageSharp.gatsbyImageData
 
   return (
     <>
       <Seo title="Menú" />
-      <HeroContainer
-        image={
-          data.strapiMenuPage.heroImage.localFile.childImageSharp.gatsbyImageData
-        }
-      >
+      <HeroContainer image={heroImage}>
         <HeroCaption
           title="Menú"
           text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
