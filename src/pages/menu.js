@@ -8,16 +8,17 @@ import Divider from "../shared/components/Divider/Divider"
 
 const MenuPage = ({ data }) => {
   
+  const seoData = data.strapiMenuPage.seoData
   const heroImage =
     data.strapiMenuPage.heroImage.localFile.childImageSharp.gatsbyImageData
 
   return (
     <>
-      <Seo title="Menú" />
+      <Seo title={seoData.title} description={seoData.description}/>
       <HeroContainer image={heroImage}>
         <HeroCaption
-          title="Menú"
-          text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
+          title={seoData.title}
+          text={seoData.description}
           btnText="Explorar"
         />
       </HeroContainer>
@@ -32,6 +33,10 @@ export default MenuPage
 export const query = graphql`
   query menuPage {
     strapiMenuPage {
+      seoData {
+        title
+        description
+      }
       heroImage {
         localFile {
           childImageSharp {
