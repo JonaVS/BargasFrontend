@@ -3,7 +3,6 @@ import { Form, Formik } from "formik"
 import * as Yup from "yup"
 import BargasTextField from "../../../../../shared/components/Form/BargasTextField/BargasTextField"
 import BargasTextAreaField from "../../../../../shared/components/Form/BargasTextAreaField/BargasTextAreaField"
-import { Button } from "react-bootstrap"
 import * as styles from "./contactForm.module.css"
 
 const ContactForm = () => {
@@ -45,14 +44,13 @@ const ContactForm = () => {
               rows={5}
               placeholder="Escribe el mensaje aquí"
             />
-            <Button
+            <button
               type="submit"
-              variant="custom"
               className={styles.submitBtn}
               disabled={!(formik.isValid && formik.dirty)}
             >
               Enviar
-            </Button>
+            </button>
           </Form>
         )}
       </Formik>
