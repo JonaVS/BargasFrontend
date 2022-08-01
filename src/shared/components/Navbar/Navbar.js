@@ -85,7 +85,7 @@ const NavBar = () => {
                 active={false}
                 className={styles.navLink}
                 as={Link}
-                to="/"
+                to="/events"
                 eventKey="3"
                 activeClassName={styles.active}
               >

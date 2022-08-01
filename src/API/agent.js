@@ -29,6 +29,10 @@ const product = {
   details: (id) => request.get(`/products/${id}?populate=%2A`)
 }
 
+const event = {
+  getEvents: () => request.get('/events?populate=%2A') 
+}
+
 const user = {
   register: (body, config) => request.post(`auth/local/register`, body, config),
   login: (body, config) => request.post('/auth/local', body, config),
@@ -38,6 +42,7 @@ const user = {
 
 const agent = {
   product,
+  event,
   user
 };
 

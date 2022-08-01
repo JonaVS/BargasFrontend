@@ -25,5 +25,8 @@ export const StrapiErrors = {
       strapiError: "Not Found",
       translatedMessage: "No se pudo verificar la disponibilidad del producto" 
     },
+  ],
+  EVENTS: [
+    {}
   ]
 }

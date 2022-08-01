@@ -1,0 +1,45 @@
+.content {
+    background-color: rgb(14, 14, 14);
+    border: solid rgb(35, 35, 35) 2px;
+  }
+  
+  .modalHeader {
+    background-color: black;
+    color: var(--bargas-gold);
+    border: none;
+  }
+  
+  .modalHeader > button:focus,
+  .modalHeader > button:focus-visible {
+    box-shadow: none;
+  }
+  
+  .modalHeader, .modalBody {
+    font-family: "Squada One";
+  }
+  
+  .modalBody {
+    color: rgb(144, 143, 143);
+    border: none !important;
+  }
+
+  .modalBody > p:not(:last-child) {
+    margin-bottom: 0px;
+    font-size: 1rem;
+  }
+
+  .modalDesc {
+    margin-top: 5px;
+    font-size: 1.1rem;
+  }
+  
+  .modalFooter {
+    border-top: solid rgb(35, 35, 35) 2px;
+  }
+  
+  .modalFooter > button:focus,
+  .modalFooter > button:focus-visible {
+    box-shadow: none !important;
+    outline: none !important;
+  }
+  
