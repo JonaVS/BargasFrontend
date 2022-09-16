@@ -11,7 +11,7 @@ const CartTotalMobile = ({ totalData, focusErrors }) => {
         <p>Subtotal: ₡ {cartTotal}</p>
         <p>Envio: ₡ {totalData.delivery}</p>
         <div className={styles.basicDivider} />
-        <p>TOTAL: ₡ {cartTotal + totalData.delivery}</p>
+        <p>TOTAL: ₡ {Intl.NumberFormat("CRC").format(totalData.subTotal + cartTotal)}</p>
       </div>
       <Button
         size="lg"
