@@ -8,11 +8,10 @@ import NoContentMessage from "../../../../shared/components/NoContentMessage/NoC
 import EventSectionPlaceholder from "./EventSectionPlaceholder/EventSectionPlaceholder"
 
 const Events = () => {
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
   const [events, setEvents] = useState([])
 
   useEffect(() => {
-    setIsLoading(true)
     const getEventsData = async () => {
       try {
         const result = await agent.event.getEvents()
