@@ -15,6 +15,8 @@ const NavBar = () => {
     setShowCart(!showCart)
   }
 
+  if (window && window.location.pathname === "/app/QRmenu" ) return null
+  
   return (
     <>
       <Navbar

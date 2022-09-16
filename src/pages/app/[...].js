@@ -2,6 +2,7 @@ import React from "react"
 import { Router } from "@reach/router"
 import NotFoundPage from "../404"
 import CartPage from "../../features/cart/pages/CartPage"
+import QRMenu from "../../features/menu/Menu/QRMenu"
 import SignUpPage from "../../features/auth/pages/SignUpPage"
 import LoginPage from "../../features/auth/pages/LoginPage"
 import PasswordRecoveryPage from "../../features/auth/pages/PasswordRecoveryPage"
@@ -16,6 +17,7 @@ const App = () => {
   return (
     <Router>
       <CartPage path="app/cart"/>
+      <QRMenu path="app/QRmenu"/>
       <NotAuthenticatedRoute path="app/login" component={LoginPage}/>
       <NotAuthenticatedRoute path="app/signup" component={SignUpPage}/>
       <NotAuthenticatedRoute path="app/forgot-password" component={PasswordRecoveryPage}/>

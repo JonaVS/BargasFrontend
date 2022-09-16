@@ -7,7 +7,7 @@ import MenuItemList from "./MenuItemList/MenuItemList"
 import NoContentMessage from "../../../shared/components/NoContentMessage/NoContentMessage"
 import *as styles from './menu.module.css'
 
-const Menu = () => {
+const Menu = ({ qrmenu }) => {
   const data = useStaticQuery(graphql`
     query MyQuery {
       allStrapiProduct {
@@ -77,11 +77,15 @@ const Menu = () => {
           xxl={3}
           className="g-4 mt-5 list-unstyled"
         >
-          <MenuItemList menu={filteredMenu} />
+          <MenuItemList menu={filteredMenu} qrmenu={qrmenu} />
         </Row>
       )}
     </Container>
   )
+}
+
+Menu.defaultProps = {
+  qrmenu: false,
 }
 
 export default Menu

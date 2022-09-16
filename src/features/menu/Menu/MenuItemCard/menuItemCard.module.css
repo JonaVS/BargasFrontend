@@ -47,3 +47,16 @@
   font-size: 1.1rem;
   text-align: left;
 }
+
+.detailsBtn {
+  padding: 8px;
+  background-color: var(--bargas-gold);
+  border: none;
+  border-radius: 10px;
+  color: black;
+}
+
+/*Shared CSS*/
+.priceTag, .detailsBtn {
+  font-family: "Squada One";
+}

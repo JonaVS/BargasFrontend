@@ -9,6 +9,9 @@ import { StaticImage } from "gatsby-plugin-image"
 import * as styles from "../Footer/footer.module.css"
 
 const Footer = () => {
+
+  if (window && window.location.pathname === "/app/QRmenu" ) return null
+  
   return (
     <footer className={styles.footer}>
       <Container fluid={true}>
