@@ -17,7 +17,7 @@ const EventCard = ({ event }) => {
         <img
           className={styles.eventImg}
           src={event.attributes.image.data.attributes.formats.small.url}
-          alt="Event image"
+          alt={event.attributes.title}
         />
         <div className={styles.cardInfo}>
           <div className={styles.innerWrapper}>
