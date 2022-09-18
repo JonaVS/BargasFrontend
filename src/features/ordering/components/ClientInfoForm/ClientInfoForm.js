@@ -5,7 +5,7 @@ import BargasTextField from "../../../../shared/components/Form/BargasTextField/
 import BargasTextAreaField from "../../../../shared/components/Form/BargasTextAreaField/BargasTextAreaField"
 import BargasSelectField from "../../../../shared/components/Form/BargasSelectField/BargasSelectField"
 import BargasCheckBoxField from "../../../../shared/components/Form/BargasCheckBoxField/BargasCheckboxField"
-import CartTotalMobile from "../../../cart/components/CartTotalMobile/CartTotalMobile"
+import CartTotalSummary from "../../../cart/components/CartTotalSummary/CartTotalSummary"
 import { ConnectedFocusError } from "focus-formik-error"
 
 const ClientInfoForm = () => {
@@ -115,7 +115,7 @@ const ClientInfoForm = () => {
                 </div>
               </>
             )}
-            <CartTotalMobile
+            <CartTotalSummary
               focusErrors={() => focusErrors(formik.errors)}
             />
           </Form>
