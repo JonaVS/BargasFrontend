@@ -38,7 +38,6 @@ EventDetailsModal.defaultProps = {
       description: "Default description",
       startDate: "12/12/2022",
       endDate: "12/20/2022",
-      description: "Default description"
     },
   }
 }
