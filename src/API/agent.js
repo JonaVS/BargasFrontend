@@ -25,6 +25,10 @@ const request = {
   delete: (url, config={}) => axios.delete(url, config).then(response),
 }
 
+const generalInfo = {
+  websiteInfo: () => request.get('/general-website-info')
+}
+
 const product = {
   details: (id) => request.get(`/products/${id}?populate=%2A`)
 }
@@ -41,6 +45,7 @@ const user = {
 }
 
 const agent = {
+  generalInfo,
   product,
   event,
   user

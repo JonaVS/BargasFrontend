@@ -1,33 +1,73 @@
-import React, { useContext } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { CartContext } from "../../../../context/CartContext"
-import Button from "react-bootstrap/Button"
+import agent from "../../../../API/agent"
+import { Spinner, Button } from "react-bootstrap"
+import UnavailableService from "../../../../shared/components/UnavailableService/UnavailableService"
 import * as styles from "./cartTotalSummary.module.css"
 
-const CartTotalSummary = ({ totalData, focusErrors }) => {
+const CartTotalSummary = ({ focusErrors }) => {
+  const [isLoading, setIsLoading] = useState(true)
+  const [serviceData, setServiceData] = useState({
+    deliveryCost: 0,
+    onlineOrdering: false,
+  })
   const { cartTotal } = useContext(CartContext)
+  const { deliveryCost, onlineOrdering } = serviceData
+
+  useEffect(() => {
+    const getOrderingServiceStatus = async () => {
+      try {
+        const result = await agent.generalInfo.websiteInfo()
+        const { deliveryCost, onlineOrdering } = result.data.attributes
+        setServiceData({ deliveryCost, onlineOrdering })
+        setIsLoading(false)
+      } catch (error) {
+        setIsLoading(false)
+      }
+    }
+    getOrderingServiceStatus()
+  }, [])
+
+  if (!onlineOrdering && !isLoading) {
+    return (
+      <UnavailableService
+        visible={true}
+        message="Los pedidos en linea no están disponibles en este momento."
+      />
+    )
+  }
+
   return (
     <div className={styles.totalWrapper}>
-      <div className={styles.dataWrapper}>
-        <p>Subtotal: ₡ {cartTotal}</p>
-        <p>Envio: ₡ {totalData.delivery}</p>
-        <div className={styles.basicDivider} />
-        <p>TOTAL: ₡ {Intl.NumberFormat("CRC").format(totalData.subTotal + cartTotal)}</p>
-      </div>
-      <Button
-        size="lg"
-        variant="custom"
-        type="submit"
-        className={styles.orderBtn}
-        onClick={focusErrors}
-      >
-        ORDENAR
-      </Button>
+      {isLoading ? (
+        <Spinner animation="border" role="status" variant="warning" />
+      ) : (
+        <>
+          <div className={styles.dataWrapper}>
+            <p>Subtotal: ₡ {Intl.NumberFormat("CRC").format(cartTotal)}</p>
+            <p>Envio: ₡ {Intl.NumberFormat("CRC").format(deliveryCost)}</p>
+            <div className={styles.basicDivider} />
+            <p>
+              TOTAL: ₡ {Intl.NumberFormat("CRC").format(cartTotal + deliveryCost)}
+            </p>
+          </div>
+          <Button
+            size="lg"
+            variant="custom"
+            type="submit"
+            className={styles.orderBtn}
+            onClick={focusErrors}
+          >
+            ORDENAR
+          </Button>
+        </>
+      )}
     </div>
   )
 }
 
 CartTotalSummary.defaultProps = {
-  totalData: { subTotal: 0, delivery: 2000, discount: 0, total: 0 },
+  focusErrors: () => {},
 }
 
 export default CartTotalSummary

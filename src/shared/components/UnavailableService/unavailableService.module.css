@@ -1,0 +1,22 @@
+.unavailableService {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    position: fixed;
+    z-index: 2;
+    padding: 15px;
+    width: 100%;
+    bottom: 0px;
+    left: 0px;
+    background-color: black;
+    color: var(--bargas-muted-text1);
+    font-family: "Squada One";
+  }
+  
+  .unavailableService > span {
+    margin-left: 5px;
+    text-align: center;
+    font-size: 1.1rem;
+  }
+
