@@ -26,6 +26,7 @@ CartItemList.defaultProps = {
   cartItems: [],
   handleEdit: () => {},
   handleDelete: () => {},
+  wrapperClass: ''
 }
 
 export default CartItemList
