@@ -45,7 +45,6 @@ const ClientInfoForm = () => {
             : validationSchemas.normalValidation
         }
         onSubmit={(values, formikBag) => {console.log(formikBag)} }
-        validateOnMount={true}
       >
         {formik => (
           <Form onSubmit={formik.handleSubmit}>
