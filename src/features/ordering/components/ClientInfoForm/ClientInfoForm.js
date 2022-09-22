@@ -32,7 +32,7 @@ const ClientInfoForm = () => {
           address: "",
           phone: "",
           email: "",
-          province: "",
+          province: "Cartago",
           acceptedInvoice: false,
           invoiceReceiver: "",
           idType: "",
@@ -71,7 +71,7 @@ const ClientInfoForm = () => {
                 type="tel"
                 placeholder="88888888"
               />
-              <BargasSelectField label="Provincia" name="province">
+              <BargasSelectField id='province' label="Provincia" name="province">
                 <option value="Cartago">Cartago</option>
               </BargasSelectField>
             </div>
