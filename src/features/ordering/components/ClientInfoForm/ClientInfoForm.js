@@ -5,6 +5,8 @@ import BargasTextField from "../../../../shared/components/Form/BargasTextField/
 import BargasTextAreaField from "../../../../shared/components/Form/BargasTextAreaField/BargasTextAreaField"
 import BargasSelectField from "../../../../shared/components/Form/BargasSelectField/BargasSelectField"
 import BargasCheckBoxField from "../../../../shared/components/Form/BargasCheckBoxField/BargasCheckboxField"
+import CartDivider from "../../../cart/components/CartDivider/CartDivider"
+import BargasRadioButton from "../../../../shared/components/Form/BargasRadioButton/BargasRadioButton"
 import CartTotalSummary from "../../../cart/components/CartTotalSummary/CartTotalSummary"
 import { ConnectedFocusError } from "focus-formik-error"
 
@@ -35,6 +37,7 @@ const ClientInfoForm = () => {
           invoiceReceiver: "",
           idType: "",
           idNumber: "",
+          paymentType: "Tarjeta",
         }}
         validationSchema={
           withInvoice
@@ -115,6 +118,10 @@ const ClientInfoForm = () => {
                 </div>
               </>
             )}
+            <br/>
+            <CartDivider text='Medio de pago'/>
+            <BargasRadioButton id="Tarjeta" type="radio" name="paymentType" label="Tarjeta" value="Tarjeta" defaultChecked/>
+            <BargasRadioButton id="Efectivo" type="radio" name="paymentType" label="Efectivo" value="Efectivo" />
             <CartTotalSummary
               focusErrors={() => focusErrors(formik.errors)}
             />
