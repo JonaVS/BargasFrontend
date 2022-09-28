@@ -4,7 +4,8 @@ export const ErrorContext = {
   LOGIN: "login",
   SIGNUP: "signup",
   PRODUCT_DETAILS: "productDetails",
-  EVENTS: "events"
+  EVENTS: "events",
+  ORDERING: "ordering"
 }
 
 export const errorMessageBuilder = (context, error) => {
@@ -35,6 +36,11 @@ export const errorMessageBuilder = (context, error) => {
         err => err.strapiError === strapiError
       ).translatedMessage
       break
+    case "ordering":
+      message = StrapiErrors.ORDERING.find(
+        err => err.strapiError === strapiError
+      ).translatedMessage
+      break
     default:
       break
   }
@@ -42,7 +48,6 @@ export const errorMessageBuilder = (context, error) => {
 }
 
 const isNetworkOrServerRelated = error => {
-  if (!error.response) return true
-  if (error.response.status === 0) return true
+  if (error.response.status === 0 ) return true
   return false
 }

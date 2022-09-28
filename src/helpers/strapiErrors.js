@@ -21,12 +21,37 @@ export const StrapiErrors = {
   ],
   PRODUCT_DETAILS: [
     {
-      /*This error is extremely rare to happen, but just in case*/
       strapiError: "Not Found",
       translatedMessage: "No se pudo verificar la disponibilidad del producto" 
     },
   ],
+  ORDERING: [
+    {
+      strapiError: "Invalid order data",
+      translatedMessage: "Datos de orden inválidos"
+    },
+    {
+      strapiError: "Invalid product data",
+      translatedMessage: "Información de producto inválida"
+    },
+    {
+      strapiError: "Unavailable Items",
+      translatedMessage: "Productos no disponibles"
+    },
+    {
+      strapiError: "Error validating order",
+      translatedMessage: "Error al validar la orden"
+    },
+    {
+      strapiError: "Error placing order",
+      translatedMessage: "Error al establecer la orden"
+    },
+    {
+      strapiError: "Error generating payment session",
+      translatedMessage: "No se pudo generar sesión de pago"
+    },
+  ],
   EVENTS: [
     {}
-  ]
+  ],
 }

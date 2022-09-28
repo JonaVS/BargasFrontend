@@ -1,6 +1,11 @@
-import React, { useState } from "react"
+import React, { useContext, useState } from "react"
+import { CartContext } from "../../../../context/CartContext"
 import { Form, Formik } from "formik"
+import { toastDispatcher, ToastType } from "../../../../helpers/toastDispatcher"
+import { ErrorContext, errorMessageBuilder } from "../../../../helpers/errorMessageBuilder"
+import { navigate } from "gatsby"
 import validationSchemas from "../ClientInfoForm/YupValidations"
+import LoadingOverlay from "../../../../shared/components/LoadingOverlay/LoadingOverlay"
 import BargasTextField from "../../../../shared/components/Form/BargasTextField/BargasTextField"
 import BargasTextAreaField from "../../../../shared/components/Form/BargasTextAreaField/BargasTextAreaField"
 import BargasSelectField from "../../../../shared/components/Form/BargasSelectField/BargasSelectField"
@@ -10,17 +15,21 @@ import BargasRadioButton from "../../../../shared/components/Form/BargasRadioBut
 import CartTotalSummary from "../../../cart/components/CartTotalSummary/CartTotalSummary"
 import { ConnectedFocusError } from "focus-formik-error"
 
+import * as styles from "./clientInfoForm.module.css"
+
 const ClientInfoForm = () => {
+  const { placeOrder } = useContext(CartContext)
   const [withInvoice, setWithInvoice] = useState(false)
+  const [isPlacingOrder, setIsPlacingOrder] = useState(false)
 
   const handleExtraFields = () => setWithInvoice(!withInvoice)
 
   function focusErrors(errors) {
-    const errorKeys = Object.keys(errors);
+    const errorKeys = Object.keys(errors)
     if (errorKeys.length > 0) {
       const el = document.getElementsByName(errorKeys[0])[0]
-      el.scrollIntoView({ behavior: 'smooth', block: 'start'});
-      el.focus();
+      el.scrollIntoView({ behavior: "smooth", block: "start" })
+      el.focus()
     }
   }
 
@@ -37,18 +46,42 @@ const ClientInfoForm = () => {
           invoiceReceiver: "",
           idType: "",
           idNumber: "",
-          paymentType: "Tarjeta",
+          paymentType: "Card",
         }}
         validationSchema={
           withInvoice
             ? validationSchemas.validationWithEInvoice
             : validationSchemas.normalValidation
         }
-        onSubmit={(values, formikBag) => {console.log(formikBag)} }
+        onSubmit={async (values, formikBag) => {
+          setIsPlacingOrder(true)
+          const result = await placeOrder(values)
+          if (result.success) {
+            result.paymentGateway === ""
+              ? navigate("/app/ordering-result/basic")
+              : (window.location.href = result.paymentGateway)
+          } else {
+            setIsPlacingOrder(false)
+            toastDispatcher(
+              ToastType.ERROR,
+              errorMessageBuilder(ErrorContext.ORDERING, result)
+            )
+          }
+        }}
       >
         {formik => (
           <Form onSubmit={formik.handleSubmit}>
-            <ConnectedFocusError/>
+            {isPlacingOrder && (
+              <LoadingOverlay
+                className={styles.overlay}
+                message={
+                  formik.values.paymentType === "Card"
+                    ? "Conectando con proveedor de pagos..."
+                    : "Estableciendo pedido..."
+                }
+              />
+            )}
+            <ConnectedFocusError />
             <div className="d-flex flex-md-row flex-column gap-3">
               <BargasTextField
                 label="Nombre completo"
@@ -71,7 +104,11 @@ const ClientInfoForm = () => {
                 type="tel"
                 placeholder="88888888"
               />
-              <BargasSelectField id='province' label="Provincia" name="province">
+              <BargasSelectField
+                id="province"
+                label="Provincia"
+                name="province"
+              >
                 <option value="Cartago">Cartago</option>
               </BargasSelectField>
             </div>
@@ -117,13 +154,24 @@ const ClientInfoForm = () => {
                 </div>
               </>
             )}
-            <br/>
-            <CartDivider text='Medio de pago'/>
-            <BargasRadioButton id="Tarjeta" type="radio" name="paymentType" label="Tarjeta" value="Tarjeta" defaultChecked/>
-            <BargasRadioButton id="Efectivo" type="radio" name="paymentType" label="Efectivo" value="Efectivo" />
-            <CartTotalSummary
-              focusErrors={() => focusErrors(formik.errors)}
+            <br />
+            <CartDivider text="Medio de pago" />
+            <BargasRadioButton
+              id="Tarjeta"
+              type="radio"
+              name="paymentType"
+              label="Tarjeta"
+              value="Card"
+              defaultChecked
             />
+            <BargasRadioButton
+              id="Efectivo"
+              type="radio"
+              name="paymentType"
+              label="Efectivo"
+              value="Cash"
+            />
+            <CartTotalSummary focusErrors={() => focusErrors(formik.errors)} />
           </Form>
         )}
       </Formik>

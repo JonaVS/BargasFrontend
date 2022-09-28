@@ -1,0 +1,18 @@
+.msgBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var( --bargas-muted-text1);
+  font-family: 'Squada One';
+}
+
+.msgBody > h2 {
+  font-size: 1.4rem;
+  margin: 20px 0 20px 0;
+  text-align: center;
+}
+
+.icon {
+  color: rgb(117, 158, 56);
+}

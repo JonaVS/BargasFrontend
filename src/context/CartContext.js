@@ -2,6 +2,8 @@ import React, { createContext } from "react"
 import { useLocalStorage } from "../customHooks/useLocalStorage"
 import { v4 as uuid } from "uuid"
 import {ToastType, toastDispatcher} from '../helpers/toastDispatcher'
+import agent from "../API/agent"
+import { clientOrderBuilder } from "../helpers/clientOrderBuilder"
 
 export const CartContext = createContext([{}])
 
@@ -74,6 +76,14 @@ export const CartProvider = ({ children }) => {
 
   const cartTotal = getCartTotal()
 
+  const placeOrder = async (orderFormData) => {
+    try {
+      return await agent.ordering.placeOrder(clientOrderBuilder(cart, orderFormData))
+    } catch (error) {
+      return error
+    }
+  }
+
   return (
     <CartContext.Provider
       value={{
@@ -83,7 +93,8 @@ export const CartProvider = ({ children }) => {
         addToCart,
         editCartItem,
         deleteCartItem,
-        sortCart
+        sortCart,
+        placeOrder
       }}
     >
       {children}

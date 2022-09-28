@@ -44,11 +44,16 @@ const user = {
   getLoggedInUser: (config) => request.get('/users/me', config),
 }
 
+const ordering = {
+  placeOrder: (body) => request.post('/order/place-order', body)
+}
+
 const agent = {
   generalInfo,
   product,
   event,
-  user
+  user,
+  ordering
 };
 
 export default agent
