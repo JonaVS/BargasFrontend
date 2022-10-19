@@ -1,6 +1,7 @@
 import React from "react"
 import { Form, Formik } from "formik"
 import * as Yup from "yup"
+import { contactFormValidators } from "./YupValidation"
 import BargasTextField from "../../../../../shared/components/Form/BargasTextField/BargasTextField"
 import BargasTextAreaField from "../../../../../shared/components/Form/BargasTextAreaField/BargasTextAreaField"
 import * as styles from "./contactForm.module.css"
@@ -10,18 +11,7 @@ const ContactForm = () => {
     <>
       <Formik
         initialValues={{ name: "", email: "", message: "" }}
-        validationSchema={Yup.object({
-          name: Yup.string()
-            .max(30, "El campo debe contar con 40 caracteres o menos")
-            .required("Campo requerido"),
-          email: Yup.string()
-            .email("Formato invalido")
-            .required("Campo requerido"),
-          message: Yup.string()
-            .max(200, "El maximo de caracteres permito es de 200 o menos")
-            .required("Campo requerido"),
-        })}
-
+        validationSchema={Yup.object(contactFormValidators)}
         onSubmit={(values) => console.log(values)}
       >
         {formik => (
