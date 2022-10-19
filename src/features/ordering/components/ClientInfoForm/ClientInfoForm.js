@@ -13,7 +13,6 @@ import BargasCheckBoxField from "../../../../shared/components/Form/BargasCheckB
 import CartDivider from "../../../cart/components/CartDivider/CartDivider"
 import BargasRadioButton from "../../../../shared/components/Form/BargasRadioButton/BargasRadioButton"
 import CartTotalSummary from "../../../cart/components/CartTotalSummary/CartTotalSummary"
-import { ConnectedFocusError } from "focus-formik-error"
 
 import * as styles from "./clientInfoForm.module.css"
 
@@ -81,7 +80,6 @@ const ClientInfoForm = () => {
                 }
               />
             )}
-            <ConnectedFocusError />
             <div className="d-flex flex-md-row flex-column gap-3">
               <BargasTextField
                 label="Nombre completo"
