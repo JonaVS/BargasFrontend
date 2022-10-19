@@ -8,43 +8,41 @@ import * as styles from "./contactForm.module.css"
 
 const ContactForm = () => {
   return (
-    <>
-      <Formik
-        initialValues={{ name: "", email: "", message: "" }}
-        validationSchema={Yup.object(contactFormValidators)}
-        onSubmit={(values) => console.log(values)}
-      >
-        {formik => (
-          <Form onSubmit={formik.handleSubmit}>
-            <BargasTextField
-              label="Nombre completo"
-              name="name"
-              type="text"
-              placeholder="Escribe tu nombre aquí"
-            />
-            <BargasTextField
-              label="Email"
-              name="email"
-              type="email"
-              placeholder="bob@mail.com"
-            />
-            <BargasTextAreaField
-              label="Mensaje"
-              name="message"
-              rows={5}
-              placeholder="Escribe el mensaje aquí"
-            />
-            <button
-              type="submit"
-              className={styles.submitBtn}
-              disabled={!(formik.isValid && formik.dirty)}
-            >
-              Enviar
-            </button>
-          </Form>
-        )}
-      </Formik>
-    </>
+    <Formik
+      initialValues={{ name: "", email: "", message: "" }}
+      validationSchema={Yup.object(contactFormValidators)}
+      onSubmit={(values) => console.log(values)}
+    >
+      {formik => (
+        <Form onSubmit={formik.handleSubmit}>
+          <BargasTextField
+            label="Nombre completo"
+            name="name"
+            type="text"
+            placeholder="Escribe tu nombre aquí"
+          />
+          <BargasTextField
+            label="Email"
+            name="email"
+            type="email"
+            placeholder="bob@mail.com"
+          />
+          <BargasTextAreaField
+            label="Mensaje"
+            name="message"
+            rows={5}
+            placeholder="Escribe el mensaje aquí"
+          />
+          <button
+            type="submit"
+            className={styles.submitBtn}
+            disabled={!(formik.isValid && formik.dirty)}
+          >
+            Enviar
+          </button>
+        </Form>
+      )}
+    </Formik>
   )
 }
 
