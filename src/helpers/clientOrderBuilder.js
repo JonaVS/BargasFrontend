@@ -5,7 +5,7 @@ export const clientOrderBuilder = (cartItems, orderFormData) => {
     clientName: orderFormData.clientName,
     clientEmail: orderFormData.email,
     clientId: orderFormData.idNumber,
-    phone: orderFormData.idNumber,
+    phone: orderFormData.phone,
     province: orderFormData.province,
     address: orderFormData.address,
   }
