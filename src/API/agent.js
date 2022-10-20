@@ -48,12 +48,17 @@ const ordering = {
   placeOrder: (body) => request.post('/order/place-order', body)
 }
 
+const contact = {
+  contactFormSubmission: (body) => request.post('/contact-page/form-submission', body)
+}
+
 const agent = {
   generalInfo,
   product,
   event,
   user,
-  ordering
+  ordering,
+  contact
 };
 
 export default agent

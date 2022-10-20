@@ -1,4 +1,7 @@
 import React from "react"
+import agent from "../../../../../API/agent"
+import { toastDispatcher, ToastType } from "../../../../../helpers/toastDispatcher"
+import { ErrorContext, errorMessageBuilder } from "../../../../../helpers/errorMessageBuilder"
 import { Form, Formik } from "formik"
 import * as Yup from "yup"
 import { contactFormValidators } from "./YupValidation"
@@ -7,11 +10,28 @@ import BargasTextAreaField from "../../../../../shared/components/Form/BargasTex
 import * as styles from "./contactForm.module.css"
 
 const ContactForm = () => {
+
+  const handleSubmit = async (values, formikBag) => {
+    try {
+      await agent.contact.contactFormSubmission(values)
+      toastDispatcher(
+        ToastType.SUCCESS,
+        '¡Mensaje enviado correctamente!'
+      )
+      formikBag.resetForm()
+    } catch (error) {
+      toastDispatcher(
+        ToastType.ERROR,
+        errorMessageBuilder(ErrorContext.CONTACT, error)
+      )
+    }
+  }
+
   return (
     <Formik
       initialValues={{ name: "", email: "", message: "" }}
       validationSchema={Yup.object(contactFormValidators)}
-      onSubmit={(values) => console.log(values)}
+      onSubmit={(values, formikBag) => handleSubmit(values, formikBag)}
     >
       {formik => (
         <Form onSubmit={formik.handleSubmit}>

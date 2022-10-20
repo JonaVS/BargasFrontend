@@ -54,4 +54,22 @@ export const StrapiErrors = {
   EVENTS: [
     {}
   ],
+  CONTACT: [
+    {
+      strapiError: "The submitted data is invalid",
+      translatedMessage: "La información enviada es invalida"
+    },
+    {
+      strapiError: "Invalid email",
+      translatedMessage: "Correo invalido"
+    },
+    {
+      strapiError: "Message lenght should be equal or less than 300 characters",
+      translatedMessage: "La longitud del mensaje debe de ser igual o menor a 300 caracteres"
+    },
+    {
+      strapiError: "Empty message",
+      translatedMessage: "Mensaje vacío"
+    },
+  ],
 }

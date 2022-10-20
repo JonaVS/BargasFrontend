@@ -5,7 +5,8 @@ export const ErrorContext = {
   SIGNUP: "signup",
   PRODUCT_DETAILS: "productDetails",
   EVENTS: "events",
-  ORDERING: "ordering"
+  ORDERING: "ordering",
+  CONTACT: "contact"
 }
 
 export const errorMessageBuilder = (context, error) => {
@@ -38,6 +39,11 @@ export const errorMessageBuilder = (context, error) => {
       break
     case "ordering":
       message = StrapiErrors.ORDERING.find(
+        err => err.strapiError === strapiError
+      ).translatedMessage
+      break
+    case "contact":
+      message = StrapiErrors.CONTACT.find(
         err => err.strapiError === strapiError
       ).translatedMessage
       break
