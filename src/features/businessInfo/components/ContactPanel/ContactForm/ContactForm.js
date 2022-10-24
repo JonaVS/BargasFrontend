@@ -7,6 +7,7 @@ import * as Yup from "yup"
 import { contactFormValidators } from "./YupValidation"
 import BargasTextField from "../../../../../shared/components/Form/BargasTextField/BargasTextField"
 import BargasTextAreaField from "../../../../../shared/components/Form/BargasTextAreaField/BargasTextAreaField"
+import LoadingOverlay from "../../../../../shared/components/LoadingOverlay/LoadingOverlay"
 import * as styles from "./contactForm.module.css"
 
 const ContactForm = () => {
@@ -34,7 +35,8 @@ const ContactForm = () => {
       onSubmit={(values, formikBag) => handleSubmit(values, formikBag)}
     >
       {formik => (
-        <Form onSubmit={formik.handleSubmit}>
+        <Form className={styles.contactForm} onSubmit={formik.handleSubmit}>
+          {formik.isSubmitting && <LoadingOverlay message='Enviando mensaje...'/>}
           <BargasTextField
             label="Nombre completo"
             name="name"

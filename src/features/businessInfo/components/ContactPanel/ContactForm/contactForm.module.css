@@ -1,3 +1,7 @@
+.contactForm {
+  position: relative;
+}
+
 .submitBtn {
   display: block;
   margin: 20px auto 0px auto;
