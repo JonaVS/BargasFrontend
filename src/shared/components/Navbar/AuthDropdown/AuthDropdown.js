@@ -9,10 +9,9 @@ import * as styles from "./authDropdown.module.css"
 const AuthDropdown = () => {
   const { isLoggedIn, logout } = useContext(UserContext)
 
-
   return (
     <Dropdown as={ButtonGroup}>
-      <Dropdown.Toggle className={styles.authDp} id="dropdown-custom-1">
+      <Dropdown.Toggle className={styles.authDp}>
         <BiUser className={styles.icon} />
       </Dropdown.Toggle>
       <Dropdown.Menu className={styles.dpMenu}>
@@ -25,7 +24,7 @@ const AuthDropdown = () => {
             Registrarse
           </Dropdown.Item>
         ) : (
-          <Dropdown.Item as={Button} onClick={logout}>
+          <Dropdown.Item onClick={logout}>
             Salir
           </Dropdown.Item>
         )}
