@@ -12,6 +12,7 @@ const AuthDropdown = () => {
   return (
     <Dropdown as={ButtonGroup}>
       <Dropdown.Toggle className={styles.authDp}>
+      {isLoggedIn && <div className={styles.onlineStatus}/>}
         <BiUser className={styles.icon} />
       </Dropdown.Toggle>
       <Dropdown.Menu className={styles.dpMenu}>

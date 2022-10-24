@@ -3,6 +3,17 @@
   background-color: black;
   padding: 0px !important;
   margin: 0px 5px 0px 0px;
+  position: relative;
+}
+
+.onlineStatus {
+  position: absolute;
+  top: -2px;
+  right: -3px;
+  min-width: 10px;
+  min-height: 10px;
+  background-color: rgba(108, 202, 19, 0.87);
+  border-radius: 100%;
 }
 
 .dpMenu {
