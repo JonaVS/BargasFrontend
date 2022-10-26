@@ -15,8 +15,8 @@ export const StrapiErrors = {
   ],
   SIGNUP: [
     {
-      strapiError: "Email is already taken",
-      translatedMessage: "El email ya ha sido utilizado"
+      strapiError: "Email or Username are already taken",
+      translatedMessage: "El email o nombre de usuario ya ha sido utilizado"
     },
   ],
   PRODUCT_DETAILS: [
