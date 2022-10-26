@@ -1,0 +1,13 @@
+.descriptor {
+  max-width: 500px;
+  background-color: transparent;
+  padding: 25px 0px 0px 0px;
+}
+
+.descriptor > h1 {
+  font-size: 3.5rem;
+}
+
+.descriptor > p {
+  font-style: italic;
+}

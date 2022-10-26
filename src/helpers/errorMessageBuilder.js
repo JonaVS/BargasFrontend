@@ -7,6 +7,7 @@ export const ErrorContext = {
   EVENTS: "EVENTS",
   ORDERING: "ORDERING",
   CONTACT: "CONTACT",
+  USER_PASSWORD_CHANGE: "USER_PASSWORD_CHANGE",
 }
 
 export const errorMessageBuilder = (context, error) => {

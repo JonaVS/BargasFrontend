@@ -42,6 +42,7 @@ const user = {
   login: (body, config) => request.post('/auth/local', body, config),
   logout: (body, config) => request.post('/auth/logout', body, config),
   getLoggedInUser: (config) => request.get('/users/me', config),
+  changePassword: (body, config) => request.post('/auth/change-password', body, config),
 }
 
 const ordering = {

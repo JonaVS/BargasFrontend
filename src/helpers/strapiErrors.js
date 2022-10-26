@@ -72,4 +72,14 @@ export const StrapiErrors = {
       translatedMessage: "Mensaje vacío"
     },
   ],
+  USER_PASSWORD_CHANGE: [
+    {
+      strapiError: "The provided current password is invalid",
+      translatedMessage: "La contraseña actual es invalida"
+    },
+    {
+      strapiError: "Your new password must be different than your current password",
+      translatedMessage: "La contraseña nueva debe de ser diferente a la actual"
+    },
+  ],
 }

@@ -1,13 +1,15 @@
 import React from "react"
 import { Router } from "@reach/router"
-import NotFoundPage from "../404"
 import CartPage from "../../features/cart/pages/CartPage"
 import QRMenu from "../../features/menu/Menu/QRMenu"
-import SignUpPage from "../../features/auth/pages/SignUpPage"
-import LoginPage from "../../features/auth/pages/LoginPage"
-import PasswordRecoveryPage from "../../features/auth/pages/PasswordRecoveryPage"
-import NotAuthenticatedRoute from "../../shared/components/PageRedirect/NotAuthenticatedRoute"
 import OrderingResult from "../../features/ordering/pages/OrderingResult"
+import NotAuthenticatedRoute from "../../shared/components/PageRedirect/NotAuthenticatedRoute"
+import LoginPage from "../../features/auth/pages/LoginPage"
+import SignUpPage from "../../features/auth/pages/SignUpPage"
+import PasswordRecoveryPage from "../../features/auth/pages/PasswordRecoveryPage"
+import AuthenticatedRoute from "../../shared/components/PageRedirect/AuthenticatedRoute"
+import UserAccountPage from "../../features/userAccount/pages/userAccountPage"
+import NotFoundPage from "../404"
 
 /*This special page handles client only routes (Gatsby will not 
 generate static versions for the pages/components inside the router)
@@ -23,6 +25,7 @@ const App = () => {
       <NotAuthenticatedRoute path="app/login" component={LoginPage}/>
       <NotAuthenticatedRoute path="app/signup" component={SignUpPage}/>
       <NotAuthenticatedRoute path="app/forgot-password" component={PasswordRecoveryPage}/>
+      <AuthenticatedRoute path="app/user-account" component={UserAccountPage}/>
       <NotFoundPage default/>
     </Router>
   )

@@ -1,0 +1,39 @@
+.accountModule {
+  margin: 0px auto 40px auto;
+  background-color: rgba(0, 0, 0, 0.521);
+}
+
+.accountModule > h2 {
+  color: var(--bargas-gold);
+}
+
+.accountModule > span {
+  display: block;
+  font-size: 1.2rem;
+  color: var(--bargas-muted-text1);
+}
+
+.icon {
+  font-size: 1.3rem;
+  margin-right: 5px;
+}
+
+/*SHARED CSS*/
+.accountModule > span,
+.accountModule > h2 {
+  font-family: "Squada One";
+}
+
+@media (min-width: 320px) {
+  .accountModule {
+    width: 100%;
+    padding: 20px;
+  }
+}
+
+@media (min-width: 576px) {
+  .accountModule {
+    width: 70%;
+    padding: 50px;
+  }
+}

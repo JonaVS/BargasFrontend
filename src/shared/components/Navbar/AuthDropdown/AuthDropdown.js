@@ -16,7 +16,7 @@ const AuthDropdown = () => {
         <BiUser className={styles.icon} />
       </Dropdown.Toggle>
       <Dropdown.Menu className={styles.dpMenu}>
-        <Dropdown.Item as={Link} to={!isLoggedIn ? "/app/login" : "/"}>
+        <Dropdown.Item as={Link} to={!isLoggedIn ? "/app/login" : "/app/user-account"}>
           {!isLoggedIn ? "Ingresar" : "Mi Cuenta"}
         </Dropdown.Item>
         <div className={styles.divider} />
