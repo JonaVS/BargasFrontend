@@ -1,12 +1,12 @@
 import { StrapiErrors } from "./strapiErrors"
 
 export const ErrorContext = {
-  LOGIN: "login",
-  SIGNUP: "signup",
-  PRODUCT_DETAILS: "productDetails",
-  EVENTS: "events",
-  ORDERING: "ordering",
-  CONTACT: "contact"
+  LOGIN: "LOGIN",
+  SIGNUP: "SIGNUP",
+  PRODUCT_DETAILS: "PRODUCT_DETAILS",
+  EVENTS: "EVENTS",
+  ORDERING: "ORDERING",
+  CONTACT: "CONTACT",
 }
 
 export const errorMessageBuilder = (context, error) => {
@@ -16,40 +16,10 @@ export const errorMessageBuilder = (context, error) => {
 
   const strapiError = error.response.data.error.message
 
-  switch (context) {
-    case "login":
-      message = StrapiErrors.LOGIN.find(
-        err => err.strapiError === strapiError
-      ).translatedMessage
-      break
-    case "signup":
-      message = StrapiErrors.SIGNUP.find(
-        err => err.strapiError === strapiError
-      ).translatedMessage
-      break
-    case "productDetails":
-      message = StrapiErrors.PRODUCT_DETAILS.find(
-        err => err.strapiError === strapiError
-      ).translatedMessage
-      break
-    case "events":
-      message = StrapiErrors.EVENTS.find(
-        err => err.strapiError === strapiError
-      ).translatedMessage
-      break
-    case "ordering":
-      message = StrapiErrors.ORDERING.find(
-        err => err.strapiError === strapiError
-      ).translatedMessage
-      break
-    case "contact":
-      message = StrapiErrors.CONTACT.find(
-        err => err.strapiError === strapiError
-      ).translatedMessage
-      break
-    default:
-      break
-  }
+  message = StrapiErrors[context].find(
+    err => err.strapiError === strapiError
+  ).translatedMessage
+
   return message
 }
 
