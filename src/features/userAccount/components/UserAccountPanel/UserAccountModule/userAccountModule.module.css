@@ -13,11 +13,6 @@
   color: var(--bargas-muted-text1);
 }
 
-.icon {
-  font-size: 1.3rem;
-  margin-right: 5px;
-}
-
 /*SHARED CSS*/
 .accountModule > span,
 .accountModule > h2 {
