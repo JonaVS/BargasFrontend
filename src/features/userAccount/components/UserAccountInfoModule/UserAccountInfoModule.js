@@ -1,9 +1,9 @@
 import React, { useContext } from "react"
-import { UserContext } from "../../../../../context/UserContext"
+import { UserContext } from "../../../../context/UserContext"
 import UserAccountModule from "../UserAccountModule/UserAccountModule"
 import { BiUser } from "react-icons/bi"
 import { AiOutlineMail } from "react-icons/ai"
-import ChangePasswordForm from '../../ChangePasswordForm/ChangePasswordForm'
+import ChangePasswordForm from '../ChangePasswordForm/ChangePasswordForm'
 import * as styles from './userAccountInfoModule.module.css'
 
 const UserAccountInfoModule = () => {
