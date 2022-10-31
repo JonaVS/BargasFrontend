@@ -32,6 +32,22 @@ const ClientInfoForm = () => {
     }
   }
 
+  const handleSubmit = async (values) => {
+    setIsPlacingOrder(true)
+    const result = await placeOrder(values)
+    if (result.success) {
+      result.paymentGateway === ""
+        ? navigate("/app/ordering-result/basic")
+        : (window.location.href = result.paymentGateway)
+    } else {
+      setIsPlacingOrder(false)
+      toastDispatcher(
+        ToastType.ERROR,
+        errorMessageBuilder(ErrorContext.ORDERING, result)
+      )
+    }
+  }
+
   return (
     <div>
       <Formik
@@ -52,21 +68,7 @@ const ClientInfoForm = () => {
             ? validationSchemas.validationWithEInvoice
             : validationSchemas.normalValidation
         }
-        onSubmit={async (values, formikBag) => {
-          setIsPlacingOrder(true)
-          const result = await placeOrder(values)
-          if (result.success) {
-            result.paymentGateway === ""
-              ? navigate("/app/ordering-result/basic")
-              : (window.location.href = result.paymentGateway)
-          } else {
-            setIsPlacingOrder(false)
-            toastDispatcher(
-              ToastType.ERROR,
-              errorMessageBuilder(ErrorContext.ORDERING, result)
-            )
-          }
-        }}
+        onSubmit={(values) => handleSubmit(values)}
       >
         {formik => (
           <Form onSubmit={formik.handleSubmit}>
