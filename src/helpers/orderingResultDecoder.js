@@ -1,6 +1,15 @@
-window.Buffer = window.Buffer || require("buffer").Buffer
+const isBrowser = typeof window !== "undefined"
+
+if (isBrowser) {
+  window.Buffer = window.Buffer || require("buffer").Buffer
+}
 
 export const decodeGatewayResult = data => {
+
+  if (!isBrowser) {
+    return;
+  }
+  
   let success = false
   let decodedGatewayResult = null
 
