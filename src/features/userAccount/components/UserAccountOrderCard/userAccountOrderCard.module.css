@@ -1,0 +1,23 @@
+.orderCard {
+  background-color: rgb(8, 8, 8);
+  color: var(--bargas-muted-text1);
+  font-family: "Squada One";
+  border: solid rgb(29, 29, 29) 2px;
+}
+
+.cardHeader {
+  background-color: rgb(15, 15, 15);
+}
+
+.cardHeader > p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.detailsBtn {
+  padding: 8px;
+  background-color: var(--bargas-gold);
+  color: black;
+  border: none;
+  border-radius: 10px;
+}

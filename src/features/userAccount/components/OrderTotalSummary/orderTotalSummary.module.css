@@ -1,0 +1,19 @@
+.orderTotalSummary {
+  text-align: right;
+}
+
+.orderTotalSummary > h2 {
+  font-size: 1.3rem;
+  color: var(--bargas-gold);
+}
+
+.orderTotalSummary > p {
+  margin: 0px;
+  font-size: 1rem;
+  color: rgb(144, 143, 143);
+}
+
+.orderTotalSummary p > span {
+  margin: 0px;
+  color: rgb(226, 226, 226);
+}

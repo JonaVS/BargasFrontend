@@ -1,4 +1,5 @@
 .accountModule {
+  position: relative;
   margin: 0px auto 40px auto;
   background-color: rgba(0, 0, 0, 0.521);
 }

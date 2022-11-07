@@ -1,0 +1,16 @@
+.orderGeneralInfo {
+  margin: 0px 0px 5px 0px;
+}
+
+.orderGeneralInfo > h2 {
+  font-size: 1.3rem;
+  color: var(--bargas-gold);
+}
+
+.orderGeneralInfo > p {
+  margin-bottom: 0px;
+  font-size: 1rem;
+}
+.orderGeneralInfo > p > span {
+  color: rgb(226, 226, 226);
+}

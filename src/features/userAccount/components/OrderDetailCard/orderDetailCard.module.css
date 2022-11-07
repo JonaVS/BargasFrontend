@@ -1,0 +1,43 @@
+/*Product card styles*/
+.orderDetailCard {
+    margin-bottom: 10px;
+    display: flex;
+    background-color: black;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+  .imgWrapper {
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+  }
+  
+  .productDetails {
+    margin-left: 5px;
+    flex-grow: 1;
+  }
+  
+  .productDetails > p {
+    margin: 0px;
+    font-size: 0.9rem;
+  }
+  
+  .productName {
+    color: var(--bargas-gold);
+    font-size: 1rem;
+  }
+  
+  .priceBadge {
+    margin-left: 4px;
+    padding: 4px;
+    font-family: 'Squada One';
+    font-size: 0.9rem;
+    font-weight: lighter;
+    color: rgb(235, 235, 235);
+  }
+  

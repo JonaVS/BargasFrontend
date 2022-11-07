@@ -1,0 +1,9 @@
+.detailsCardList > h2 {
+  font-size: 1.3rem;
+  color: var(--bargas-gold);
+}
+
+.orderDetailsList {
+  list-style: none;
+  padding: 0;
+}
