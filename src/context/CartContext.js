@@ -78,7 +78,10 @@ export const CartProvider = ({ children }) => {
 
   const placeOrder = async (orderFormData) => {
     try {
-      return await agent.ordering.placeOrder(clientOrderBuilder(cart, orderFormData))
+      return await agent.ordering.placeOrder(
+        clientOrderBuilder(cart, orderFormData),
+        { withCredentials: true }
+      )
     } catch (error) {
       return error
     }

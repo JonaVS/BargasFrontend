@@ -46,7 +46,7 @@ const user = {
 }
 
 const ordering = {
-  placeOrder: (body) => request.post('/order/place-order', body)
+  placeOrder: (body, config) => request.post('/order/place-order', body, config)
 }
 
 const contact = {
