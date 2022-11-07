@@ -18,7 +18,6 @@ const UserAccountOrdersModule = () => {
       try {
         const ordersData = await agent.user.getUserOrders(userId, { withCredentials: true })
         setUserOrdersData(ordersData.orders)
-        console.log(ordersData)
       } catch (error) {
         toastDispatcher(
           ToastType.ERROR,
