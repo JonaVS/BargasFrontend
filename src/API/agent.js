@@ -44,7 +44,7 @@ const user = {
   logout: (body, config) => request.post('/auth/logout', body, config),
   getLoggedInUser: (config) => request.get('/users/me', config),
   changePassword: (body, config) => request.post('/auth/change-password', body, config),
-  getUserOrders: (userId, config) => request.get(`/users/${userId}?${userOrdersQuery}`, config)
+  getUserOrders: (userId, config) => request.get(`/user/${userId}/orders?${userOrdersQuery}`, config)
 }
 
 const ordering = {
