@@ -82,4 +82,18 @@ export const StrapiErrors = {
       translatedMessage: "La contraseña nueva debe de ser diferente a la actual"
     },
   ],
+  USER_RESET_PASSWORD: [
+    {
+      strapiError: "Passwords do not match",
+      translatedMessage: "Las contraseñas no coinciden"
+    },
+    {
+      strapiError: "Incorrect code provided",
+      translatedMessage: "El código de autorización no es válido"
+    },
+    {
+      strapiError: "code must be a `string` type, but the final value was: `null`.",
+      translatedMessage: "El código de autorización no es válido"
+    },
+  ],
 }

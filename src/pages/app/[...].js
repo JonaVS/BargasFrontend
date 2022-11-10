@@ -7,6 +7,7 @@ import NotAuthenticatedRoute from "../../shared/components/PageRedirect/NotAuthe
 import LoginPage from "../../features/auth/pages/LoginPage"
 import SignUpPage from "../../features/auth/pages/SignUpPage"
 import PasswordRecoveryPage from "../../features/auth/pages/PasswordRecoveryPage"
+import ResetPasswordPage from "../../features/auth/pages/ResetPasswordPage"
 import AuthenticatedRoute from "../../shared/components/PageRedirect/AuthenticatedRoute"
 import UserAccountPage from "../../features/userAccount/pages/userAccountPage"
 import NotFoundPage from "../404"
@@ -25,6 +26,7 @@ const App = () => {
       <NotAuthenticatedRoute path="app/login" component={LoginPage}/>
       <NotAuthenticatedRoute path="app/signup" component={SignUpPage}/>
       <NotAuthenticatedRoute path="app/forgot-password" component={PasswordRecoveryPage}/>
+      <NotAuthenticatedRoute path="app/reset-password" component={ResetPasswordPage}/>
       <AuthenticatedRoute path="app/user-account" component={UserAccountPage}/>
       <NotFoundPage default/>
     </Router>
