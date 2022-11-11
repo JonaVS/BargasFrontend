@@ -22,11 +22,17 @@ const About = () => {
           description
         }
       }
+      strapiGeneralWebsiteInfo {
+        basicLocation
+        detailedLocation
+        openingHours
+      }
     }
   `)
 
   const sectionDesc = data.strapiHomePage.aboutUs.description
   const aboutImage = data.strapiHomePage.aboutImage.localFile.childImageSharp.gatsbyImageData
+  const aboutColsData = data.strapiGeneralWebsiteInfo
 
   return (
     <LazyLoad once offset={100} height={400}>
@@ -42,7 +48,7 @@ const About = () => {
           </div>
           <GatsbyImage image={aboutImage} alt="local" />
         </div>
-        <AboutCols />
+        <AboutCols colsData={aboutColsData} />
       </Container>
     </LazyLoad>
   )
