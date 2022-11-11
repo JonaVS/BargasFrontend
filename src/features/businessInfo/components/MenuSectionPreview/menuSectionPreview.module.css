@@ -1,0 +1,35 @@
+.masonryWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.masonryGrid {
+  display: flex;
+  margin-top: 50px;
+  margin-left: -15px;
+}
+
+.masonryCol {
+  padding-left: 15px;
+  background-clip: padding-box;
+}
+
+.masonryCol > div {
+  margin-bottom: 15px;
+}
+
+.masonImg {
+  width: 100%;
+}
+
+@media (min-width: 320px) {
+  .masonryGrid {
+    max-width: 80%;
+  }
+}
+
+@media (min-width: 991px) {
+  .masonryGrid {
+    max-width: 60%;
+  }
+}

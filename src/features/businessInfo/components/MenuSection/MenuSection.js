@@ -3,9 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import LazyLoad from "react-lazyload"
 import Container from "react-bootstrap/Container"
 import SubSectionHeader from "../../../../shared/components/SubSectionHeader/SubSectionHeader"
-import Masonry from "react-masonry-css"
-import { GatsbyImage } from "gatsby-plugin-image"
-import * as styles from "../MenuSection/menuSection.module.css"
+import MenuSectionPreview from "../MenuSectionPreview/MenuSectionPreview"
 
 const MenuSection = () => {
   const data = useStaticQuery(graphql`
@@ -33,11 +31,6 @@ const MenuSection = () => {
     }
   `)
 
-  //Breakpoints for Masonry
-  const breakPoints = {
-    default: 2,
-  }
-
   const sectionDesc = data.strapiHomePage.aboutMenu.description
   const menuPreview = data.allStrapiMenuPreview.nodes
 
@@ -52,24 +45,7 @@ const MenuSection = () => {
         >
           {sectionDesc}
         </SubSectionHeader>
-        <div className={styles.masonryWrapper}>
-          <Masonry
-            breakpointCols={breakPoints}
-            className={styles.masonryGrid}
-            columnClassName={styles.masonryCol}
-          >
-            {menuPreview.map(item => {
-              return (
-                <div key={item.product.name}>
-                  <GatsbyImage
-                    image={item.image.localFile.childImageSharp.gatsbyImageData}
-                    alt={item.product.name}
-                  />
-                </div>
-              )
-            })}
-          </Masonry>
-        </div>
+        <MenuSectionPreview menuPreview={menuPreview}/>
       </Container>
     </LazyLoad>
   )
