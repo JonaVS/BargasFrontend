@@ -5,11 +5,7 @@ const ResetPasswordPage = () => {
   const urlParams = window && window.location.href.split("?")[1]
   const code = new URLSearchParams(urlParams).get("code")
 
-  return (
-    <>
-      <PassResetForm authCode={code} />
-    </>
-  )
+  return <PassResetForm authCode={code} />
 }
 
 export default ResetPasswordPage
