@@ -44,7 +44,6 @@ const PassResetForm = ({ authCode }) => {
             >
               {formik => (
                 <Form
-                  className={styles.passChangeForm}
                   onSubmit={formik.handleSubmit}
                 >
                   {formik.isSubmitting && <LoadingOverlay />}
