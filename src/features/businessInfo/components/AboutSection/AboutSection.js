@@ -1,6 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import LazyLoad from "react-lazyload"
+import LazyLoad from "react-lazy-load"
 import Container from "react-bootstrap/Container"
 import SubSectionHeader from "../../../../shared/components/SubSectionHeader/SubSectionHeader"
 import { GatsbyImage } from "gatsby-plugin-image"
@@ -35,7 +35,7 @@ const About = () => {
   const aboutColsData = data.strapiGeneralWebsiteInfo
 
   return (
-    <LazyLoad once offset={100} height={400}>
+    <LazyLoad offset={100}>
       <Container fluid="xl">
         <div className={styles.content}>
           <div className={styles.aboutInfo}>

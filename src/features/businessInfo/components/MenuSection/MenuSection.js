@@ -1,6 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import LazyLoad from "react-lazyload"
+import LazyLoad from "react-lazy-load"
 import Container from "react-bootstrap/Container"
 import SubSectionHeader from "../../../../shared/components/SubSectionHeader/SubSectionHeader"
 import MenuSectionPreview from "../MenuSectionPreview/MenuSectionPreview"
@@ -35,7 +35,7 @@ const MenuSection = () => {
   const menuPreview = data.allStrapiMenuPreview.nodes
 
   return (
-    <LazyLoad once offset={50} height={500}>
+    <LazyLoad offset={100}>
       <Container>
         <SubSectionHeader
           title="Menú"
