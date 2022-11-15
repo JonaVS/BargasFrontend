@@ -1,12 +1,21 @@
-import * as React from "react"
+import React from "react"
+import { Container } from "react-bootstrap"
 import Seo from "../shared/components/Seo/seo"
+import { TfiFaceSad } from "react-icons/tfi";
+import LinkBtn from "../shared/components/LinkBtn/LinkBtn";
+import * as styles from "../pagesStyles/notFound.module.css"
 
-const NotFoundPage = () => (
-  <>
-    <Seo title="404: Not found" />
-    <h1>404: Not Found</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-  </>
-)
+const NotFoundPage = () => {
+  return (
+    <Container fluid className={styles.notFoundContainer}>
+      <Seo title="Página no encontrada" />
+      <div className={styles.notFoundMessage}>
+        <TfiFaceSad size={50}/>
+        <p>La página que intentas acceder no existe</p>
+        <LinkBtn link='/'>Inicio</LinkBtn>
+      </div>
+    </Container>
+  )
+}
 
 export default NotFoundPage
