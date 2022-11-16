@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import Seo from "../shared/components/Seo/seo"
 import HeroContainer from "../shared/components/HeroContainer/HeroContainer"
 import HeroCaption from "../shared/components/HeroContainer/HeroCaption/HeroCaption"
+import { BiChat } from "react-icons/bi"
 import ContactPanel from "../features/businessInfo/components/ContactPanel/ContactPanel"
 import Divider from "../shared/components/Divider/Divider"
 
@@ -19,6 +20,7 @@ const Contact = ({ data }) => {
         <HeroCaption
           title={seoData.title}
           text={seoData.description}
+          icon={<BiChat/>}
         />
       </HeroContainer>
       <Divider />
