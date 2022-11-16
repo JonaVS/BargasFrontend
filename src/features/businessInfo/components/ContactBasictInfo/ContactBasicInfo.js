@@ -6,6 +6,20 @@ import SubSectionHeader from "../../../../shared/components/SubSectionHeader/Sub
 import Map from "../../../../shared/components/GoogleMap/Map/Map"
 import * as styles from "../ContactBasictInfo/contactBasicInfo.module.css"
 
+//START--Framer motion variants--START
+const header = {
+  hidden: { opacity: 0, x: -50 },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 1.2,
+      delay: 0.5,
+    },
+  },
+}
+//END--Framer motion variants--END
+
 const ContactBasicInfo = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -28,6 +42,10 @@ const ContactBasicInfo = () => {
           link="/contact"
           linkText="Contactar"
           className={styles.infoContainer}
+          variants={header}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ fallback: true, once: true, amount: 0.5 }}
         >
           {sectionDesc}
         </SubSectionHeader>
