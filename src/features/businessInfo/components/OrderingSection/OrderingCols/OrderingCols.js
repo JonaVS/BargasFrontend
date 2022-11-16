@@ -29,21 +29,21 @@ const OrderingCols = ({ colData }) => {
     <Container className={styles.mainCont}>
       <Row
         as={motion.div}
-        className="justify-content-center"
+        className={styles.colsWrapper}
         variants={container}
         initial="hidden"
         whileInView="show"
         viewport={{ fallback: true, once: true }}
       >
-        <Col as={motion.div} lg={true} className={styles.col} variants={item}>
+        <Col as={motion.div} lg={true} variants={item}>
           <FaClipboardList className={styles.icon} />
           <p>{colData.onlineOrdering}</p>
         </Col>
-        <Col as={motion.div} lg={true} className={styles.col} variants={item}>
+        <Col as={motion.div} lg={true} variants={item}>
           <FaMotorcycle className={styles.icon} />
           <p>{colData.delivery}</p>
         </Col>
-        <Col as={motion.div} lg={true} className={styles.col} variants={item}>
+        <Col as={motion.div} lg={true} variants={item}>
           <BsFillChatDotsFill className={styles.icon} />
           <p>{colData.chatHelp}</p>
         </Col>

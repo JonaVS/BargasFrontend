@@ -2,24 +2,30 @@
   margin: 50px auto 0px auto;
 }
 
-.col {
+.colsWrapper {
   justify-content: center;
+}
+
+.colsWrapper > div {
   display: flex;
   flex-direction: column;
-  padding: 20px 20px 20px 20px;
+  overflow: hidden;
+  padding: 20px;
   background-color: rgba(47, 47, 47, 0.294);
   margin: 10px 10px 0px 10px;
 }
 
-.col > p {
+.colsWrapper > div > p {
   font-family: "Josefin Slab";
   font-size: 1.2rem;
+  text-align: center;
+  word-wrap: break-word;
   color: rgb(195, 193, 193);
   margin: 10px 0px 0px 0px;
 }
 
 .icon {
-  margin: auto;
+  margin: 0px auto 0px auto;
   font-size: 2.5rem;
   color: rgb(216, 183, 35);
 }
