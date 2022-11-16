@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import Seo from "../shared/components/Seo/seo"
 import HeroContainer from "../shared/components/HeroContainer/HeroContainer"
 import HeroCaption from "../shared/components/HeroContainer/HeroCaption/HeroCaption"
+import { FaCocktail } from "react-icons/fa"
 import Divider from "../shared/components/Divider/Divider"
 import Events from "../features/events/components/Events/Events"
 
@@ -20,6 +21,7 @@ const EventsPage = ({ data }) => {
           title={seoData.title}
           text={seoData.description}
           btnText="Explorar"
+          icon={<FaCocktail/>}
         />
       </HeroContainer>
       <Divider />
