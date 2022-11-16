@@ -32,7 +32,7 @@
   background-color: black;
 }
 
-.icon {
+.roundedWrapper > svg {
   margin: 0px 0px 0px 0px;
   color: rgb(195, 191, 191);
 }
@@ -79,7 +79,7 @@
     padding: 10px;
   }
 
-  .icon {
+  .roundedWrapper > svg {
     font-size: 1rem;
   }
 }
@@ -102,7 +102,7 @@
     padding: 10px;
   }
 
-  .icon {
+  .roundedWrapper > svg {
     font-size: 2rem;
   }
 
