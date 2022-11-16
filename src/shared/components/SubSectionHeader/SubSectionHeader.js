@@ -1,10 +1,22 @@
 import React from "react"
+import { motion } from "framer-motion"
 import LinkBtn from "../LinkBtn/LinkBtn"
 import * as styles from "../SubSectionHeader/subSectionHeader.module.css"
 
-const SubSectionHeader = ({ title, children, withLink, link, linkText, className }) => {
+const SubSectionHeader = ({
+  title,
+  children,
+  withLink,
+  link,
+  linkText,
+  className,
+  ...props
+}) => {
   return (
-    <div className={`${styles.sectionDesc} ${className}`}>
+    <motion.div
+      className={`${styles.sectionDesc} ${className}`}
+      {...props}
+    >
       <h1>{title}</h1>
       <p>{children}</p>
       {withLink && (
@@ -13,7 +25,7 @@ const SubSectionHeader = ({ title, children, withLink, link, linkText, className
         </LinkBtn>
       )}
       <div className={styles.clearFix}></div>
-    </div>
+    </motion.div>
   )
 }
 

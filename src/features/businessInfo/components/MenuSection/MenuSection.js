@@ -5,6 +5,20 @@ import Container from "react-bootstrap/Container"
 import SubSectionHeader from "../../../../shared/components/SubSectionHeader/SubSectionHeader"
 import MenuSectionPreview from "../MenuSectionPreview/MenuSectionPreview"
 
+//START--Framer motion variants--START
+const header = {
+  hidden: { opacity: 0, x: -100 },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 1.2,
+      delay: 1,
+    },
+  },
+}
+//END--Framer motion variants--END
+
 const MenuSection = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -42,6 +56,10 @@ const MenuSection = () => {
           withLink
           link="/menu"
           linkText="Ver menú"
+          variants={header}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ fallback: true, once: true }}
         >
           {sectionDesc}
         </SubSectionHeader>
