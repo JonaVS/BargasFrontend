@@ -1,3 +1,7 @@
+.cardWrapper {
+  margin-top: 20px;
+}
+
 .eventCard {
   display: flex;
   flex-direction: column;
@@ -44,7 +48,7 @@
   z-index: 10;
 }
 
-.innerWrapper > h2 {
+.innerWrapper>h2 {
   color: var(--bargas-muted-text1);
   margin-bottom: 30px;
   text-align: right;
@@ -61,7 +65,7 @@
   flex-shrink: 0;
 }
 
-.eventInfo > p {
+.eventInfo>p {
   margin: 5px 0px 0px 0px;
   color: var(--bargas-muted-text1);
   font-size: 1rem;
@@ -81,8 +85,8 @@
 }
 
 /*SHARED CSS*/
-.innerWrapper > h2,
-.eventInfo > p,
+.innerWrapper>h2,
+.eventInfo>p,
 .detailsBtn {
   font-family: "Squada One";
 }

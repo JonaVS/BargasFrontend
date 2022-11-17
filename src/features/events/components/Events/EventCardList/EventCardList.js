@@ -1,5 +1,5 @@
 import React from "react"
-import { Col, Row } from "react-bootstrap"
+import { Row } from "react-bootstrap"
 import EventCard from "../EventCard/EventCard"
 
 const EventCardList = ({ events }) => {
@@ -10,12 +10,10 @@ const EventCardList = ({ events }) => {
       lg={2}
       xl={2}
       xxl={3}
-      className="list-unstyled justify-content-center"
+      className="list-unstyled"
     >
-      {events.map((event) => (
-        <Col key={event.id} as="li" className="justify-content-center mt-4">
-          <EventCard event={event} />
-        </Col>
+      {events.map(event => (
+        <EventCard key={event.id} event={event} />
       ))}
     </Row>
   )
