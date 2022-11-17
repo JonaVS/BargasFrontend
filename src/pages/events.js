@@ -5,6 +5,7 @@ import HeroContainer from "../shared/components/HeroContainer/HeroContainer"
 import HeroCaption from "../shared/components/HeroContainer/HeroCaption/HeroCaption"
 import { FaCocktail } from "react-icons/fa"
 import Divider from "../shared/components/Divider/Divider"
+import LazyLoad from "react-lazy-load"
 import Events from "../features/events/components/Events/Events"
 
 const EventsPage = ({ data }) => {
@@ -25,7 +26,9 @@ const EventsPage = ({ data }) => {
         />
       </HeroContainer>
       <Divider />
-      <Events/>
+      <LazyLoad offset={0}>
+        <Events/>
+      </LazyLoad>
     </>
   )
 }
