@@ -10,6 +10,11 @@
   align-items: center;
 }
 
+.controlBtn {
+  background-color: transparent;
+  border: none;
+}
+
 .controlBtn:active {
   outline: none !important;
 }

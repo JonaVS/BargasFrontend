@@ -1,8 +1,25 @@
 import React from "react"
-import Button from "react-bootstrap/Button"
+import { motion } from "framer-motion"
 import { FiArrowLeftCircle, FiArrowRightCircle } from "react-icons/fi"
 import CategorieList from "./CategorieList/CategorieList"
 import * as styles from "../Categories/categories.module.css"
+
+//START--Framer motion variants--START
+const categoryHandler = {
+  hidden: { opacity: 0, x: 40 },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.6,
+    },
+  },
+}
+
+const scrollBtn = {
+  tap: { scale: 0.9 } 
+}
+//END--Framer motion variants--END
 
 const Categories = ({ categories, handleCategorie, currentCategorie }) => {
   const itemToScroll = React.useRef()
@@ -25,31 +42,38 @@ const Categories = ({ categories, handleCategorie, currentCategorie }) => {
   }
 
   return (
-    <>
+    <motion.div
+      variants={categoryHandler}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ fallback: true, once: true, amount: 1 }}
+    >
       <h1 className={styles.title}>Categorias</h1>
       <div className={styles.mainCont}>
-        <Button
+        <motion.button
           onClick={() => handleScroll("left")}
-          variant="default"
-          className={`shadow-none ${styles.controlBtn}`}
+          whileTap='tap'
+          variants={scrollBtn}
+          className={styles.controlBtn}
         >
           <FiArrowLeftCircle className={styles.icon} />
-        </Button>
+        </motion.button>
         <CategorieList
           ref={itemToScroll}
           categories={categories}
           handleCategorie={handleCategorie}
           currentCategorie={currentCategorie}
         />
-        <Button
+        <motion.button
           onClick={() => handleScroll("right")}
-          variant="default"
-          className={`shadow-none ${styles.controlBtn}`}
+          whileTap='tap'
+          variants={scrollBtn}
+          className={styles.controlBtn}
         >
           <FiArrowRightCircle className={styles.icon} />
-        </Button>
+        </motion.button>
       </div>
-    </>
+    </motion.div>
   )
 }
 
