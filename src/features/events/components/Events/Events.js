@@ -7,7 +7,7 @@ import EventCardList from "./EventCardList/EventCardList"
 import NoContentMessage from "../../../../shared/components/NoContentMessage/NoContentMessage"
 import EventSectionPlaceholder from "./EventSectionPlaceholder/EventSectionPlaceholder"
 
-const Events = () => {
+const  Events = () => {
   const [isLoading, setIsLoading] = useState(true)
   const [events, setEvents] = useState([])
 
@@ -15,15 +15,14 @@ const Events = () => {
     const getEventsData = async () => {
       try {
         const result = await agent.event.getEvents()
-        setIsLoading(false)
         setEvents(result.data)
       } catch (error) {
         toastDispatcher(
           ToastType.ERROR,
           errorMessageBuilder(ErrorContext.EVENTS, error)
         )
-        setIsLoading(false)
       }
+      setIsLoading(false)
     }
     getEventsData()
   }, [])
@@ -32,7 +31,7 @@ const Events = () => {
 
   return (
     <Container>
-      {events.length > 0 ? (
+      {events.length ? (
         <EventCardList events={events} />
       ) : (
         <NoContentMessage />
