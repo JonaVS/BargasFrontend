@@ -65,20 +65,9 @@ const Menu = ({ qrmenu }) => {
         currentCategorie={categorie}
       />
       {filteredMenu.length === 0 ? (
-        <NoContentMessage messageClass={styles.noContentMsg}/>
+        <NoContentMessage messageClass={styles.noContentMsg} />
       ) : (
-        <Row
-          as="ul"
-          xs={1}
-          sm={1}
-          md={2}
-          lg={2}
-          xl={2}
-          xxl={3}
-          className="g-4 mt-5 list-unstyled"
-        >
-          <MenuItemList menu={filteredMenu} qrmenu={qrmenu} />
-        </Row>
+        <MenuItemList menu={filteredMenu} qrmenu={qrmenu} />
       )}
     </Container>
   )
