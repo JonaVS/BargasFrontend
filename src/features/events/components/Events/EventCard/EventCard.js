@@ -1,9 +1,17 @@
 import React, { useState } from "react"
 import { Col } from "react-bootstrap"
+import { motion } from "framer-motion"
 import { BsFillCalendarFill } from "react-icons/bs"
 import { MdLocationOn } from "react-icons/md"
 import EventDetailsModal from "../EventDetailsModal/EventDetailsModal"
 import * as styles from "./eventCard.module.css"
+
+//START--Framer motion variants--START
+const card = {
+  hidden: { opacity: 0, y: -40 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.5 } },
+}
+//END--Framer motion variants--END
 
 const EventCard = ({ event }) => {
   const [showModal, setShowModal] = useState(false)
@@ -14,7 +22,14 @@ const EventCard = ({ event }) => {
 
   return (
     <>
-      <Col className={styles.cardWrapper}>
+      <Col
+        as={motion.li}
+        variants={card}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ fallback: true, once: true, amount: 0.3 }}
+        className={styles.cardWrapper}
+      >
         <div className={styles.eventCard}>
           <img
             className={styles.eventImg}
