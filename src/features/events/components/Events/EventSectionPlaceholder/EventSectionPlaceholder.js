@@ -3,7 +3,7 @@ import React from "react"
 const EventSectionPlaceholder = () => {
   return (
     <div className="d-flex justify-content-center gap-4 flex-wrap">
-      {Array.from({ length: 2 }).map((_, idx) => (
+      {Array.from({ length: 3 }).map((_, idx) => (
       <div key={idx} className="placeholder-glow p-3" style={{backgroundColor: "#1B1B1B", width: "450px" }}>
         <span
           className="placeholder w-100 bg-warning d-block"
