@@ -11,8 +11,8 @@ import ContactPanel from "../features/businessInfo/components/ContactPanel/Conta
 const Contact = ({ data }) => {
 
   const seoData = data.strapiContactPage.seoData
-  const heroImage =
-    data.strapiContactPage.heroImage.localFile.childImageSharp.gatsbyImageData
+  const heroImage = data.strapiContactPage.heroImage.localFile.childImageSharp.gatsbyImageData
+  const contactPanelData = data.strapiGeneralWebsiteInfo
 
   return (
     <>
@@ -26,7 +26,7 @@ const Contact = ({ data }) => {
       </HeroContainer>
       <Divider />
       <LazyLoad>
-        <ContactPanel />
+        <ContactPanel data={contactPanelData} />
       </LazyLoad>
     </>
   )
@@ -48,6 +48,13 @@ export const query = graphql`
           }
         }
       }
+    }
+    strapiGeneralWebsiteInfo {
+      detailedLocation
+      phone
+      generalEmail
+      facebookUrl
+      instagramUrl
     }
   }
 `

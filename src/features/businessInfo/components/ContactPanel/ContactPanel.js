@@ -24,7 +24,10 @@ const panel = {
 }
 //END--Framer motion variants--END
 
-const ContactPanel = () => {
+const ContactPanel = ({data}) => {
+  
+  const { detailedLocation, phone, generalEmail, instagramUrl, facebookUrl } = data
+
   return (
     <Container>
       <Row
@@ -39,23 +42,23 @@ const ContactPanel = () => {
           <h2 className={styles.subTitle}>Información de contacto</h2>
           <TextIcon
             icon={<MdLocationOn className={styles.icon} />}
-            text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed deiusmod tempor incididunt ut labore"
+            text={detailedLocation}
           />
           <TextIcon
             icon={<MdPhone className={styles.icon} />}
-            text="88888888"
+            text={phone}
           />
           <TextIcon
             icon={<MdMail className={styles.icon} />}
-            text="info.bargascr.com"
+            text={generalEmail}
           />
           <RoundedBgIcon
             icon={<FiInstagram className={styles.socialIcon} />}
-            url="www.google.com"
+            url={instagramUrl}
           />
           <RoundedBgIcon
             icon={<FiFacebook className={styles.socialIcon} />}
-            url="www.facebook.com"
+            url={facebookUrl}
           />
           <h2 className={styles.subTitle}>Formulario de contacto</h2>
           <ContactForm />
@@ -67,4 +70,15 @@ const ContactPanel = () => {
     </Container>
   )
 }
+
+ContactPanel.defaultProps = {
+  data: {
+    detailedLocation: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed deiusmod ",
+    phone: "8888888",
+    generalEmail: "www.dummy@mail.com",
+    instagramUrl: "www.instagram.com",
+    facebookUrl: "www.facebook.com",
+  },
+}
+
 export default ContactPanel
