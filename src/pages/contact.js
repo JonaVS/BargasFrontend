@@ -4,8 +4,9 @@ import Seo from "../shared/components/Seo/seo"
 import HeroContainer from "../shared/components/HeroContainer/HeroContainer"
 import HeroCaption from "../shared/components/HeroContainer/HeroCaption/HeroCaption"
 import { BiChat } from "react-icons/bi"
-import ContactPanel from "../features/businessInfo/components/ContactPanel/ContactPanel"
 import Divider from "../shared/components/Divider/Divider"
+import LazyLoad from "react-lazy-load"
+import ContactPanel from "../features/businessInfo/components/ContactPanel/ContactPanel"
 
 const Contact = ({ data }) => {
 
@@ -24,7 +25,9 @@ const Contact = ({ data }) => {
         />
       </HeroContainer>
       <Divider />
-      <ContactPanel />
+      <LazyLoad>
+        <ContactPanel />
+      </LazyLoad>
     </>
   )
 }
