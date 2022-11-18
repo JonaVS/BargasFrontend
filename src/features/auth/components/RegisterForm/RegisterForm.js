@@ -1,6 +1,8 @@
 import React, { useContext } from "react"
 import { UserContext } from "../../../../context/UserContext"
 import { Container } from "react-bootstrap"
+import { motion } from "framer-motion"
+import { formVariants } from "../../shared/formMotionVariants"
 import { Form, Formik } from "formik"
 import registerValidation from "./YupRegisterValidation"
 import LoadingOverlay from "../../../../shared/components/LoadingOverlay/LoadingOverlay"
@@ -14,7 +16,12 @@ const RegisterForm = () => {
 
   return (
     <Container fluid className={styles.formContainer}>
-      <div className={styles.wrapper}>
+      <motion.div
+        variants={formVariants}
+        initial="hidden"
+        animate="show"
+        className={styles.wrapper}
+      >
         <h1 className={styles.formTitle}>Registro</h1>
         <Formik
           initialValues={{
@@ -73,7 +80,7 @@ const RegisterForm = () => {
             </Form>
           )}
         </Formik>
-      </div>
+      </motion.div>
     </Container>
   )
 }
