@@ -1,9 +1,25 @@
 import React, { useState } from "react"
 import { Card, Col } from "react-bootstrap"
-import OrderDetailsModal from "../OrderDetailsModal/OrderDetailsModal";
-import * as styles from './userAccountOrderCard.module.css'
+import { motion } from "framer-motion"
+import OrderDetailsModal from "../OrderDetailsModal/OrderDetailsModal"
+import * as styles from "./userAccountOrderCard.module.css"
 
-const UserAccountOrderCard = ({order}) => {
+//START--Framer motion variants--START
+const orderCard = {
+  hidden: { opacity: 0, scale: 0.8 },
+  show: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.8,
+      delay: 0.3,
+      type: "spring"
+    },
+  },
+}
+//END--Framer motion variants--END
+
+const UserAccountOrderCard = ({ order }) => {
   const [showModal, setShowModal] = useState(false)
   
   const handleShowDetailsModal = () => {
@@ -12,7 +28,14 @@ const UserAccountOrderCard = ({order}) => {
 
   return (
     <>
-      <Col as='li' className="mb-4">
+      <Col
+        as={motion.li}
+        variants={orderCard}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ fallback: true, once: true, amount: 0.5 }}
+        className="mb-4"
+      >
         <Card className={styles.orderCard}>
           <Card.Header as="div" className={styles.cardHeader}>
             <p>Orden: {order.orderId} </p>
