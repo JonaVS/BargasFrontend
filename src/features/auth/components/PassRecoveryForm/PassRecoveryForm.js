@@ -2,6 +2,8 @@ import React, { useState } from "react"
 import agent from "../../../../API/agent"
 import { toastDispatcher, ToastType } from "../../../../helpers/toastDispatcher"
 import { Container } from "react-bootstrap"
+import { motion } from "framer-motion"
+import { formVariants } from "../../shared/formMotionVariants"
 import { Form, Formik } from "formik"
 import passRecoveryValidation from "./passRecoveryValidation"
 import LoadingOverlay from "../../../../shared/components/LoadingOverlay/LoadingOverlay"
@@ -23,7 +25,12 @@ const PassRecoveryForm = () => {
 
   return (
     <Container fluid className={styles.formContainer}>
-      <div className={styles.wrapper}>
+      <motion.div
+        variants={formVariants}
+        initial="hidden"
+        animate="show"
+        className={styles.wrapper}
+      >
         {!isSuccess ? (
           <>
             <h1 className={styles.formTitle}>Recuperar contraseña</h1>
@@ -52,7 +59,7 @@ const PassRecoveryForm = () => {
         ) : (
           <OperationResultMessage message="Se han enviado las instrucciones de recuperación" />
         )}
-      </div>
+      </motion.div>
     </Container>
   )
 }
