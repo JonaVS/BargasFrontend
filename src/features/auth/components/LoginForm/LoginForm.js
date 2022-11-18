@@ -1,6 +1,8 @@
 import React, { useContext } from "react"
 import { UserContext } from "../../../../context/UserContext"
 import { Container } from "react-bootstrap"
+import { motion } from "framer-motion"
+import { formVariants } from "../../shared/formMotionVariants"
 import { Form, Formik } from "formik"
 import LoadingOverlay from "../../../../shared/components/LoadingOverlay/LoadingOverlay"
 import loginValidation from "./YupLoginValidation"
@@ -12,7 +14,12 @@ const LoginForm = () => {
   const { login } = useContext(UserContext)
   return (
     <Container fluid className={styles.formContainer}>
-      <div className={styles.wrapper}>
+      <motion.div
+        variants={formVariants}
+        initial="hidden"
+        animate="show"
+        className={styles.wrapper}
+      >
         <h1 className={styles.formTitle}>Iniciar sesión</h1>
         <Formik
           initialValues={{
@@ -54,7 +61,7 @@ const LoginForm = () => {
             </Form>
           )}
         </Formik>
-      </div>
+      </motion.div>
     </Container>
   )
 }
