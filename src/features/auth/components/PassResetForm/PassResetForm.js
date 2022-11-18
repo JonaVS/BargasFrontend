@@ -3,6 +3,8 @@ import agent from "../../../../API/agent"
 import { toastDispatcher, ToastType } from "../../../../helpers/toastDispatcher"
 import { ErrorContext, errorMessageBuilder } from "../../../../helpers/errorMessageBuilder"
 import { Container } from "react-bootstrap"
+import { motion } from "framer-motion"
+import { formVariants } from "../../shared/formMotionVariants"
 import { Form, Formik } from "formik"
 import resetPasswordValidators from "./resetPassValidation"
 import LoadingOverlay from "../../../../shared/components/LoadingOverlay/LoadingOverlay"
@@ -30,7 +32,11 @@ const PassResetForm = ({ authCode }) => {
 
   return (
     <Container fluid className={styles.formContainer}>
-      <div className={styles.wrapper}>
+      <motion.div         
+        variants={formVariants}
+        initial="hidden"
+        animate="show" 
+        className={styles.wrapper}>
         {!isSuccess ? (
           <>
             <h1 className={styles.formTitle}>Restablecer contraseña</h1>
@@ -72,7 +78,7 @@ const PassResetForm = ({ authCode }) => {
             to="/app/login"
           />
         )}
-      </div>
+      </motion.div>
     </Container>
   )
 }
