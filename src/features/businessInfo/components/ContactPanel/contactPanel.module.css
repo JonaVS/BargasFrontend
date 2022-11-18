@@ -1,17 +1,25 @@
+.panelWrapper {
+  justify-content: center;
+  align-items: center;
+}
+
 .formCol {
   background-color: rgba(0, 0, 0, 0.596);
   padding: 20px;
-  margin: 0px 0px 0px 0px;
+}
+
+.mapCol {
+  padding: 0;
 }
 
 .subTitle {
+  margin-bottom: 20px;
   font-family: "Niconne";
-  color: var(--bargas-gold);
+  font-size: 1.8rem;
 }
 
-.icon,
-.socialIcon {
-  color: rgb(216, 183, 35);
+.panelWrapper h2:last-of-type {
+  margin-top: 40px;
 }
 
 .icon {
@@ -22,4 +30,11 @@
 .socialIcon {
   font-size: 1.4rem;
   margin-bottom: 5px;
+}
+
+/*SHARED CSS*/
+.subTitle,
+.icon,
+.socialIcon {
+  color: var(--bargas-gold);
 }

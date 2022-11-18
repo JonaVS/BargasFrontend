@@ -10,11 +10,10 @@ import * as styles from "./contactPanel.module.css"
 
 const ContactPanel = () => {
   return (
-    <Container >
-      <Row className="mt-5 align-items-center">
-        <Col className={styles.formCol}>
-          <h1 className={styles.subTitle}>Información de contacto</h1>
-          <br />
+    <Container>
+      <Row className={styles.panelWrapper}>
+        <Col sm={12} lg={6} className={styles.formCol}>
+          <h2 className={styles.subTitle}>Información de contacto</h2>
           <TextIcon
             icon={<MdLocationOn className={styles.icon} />}
             text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -36,15 +35,10 @@ const ContactPanel = () => {
             icon={<FiFacebook className={styles.socialIcon} />}
             url="www.facebook.com"
           />
-          <br />
-          <br />
-          <hr className="bg-light" />
-          <br />
-          <h1 className={styles.subTitle}>Formulario de contacto</h1>
-          <br />
+          <h2 className={styles.subTitle}>Formulario de contacto</h2>
           <ContactForm />
         </Col>
-        <Col md={12} lg className="bg-light p-0 mt-5 mt-md-0">
+        <Col sm={12} lg={6} className={styles.mapCol}>
           <Map />
         </Col>
       </Row>
