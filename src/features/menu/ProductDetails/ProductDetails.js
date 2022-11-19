@@ -3,6 +3,7 @@ import {toastDispatcher, ToastType} from '../../../helpers/toastDispatcher'
 import {errorMessageBuilder, ErrorContext} from '../../../helpers/errorMessageBuilder'
 import agent from "../../../API/agent"
 import { Container, Row, Col } from "react-bootstrap"
+import { motion } from "framer-motion"
 import ProductDetailsHeader from "./ProductDetailsHeader/ProductDetailsHeader"
 import ProductFormPlaceHolder from "../../../shared/components/Form/ProductForm/Placeholder/ProductFormPlaceHolder/ProductFormPlaceHolder"
 import ProductPriceAvailability from "./ProductPriceAvailability/ProductPriceAvailability"
@@ -22,6 +23,19 @@ import * as styles from "../ProductDetails/productDetails.module.css"
   For this use case this is a nice feature, because if the backend goes down the clients are able 
   to see some product info instead of nothing.
 */
+
+//START--Framer motion variants--START
+const form = {
+  hidden: { opacity: 0, x: 40 },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.8,
+    },
+  },
+}
+//END--Framer motion variants--END
 
 const ProductDetails = ({ productData }) => {
   const [isLoading, setIsLoading] = useState(true)
@@ -56,26 +70,25 @@ const ProductDetails = ({ productData }) => {
 
   return (
     <Container>
-      <ProductDetailsHeader name={productData.name} loading={isLoading}/>
+      <ProductDetailsHeader name={productData.name} loading={isLoading} />
       <Row>
         <Col lg={6} className={styles.orderingPanel}>
           <h1>Ordenar</h1>
           {isLoading ? (
-              <ProductFormPlaceHolder />
+            <ProductFormPlaceHolder />
           ) : (
-            <>
+            <motion.div variants={form} initial='hidden' animate='show'>
               <ProductPriceAvailability
                 price={productData.price}
                 available={isAvailable}
               />
-              {isAvailable && <ProductForm productData={apiProductData}/>}
-            </>
+              {isAvailable && (
+              <ProductForm productData={apiProductData} />
+              )}
+            </motion.div>
           )}
         </Col>
-        <Col
-          xs={{ order: "first" }}
-          lg={{ span: 6, order: "last" }}
-        >
+        <Col xs={{ order: "first" }} lg={{ span: 6, order: "last" }}>
           <ProductDescription />
         </Col>
       </Row>
