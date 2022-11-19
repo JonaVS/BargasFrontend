@@ -3,8 +3,7 @@ import {toastDispatcher, ToastType} from '../../../helpers/toastDispatcher'
 import {errorMessageBuilder, ErrorContext} from '../../../helpers/errorMessageBuilder'
 import agent from "../../../API/agent"
 import { Container, Row, Col, Spinner } from "react-bootstrap"
-import ProductFormPlaceholder from "../../../shared/components/Form/ProductForm/Placeholder/ProductFormPlaceHolder/ProductFormPlaceHolder"
-import ProductTagsPlaceHolder from "../../../shared/components/Form/ProductForm/Placeholder/ProductFormPlaceHolder/ProductTagsPlaceHolder"
+import ProductFormPlaceHolder from "../../../shared/components/Form/ProductForm/Placeholder/ProductFormPlaceHolder/ProductFormPlaceHolder"
 import ProductPriceAvailability from "./ProductPriceAvailability/ProductPriceAvailability"
 import ProductForm from "../../../shared/components/Form/ProductForm/ProductForm"
 import ProductDescription from "./ProductDescription/ProductDescription"
@@ -65,10 +64,7 @@ const ProductDetails = ({ productData }) => {
         <Col lg={6} className={styles.orderingPanel}>
           <h1>Ordenar</h1>
           {isLoading ? (
-            <>
-              <ProductTagsPlaceHolder />
-              <ProductFormPlaceholder />
-            </>
+              <ProductFormPlaceHolder />
           ) : (
             <>
               <ProductPriceAvailability
