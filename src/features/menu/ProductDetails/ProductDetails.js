@@ -2,14 +2,12 @@ import React, { useEffect, useState } from "react"
 import {toastDispatcher, ToastType} from '../../../helpers/toastDispatcher'
 import {errorMessageBuilder, ErrorContext} from '../../../helpers/errorMessageBuilder'
 import agent from "../../../API/agent"
-import { Container, Row, Col, Spinner } from "react-bootstrap"
+import { Container, Row, Col } from "react-bootstrap"
+import ProductDetailsHeader from "./ProductDetailsHeader/ProductDetailsHeader"
 import ProductFormPlaceHolder from "../../../shared/components/Form/ProductForm/Placeholder/ProductFormPlaceHolder/ProductFormPlaceHolder"
 import ProductPriceAvailability from "./ProductPriceAvailability/ProductPriceAvailability"
 import ProductForm from "../../../shared/components/Form/ProductForm/ProductForm"
 import ProductDescription from "./ProductDescription/ProductDescription"
-import FixedComponent from "../../../shared/components/FixedComponent/FixedComponent"
-import LinkBtn from "../../../shared/components/LinkBtn/LinkBtn"
-import { AiOutlineArrowLeft } from "react-icons/ai"
 import * as styles from "../ProductDetails/productDetails.module.css"
 
 /*This component uses 2 versions of product data:
@@ -58,6 +56,7 @@ const ProductDetails = ({ productData }) => {
 
   return (
     <Container>
+      <ProductDetailsHeader name={productData.name} loading={isLoading}/>
       <Row>
         <Col lg={6} className={styles.orderingPanel}>
           <h1>Ordenar</h1>
@@ -80,23 +79,6 @@ const ProductDetails = ({ productData }) => {
           <ProductDescription />
         </Col>
       </Row>
-      <FixedComponent className={styles.fixedComponent}>
-        <LinkBtn link='/menu' className={styles.menuLink}>
-          <AiOutlineArrowLeft className={styles.icon} />
-          Menú
-        </LinkBtn>
-        <h1 className='d-flex align-items-center'>
-          {isLoading && (
-              <Spinner
-                animation="border"
-                variant="warning"
-                className="h6 align-middle me-2 mt-2 p-0"
-                style={{width:'1.5rem', height: '1.5rem'}}
-              />
-          )}
-          {productData.name}
-        </h1>
-      </FixedComponent>
     </Container>
   )
 }

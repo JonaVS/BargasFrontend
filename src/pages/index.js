@@ -2,11 +2,11 @@ import React from "react"
 import { graphql } from "gatsby"
 import Seo from "../shared/components/Seo/seo"
 import CarouselB from "../features/carousel/Carousel/CarouselB"
+import Divider from "../shared/components/Divider/Divider"
 import About from "../features/businessInfo/components/AboutSection/AboutSection"
 import MenuSection from "../features/businessInfo/components/MenuSection/MenuSection"
 import OrderingSection from "../features/businessInfo/components/OrderingSection/OrderingSection"
 import ContactBasicInfo from "../features/businessInfo/components/ContactBasictInfo/ContactBasicInfo"
-import Divider from "../shared/components/Divider/Divider"
 
 const IndexPage = ({ data }) => {
   
