@@ -26,16 +26,14 @@ import * as styles from "../ProductDetails/productDetails.module.css"
 */
 
 const ProductDetails = ({ productData }) => {
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
   const [isAvailable, setIsAvailable] = useState(false)
   const [apiProductData, setApiProductData] = useState({})
 
   useEffect(() => {
-    setIsLoading(true)
     const getProductDetails = async () => {
       try {
         const result = await agent.product.details(productData.strapi_id)
-        setIsLoading(false)
         setApiProductData(productObjectBuilder(productData, result.data.attributes))
         setIsAvailable(result.data.attributes.available)
       } catch (error) {
@@ -43,8 +41,8 @@ const ProductDetails = ({ productData }) => {
           ToastType.ERROR,
           errorMessageBuilder(ErrorContext.PRODUCT_DETAILS, error)
         )
-        setIsLoading(false)
       }
+      setIsLoading(false)
     }
     getProductDetails()
   }, [productData.strapi_id, productData])
