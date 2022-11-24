@@ -7,6 +7,7 @@ import * as Yup from "yup"
 import changePasswordValidators from "./changePasswordYupValidation"
 import LoadingOverlay from "../../../../shared/components/LoadingOverlay/LoadingOverlay"
 import BargasTextField from "../../../../shared/components/Form/BargasTextField/BargasTextField"
+import Button, { ButtonTypeAnimation } from "../../../../shared/components/Button/Button"
 import * as styles from "./changePasswordForm.module.css"
 
 const ChangePasswordForm = () => {
@@ -65,9 +66,13 @@ const ChangePasswordForm = () => {
             type="password"
             placeholder="Confirma la nueva contraseña"
           />
-          <button className={styles.generalBtn} type="submit">
+          <Button
+            whileHover={ButtonTypeAnimation.MainHover}
+            className={styles.authBtn}
+            type="submit"
+          >
             Cambiar contraseña
-          </button>
+          </Button>
         </Form>
       )}
     </Formik>
