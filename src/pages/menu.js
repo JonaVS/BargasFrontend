@@ -22,6 +22,7 @@ const MenuPage = ({ data }) => {
           text={seoData.description}
           btnText="Explorar"
           icon={<MdOutlineFoodBank/>}
+          scrollTarget='menuCategories'
         />
       </HeroContainer>
       <Divider />

@@ -18,7 +18,14 @@ const caption = {
 }
 //END--Framer motion variants--END
 
-const HeroCaption = ({ title, text, btnText, icon }) => {
+const HeroCaption = ({ title, text, btnText, icon, scrollTarget }) => {
+
+  const scrollTo = (nodeId) => {
+    if (!nodeId || !document ) return
+    const element = document.getElementById(nodeId) 
+    element.scrollIntoView({block: "center", behavior: "smooth"})
+  }
+  
   return (
     <motion.div
       className={styles.heroCaption}
@@ -32,7 +39,15 @@ const HeroCaption = ({ title, text, btnText, icon }) => {
       </h1>
       <div className={styles.basicDivider} />
       {text && <p>{text}</p>}
-      {btnText && <Button variant='dark' className={styles.btn}>{btnText}</Button>}
+      {btnText && (
+        <Button
+          variant="dark"
+          className={styles.btn}
+          onClick={() => scrollTo(scrollTarget)}
+        >
+          {btnText}
+        </Button>
+      )}
     </motion.div>
   )
 }
@@ -42,6 +57,7 @@ HeroCaption.defaultProps = {
   text: null,
   btnText: null,
   icon: <BiFoodMenu />,
+  scrollTarget: ''
 }
 
 export default HeroCaption

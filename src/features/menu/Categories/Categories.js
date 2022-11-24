@@ -47,6 +47,7 @@ const Categories = ({ categories, handleCategorie, currentCategorie }) => {
       initial="hidden"
       whileInView="show"
       viewport={{ fallback: true, once: true, amount: 1 }}
+      id='menuCategories'
     >
       <h1 className={styles.title}>Categorias</h1>
       <div className={styles.mainCont}>
