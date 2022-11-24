@@ -6,6 +6,7 @@ import BargasQuantityInput from "../BargasQuantityInput/BargasQuantityInput"
 import RadioGroupWrapper from "../RadioGroupWrapper/RadioGroupWrapper"
 import BargasRadioButton from "../BargasRadioButton/BargasRadioButton"
 import BargasTextAreaField from "../BargasTextAreaField/BargasTextAreaField"
+import CustomButton, { ButtonTypeAnimation } from "../../Button/Button"
 import { Button } from "react-bootstrap"
 import * as styles from "./productForm.module.css"
 
@@ -73,7 +74,12 @@ const ProductForm = ({
             )}
           </span>
           {!isEditMode ? (
-            <button className={styles.submitBtn}>Ordenar</button>
+            <CustomButton
+              whileHover={ButtonTypeAnimation.MainHover}
+              className={styles.orderBtn}
+            >
+              Ordenar
+            </CustomButton>
           ) : (
             <div className={styles.actions}>
               <Button variant="success" type="submit">
