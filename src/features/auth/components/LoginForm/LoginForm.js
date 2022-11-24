@@ -7,6 +7,7 @@ import { Form, Formik } from "formik"
 import LoadingOverlay from "../../../../shared/components/LoadingOverlay/LoadingOverlay"
 import loginValidation from "./YupLoginValidation"
 import BargasTextField from "../../../../shared/components/Form/BargasTextField/BargasTextField"
+import Button, { ButtonTypeAnimation } from "../../../../shared/components/Button/Button"
 import LabelLink from "../../../../shared/components/LabelLink/LabelLink"
 import * as styles from "../../shared/authForm.module.css"
 
@@ -45,9 +46,13 @@ const LoginForm = () => {
                 name="password"
                 type="password"
               />
-              <button className={styles.generalBtn} type="submit">
-                INICIAR SESIÓN
-              </button>
+              <Button
+                whileHover={ButtonTypeAnimation.MainHover}
+                className={styles.authBtn}
+                type="submit"
+              >
+                Iniciar sesión
+              </Button>
               <LabelLink
                 labelText="¿No tienes una cuenta?:"
                 linkText="Crea una aqui"

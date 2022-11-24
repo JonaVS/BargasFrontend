@@ -1,0 +1,23 @@
+.main {
+  background-color: var(--bargas-gold);
+  color: rgb(46, 46, 46);
+}
+
+.dark {
+  background-color: rgba(0, 0, 0, 0.644);
+  color: rgb(182, 182, 182);
+}
+
+/*SHARED CSS*/
+.main,
+.dark {
+  cursor: pointer;
+  border: none;
+  padding: 4px;
+  min-width: 90px;
+  font-family: "Squada One";
+  font-weight: lighter;
+  font-style: normal;
+  font-size: 1.2rem;
+  border-radius: 5px;
+}
