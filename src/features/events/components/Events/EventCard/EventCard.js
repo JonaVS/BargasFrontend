@@ -3,6 +3,7 @@ import { Col } from "react-bootstrap"
 import { motion } from "framer-motion"
 import { BsFillCalendarFill } from "react-icons/bs"
 import { MdLocationOn } from "react-icons/md"
+import Button, { ButtonTypeAnimation } from "../../../../../shared/components/Button/Button"
 import EventDetailsModal from "../EventDetailsModal/EventDetailsModal"
 import * as styles from "./eventCard.module.css"
 
@@ -50,12 +51,13 @@ const EventCard = ({ event }) => {
                     Bargas restaurante
                   </p>
                 </div>
-                <button
+                <Button
+                  whileHover={ButtonTypeAnimation.MainHover}
                   className={styles.detailsBtn}
                   onClick={handleShowDetailsModal}
                 >
                   Detalles
-                </button>
+                </Button>
               </div>
             </div>
           </div>
