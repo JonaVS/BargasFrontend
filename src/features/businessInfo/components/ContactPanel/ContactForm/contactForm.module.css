@@ -5,37 +5,11 @@
 .submitBtn {
   display: block;
   margin: 20px auto 0px auto;
-  width: 50%;
-  font-family: "Squada One";
+  width: 40%;
   font-size: 1.2rem;
-  transition: all ease-in-out 0.5s;
-  outline: none;
-  border-color: none;
-  border-radius: 5px;
 }
 
-.submitBtn:hover {
-  background-color: transparent;
-  border-color: var(--bargas-gold);
-  color: rgb(218, 214, 214);
-}
-
-.submitBtn:focus {
-  outline: none;
-  box-shadow: none;
-}
-
-.submitBtn:disabled:hover {
+.submitBtn:disabled {
   color: rgba(16, 16, 16, 0.3);
   cursor: not-allowed;
-}
-
-.submitBtn:enabled:hover {
-  cursor: pointer;
-}
-
-/*Shared CSS*/
-.submitBtn,
-.submitBtn:disabled:hover {
-  background-color: var(--bargas-gold);
 }

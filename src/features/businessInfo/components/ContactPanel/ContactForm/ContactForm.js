@@ -5,9 +5,10 @@ import { ErrorContext, errorMessageBuilder } from "../../../../../helpers/errorM
 import { Form, Formik } from "formik"
 import * as Yup from "yup"
 import { contactFormValidators } from "./YupValidation"
+import LoadingOverlay from "../../../../../shared/components/LoadingOverlay/LoadingOverlay"
 import BargasTextField from "../../../../../shared/components/Form/BargasTextField/BargasTextField"
 import BargasTextAreaField from "../../../../../shared/components/Form/BargasTextAreaField/BargasTextAreaField"
-import LoadingOverlay from "../../../../../shared/components/LoadingOverlay/LoadingOverlay"
+import Button, { ButtonTypeAnimation } from "../../../../../shared/components/Button/Button"
 import * as styles from "./contactForm.module.css"
 
 const ContactForm = () => {
@@ -55,13 +56,14 @@ const ContactForm = () => {
             rows={5}
             placeholder="Escribe el mensaje aquí"
           />
-          <button
+          <Button
             type="submit"
+            whileHover={ButtonTypeAnimation.MainHover}
             className={styles.submitBtn}
             disabled={!(formik.isValid && formik.dirty)}
           >
             Enviar
-          </button>
+          </Button>
         </Form>
       )}
     </Formik>
