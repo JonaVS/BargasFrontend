@@ -1,7 +1,7 @@
 import React from "react"
 import * as styles from "./divider.module.css"
 
-const Divider = () => {
+const Divider = ({ id }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -9,6 +9,7 @@ const Divider = () => {
       height="104.363"
       viewBox="0 0 1279.944 104.363"
       className={styles.divider}
+      id={id}
     >
       <g transform="translate(-0.163 371.863)">
         <path

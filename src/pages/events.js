@@ -23,9 +23,10 @@ const EventsPage = ({ data }) => {
           text={seoData.description}
           btnText="Explorar"
           icon={<FaCocktail/>}
+          scrollTarget='eventsDivider'
         />
       </HeroContainer>
-      <Divider />
+      <Divider id='eventsDivider' />
       <LazyLoad offset={0}>
         <Events/>
       </LazyLoad>
