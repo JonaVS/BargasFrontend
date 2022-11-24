@@ -15,9 +15,7 @@
 }
 
 .detailsBtn {
-  padding: 8px;
-  background-color: var(--bargas-gold);
-  color: black;
-  border: none;
-  border-radius: 10px;
+  padding: 5px;
+  font-size: 1.05rem;
+  min-width: auto;
 }

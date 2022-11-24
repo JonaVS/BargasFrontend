@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { Card, Col } from "react-bootstrap"
 import { motion } from "framer-motion"
 import OrderDetailsModal from "../OrderDetailsModal/OrderDetailsModal"
+import Button, { ButtonTypeAnimation } from "../../../../shared/components/Button/Button"
 import * as styles from "./userAccountOrderCard.module.css"
 
 //START--Framer motion variants--START
@@ -42,7 +43,13 @@ const UserAccountOrderCard = ({ order }) => {
             <p>Fecha: {new Date(order.date).toLocaleString({ hour12: true })}</p>
           </Card.Header>
           <Card.Body>
-            <button className={styles.detailsBtn} onClick={handleShowDetailsModal}>Detalles</button>
+            <Button
+              whileHover={ButtonTypeAnimation.MainHover}
+              className={styles.detailsBtn}
+              onClick={handleShowDetailsModal}
+            >
+              Detalles
+            </Button>
           </Card.Body>
         </Card>
       </Col>
