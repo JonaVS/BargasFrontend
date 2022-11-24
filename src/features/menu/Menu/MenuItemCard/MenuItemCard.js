@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { Card, Col } from "react-bootstrap"
 import { motion } from "framer-motion"
 import { GatsbyImage } from "gatsby-plugin-image"
+import Button, { ButtonTypeAnimation } from "../../../../shared/components/Button/Button"
 import LinkBtn from "../../../../shared/components/LinkBtn/LinkBtn"
 import ProductDetailsModal from "../../ProductDetails/QrMenuProductDetails/ProductModalDetails"
 import * as styles from "./menuItemCard.module.css"
@@ -45,7 +46,13 @@ const MenuItemCard = ({ item, qrmenu }) => {
           </Card.Text>
           <Card.Footer className="p-0 mt-5">
             {qrmenu ? (
-              <button onClick={handleShowDetailsModal} className={styles.detailsBtn}>Detalles</button>
+              <Button
+                whileHover={ButtonTypeAnimation.MainHover}
+                onClick={handleShowDetailsModal}
+                className={styles.detailsBtn}
+              >
+                Detalles
+              </Button>
             ) : (
               <LinkBtn link={`/menu/${item.slug}`}>Ordenar</LinkBtn>
             )}
