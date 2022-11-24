@@ -40,7 +40,7 @@ const Layout = ({ children }) => {
             <NavBar />
             {children}
             <Footer />
-            <ToastContainer position="bottom-right" transition={Zoom} />
+            <ToastContainer position="bottom-center" transition={Zoom} />
             {/* <Crisp /> */}
           </main>
         )}
