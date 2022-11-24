@@ -9,6 +9,7 @@ import { Form, Formik } from "formik"
 import resetPasswordValidators from "./resetPassValidation"
 import LoadingOverlay from "../../../../shared/components/LoadingOverlay/LoadingOverlay"
 import BargasTextField from "../../../../shared/components/Form/BargasTextField/BargasTextField"
+import Button, { ButtonTypeAnimation } from "../../../../shared/components/Button/Button"
 import OperationResultMessage from "../../../../shared/components/OperationResultMessage/OperationResultMessage"
 import * as styles from "../../shared/authForm.module.css"
 
@@ -65,9 +66,13 @@ const PassResetForm = ({ authCode }) => {
                     type="password"
                     placeholder="Confirma la nueva contraseña"
                   />
-                  <button className={styles.generalBtn} type="submit">
+                  <Button
+                    whileHover={ButtonTypeAnimation.MainHover}
+                    className={styles.authBtn}
+                    type="submit"
+                  >
                     Restablecer contraseña
-                  </button>
+                  </Button>
                 </Form>
               )}
             </Formik>
