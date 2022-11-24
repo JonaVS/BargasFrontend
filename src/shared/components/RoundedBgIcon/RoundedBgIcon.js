@@ -5,7 +5,7 @@ import *as styles from '../RoundedBgIcon/roundedIconBg.module.css'
 const RoundedBgIcon = ({ icon, wrapperClassName, url }) => {
   return (
     <div className={`${styles.wrapper} ${wrapperClassName}`}>
-      <a href={url}>
+      <a href={url} target="_blank" rel="noopener noreferrer">
         {icon}
       </a>
     </div>
@@ -15,7 +15,7 @@ const RoundedBgIcon = ({ icon, wrapperClassName, url }) => {
 RoundedBgIcon.defaultProps = {
   icon: <FiFacebook size={30} className={styles.icon} />,
   wrapperClassName: "",
-  url: 'www.google.com'
+  url: 'www.facebook.com'
 }
 
 export default RoundedBgIcon
