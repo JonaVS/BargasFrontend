@@ -1,17 +1,30 @@
 import React from "react"
 import Container from "react-bootstrap/Container"
-import Row from "react-bootstrap/Row"
-import Col from "react-bootstrap/Col"
-import { Link } from "gatsby"
+import { Row, Col  } from "react-bootstrap"
+import { graphql, Link, useStaticQuery } from "gatsby"
 import { MdLocationOn, MdPhone, MdMail } from "react-icons/md"
 import { FiInstagram, FiFacebook } from "react-icons/fi"
+import RoundedBgIcon from "../RoundedBgIcon/RoundedBgIcon"
 import { StaticImage } from "gatsby-plugin-image"
 import * as styles from "../Footer/footer.module.css"
 
 const Footer = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      strapiGeneralWebsiteInfo {
+        detailedLocation
+        phone
+        generalEmail
+        facebookUrl
+        instagramUrl
+      }
+    }
+  `)
 
-  if (window && window.location.pathname === "/app/QRmenu" ) return null
-  
+  const footerData = data.strapiGeneralWebsiteInfo
+
+  if (window && window.location.pathname === "/app/QRmenu") return null
+
   return (
     <footer className={styles.footer}>
       <Container fluid={true}>
@@ -27,29 +40,24 @@ const Footer = () => {
             <h3 className={styles.footerTittle}>TIENES ALGUNA PREGUNTA?</h3>
             <p className={styles.footerInfo}>
               <MdLocationOn className={styles.icon} />
-              <span>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore
-              </span>
+              <span>{footerData.detailedLocation} </span>
             </p>
             <p className={styles.footerInfo}>
               <MdPhone className={styles.icon} />
-              <span>8888888</span>
+              <span>{footerData.phone}</span>
             </p>
             <p className={styles.footerInfo}>
               <MdMail className={styles.icon} />
-              <span>info.bargascr.com</span>
+              <span>{footerData.generalEmail}</span>
             </p>
-            <div className={styles.roundedWrapper}>
-              <a href="www.google.com">
-                <FiInstagram className={styles.socialIcon} />
-              </a>
-            </div>
-            <div className={styles.roundedWrapper}>
-              <a href="www.google.com">
-                <FiFacebook className={styles.socialIcon} />
-              </a>
-            </div>
+            <RoundedBgIcon
+              icon={<FiInstagram className={styles.socialIcon} />}
+              url={footerData.instagramUrl}
+            />
+            <RoundedBgIcon
+              icon={<FiFacebook className={styles.socialIcon} />}
+              url={footerData.facebookUrl}
+            />
           </Col>
           <Col lg={true} className={styles.footerCol}>
             <h3 className={styles.footerTittle}>MEDIOS DE PAGO ACEPTADOS</h3>
