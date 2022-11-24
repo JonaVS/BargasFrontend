@@ -9,6 +9,7 @@ import LoadingOverlay from "../../../../shared/components/LoadingOverlay/Loading
 import BargasTextField from "../../../../shared/components/Form/BargasTextField/BargasTextField"
 import BargasCheckBoxField from "../../../../shared/components/Form/BargasCheckBoxField/BargasCheckboxField"
 import LabelLink from "../../../../shared/components/LabelLink/LabelLink"
+import Button, { ButtonTypeAnimation } from "../../../../shared/components/Button/Button"
 import * as styles from "../../shared/authForm.module.css"
 
 const RegisterForm = () => {
@@ -69,9 +70,13 @@ const RegisterForm = () => {
                 He leido y acepto la Politica de Privacidad, asi como los
                 Terminos y Condiciones.
               </BargasCheckBoxField>
-              <button className={styles.generalBtn} type="submit">
-                REGISTRARSE
-              </button>
+              <Button
+                whileHover={ButtonTypeAnimation.MainHover}
+                className={styles.authBtn}
+                type="submit"
+              >
+                Registrarse
+              </Button>
               <LabelLink
                 labelText="¿Ya tienes una cuenta?:"
                 linkText="Inicia sesión aquí"
