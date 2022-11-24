@@ -12,10 +12,8 @@
 }
 
 .orderBtn {
-  background-color: rgb(216, 183, 35);
-  color: black;
   font-size: 1rem;
-  margin: 0px 0px 0px 20px;
+  margin-left: 20px;
 }
 
 .dataWrapper > p {

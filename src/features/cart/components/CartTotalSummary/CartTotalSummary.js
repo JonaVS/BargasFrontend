@@ -1,8 +1,9 @@
 import React, { useContext, useEffect, useState } from "react"
 import { CartContext } from "../../../../context/CartContext"
 import agent from "../../../../API/agent"
-import { Spinner, Button } from "react-bootstrap"
 import UnavailableService from "../../../../shared/components/UnavailableService/UnavailableService"
+import { Spinner } from "react-bootstrap"
+import Button, { ButtonTypeAnimation } from "../../../../shared/components/Button/Button"
 import * as styles from "./cartTotalSummary.module.css"
 
 const CartTotalSummary = ({ focusErrors }) => {
@@ -52,9 +53,8 @@ const CartTotalSummary = ({ focusErrors }) => {
             </p>
           </div>
           <Button
-            size="lg"
-            variant="custom"
             type="submit"
+            whileHover={ButtonTypeAnimation.MainHover}
             className={styles.orderBtn}
             onClick={focusErrors}
           >
