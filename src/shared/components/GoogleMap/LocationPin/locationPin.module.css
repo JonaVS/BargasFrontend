@@ -1,0 +1,6 @@
+.pinIcon {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+  color: rgb(214, 6, 6);
+}

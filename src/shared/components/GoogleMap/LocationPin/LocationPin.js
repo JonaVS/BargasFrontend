@@ -1,13 +1,7 @@
 import React from "react"
-import { ImLocation } from "react-icons/im"
+import { ImLocation2 } from "react-icons/im"
+import * as styles from "./locationPin.module.css"
 
-const LocationPin = ({ text }) => <ImLocation className="pin-icon" size={40} />
+const LocationPin = () => <ImLocation2 className={styles.pinIcon} />
 
 export default LocationPin
-
-// const LocationPin = ({ text }) => (
-//     <div className="pin">
-//       <ImLocation className="pin-icon" size={40}/>
-//       <p className="pin-text">{text}</p>
-//     </div>
-//   )
