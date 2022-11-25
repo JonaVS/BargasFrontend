@@ -1,6 +1,7 @@
 import React from "react"
-import { motion } from "framer-motion"
 import Masonry from "react-masonry-css"
+import { motion } from "framer-motion"
+import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import * as styles from "./menuSectionPreview.module.css"
 
@@ -43,10 +44,12 @@ const MenuSectionPreview = ({ menuPreview }) => {
         {menuPreview.map(item => {
           return (
             <motion.div key={item.product.name} variants={previewItem}>
-              <GatsbyImage
-                image={item.image.localFile.childImageSharp.gatsbyImageData}
-                alt={item.product.name}
-              />
+              <Link to={`/menu/${item.product.slug}`}>
+                <GatsbyImage
+                  image={item.image.localFile.childImageSharp.gatsbyImageData}
+                  alt={item.product.name}
+                />
+              </Link>
             </motion.div>
           )
         })}
