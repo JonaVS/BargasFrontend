@@ -1,7 +1,7 @@
 import axios from "axios"
 import { userOrdersQuery } from "./paramsQueries"
 
-axios.defaults.baseURL = "http://localhost:1337/api"
+axios.defaults.baseURL = process.env.GATSBY_STRAPI_API_URL
 
 const sleep = delay => {
   return new Promise(resolve => {
