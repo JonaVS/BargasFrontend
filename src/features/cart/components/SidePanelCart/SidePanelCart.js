@@ -3,8 +3,9 @@ import { CartContext } from "../../../../context/CartContext"
 import Offcanvas from "react-bootstrap/Offcanvas"
 import EditProductModal from "../EditProductModal/EditProductModal"
 import NoContentMessage from "../../../../shared/components/NoContentMessage/NoContentMessage"
-import LinkBtn from "../../../../shared/components/LinkBtn/LinkBtn"
 import CartItemList from "../CartItemList/CartItemList"
+import LinkBtn from "../../../../shared/components/LinkBtn/LinkBtn"
+import { currencyFormatter } from "../../../../helpers/currencyFormatter"
 import * as styles from "./sidePanelCart.module.css"
 
 
@@ -60,7 +61,7 @@ const SidePanelCart = ({ showCart, handleShowCart }) => {
               callback={handleShowCart}
               className={styles.cartBtn}
             >
-              ORDENAR {`(₡${cartTotal})`}
+              ORDENAR {`(₡${currencyFormatter(cartTotal)})`}
             </LinkBtn>
           )}
         </div>
