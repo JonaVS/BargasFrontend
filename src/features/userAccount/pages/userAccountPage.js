@@ -1,4 +1,5 @@
 import React from "react"
+import Seo from "../../../shared/components/Seo/seo"
 import { Container } from "react-bootstrap"
 import SectionHeader from "../../../shared/components/SectionHeader/SectionHeader"
 import SectionDescriptor from "../../../shared/components/SectionDescriptor/SectionDescriptor"
@@ -7,16 +8,19 @@ import * as styles from "./userAccountPage.module.css"
 
 const UserAccountPage = () => {
   return (
-    <Container fluid="lg">
-      <SectionHeader>
-        <SectionDescriptor
-          title="Mi cuenta"
-          text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          className={styles.descriptor}
-        />
-      </SectionHeader>
-      <UserAccountPanel/>
-    </Container>
+    <>
+      <Seo title='Mi cuenta' />
+      <Container fluid="lg">
+        <SectionHeader>
+          <SectionDescriptor
+            title="Mi cuenta"
+            text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            className={styles.descriptor}
+          />
+        </SectionHeader>
+        <UserAccountPanel />
+      </Container>
+    </>
   )
 }
 

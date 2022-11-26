@@ -1,4 +1,5 @@
 import React from "react"
+import Seo from "../../../shared/components/Seo/seo"
 import Container from 'react-bootstrap/Container'
 import SectionHeader from "../../../shared/components/SectionHeader/SectionHeader"
 import SectionDescriptor from "../../../shared/components/SectionDescriptor/SectionDescriptor"
@@ -8,6 +9,7 @@ import * as styles from "./cartPage.module.css"
 const CartPage = () => {
   return (
     <>
+      <Seo title='Pedido'/>
       <Container fluid='lg'>
         <SectionHeader>
           <SectionDescriptor

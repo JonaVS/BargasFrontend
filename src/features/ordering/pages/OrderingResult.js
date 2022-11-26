@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from "react"
+import Seo from "../../../shared/components/Seo/seo"
 import { CartContext } from "../../../context/CartContext"
 import { decodeGatewayResult } from "../../../helpers/orderingResultDecoder"
 import LoadingOverlay from "../../../shared/components/LoadingOverlay/LoadingOverlay"
@@ -21,13 +22,16 @@ const OrderingResult = ({ resultType }) => {
   }, [resultType])
 
   return (
-    <div className={styles.resultMsg}>
-      {isValidating ? (
-        <LoadingOverlay />
-      ) : (
-        <OrderingResultMsg type={messageType} />
-      )}
-    </div>
+    <>
+      <Seo title="Resultado de pedido" />
+      <div className={styles.resultMsg}>
+        {isValidating ? (
+          <LoadingOverlay />
+        ) : (
+          <OrderingResultMsg type={messageType} />
+        )}
+      </div>
+    </>
   )
 }
 
