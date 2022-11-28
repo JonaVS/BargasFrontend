@@ -2,16 +2,16 @@ import React, { useState } from "react"
 import { Navbar, Nav } from "react-bootstrap"
 import TopNav from "./TopNav/TopNav"
 import { StaticImage } from "gatsby-plugin-image"
+import AuthDropdown from "./AuthDropdown/AuthDropdown"
 import ShoppingBag from "./ShoppingBag/ShoppingBag"
 import { Link } from "gatsby"
 import SidePanelCart from "../../../features/cart/components/SidePanelCart/SidePanelCart"
 import * as styles from "../Navbar/navbar.module.css"
-import AuthDropdown from "./AuthDropdown/AuthDropdown"
 
 const NavBar = () => {
   const [showCart, setShowCart] = useState(false)
 
-  function handleShowCart() {
+  const handleShowCart = () => {
     setShowCart(!showCart)
   }
 
@@ -21,17 +21,17 @@ const NavBar = () => {
     <>
       <Navbar
         fixed="top"
-        className={`justify-content-lg-center justify-content-between ${styles.navbar}`}
+        className={styles.navbar}
         expand="lg"
         collapseOnSelect
       >
         <TopNav handleShowCart={handleShowCart} />
         <Navbar.Brand className={styles.navBrand} href="#home">
           <StaticImage
-            src="../../../images/logoN.png"
-            alt="Bargas Logo Mobile"
+            src="../../../images/fav.png"
+            alt="Business Logo"
             placeholder="blurred"
-            width={100}
+            width={53}
             quality={100}
           />
         </Navbar.Brand>
@@ -74,11 +74,11 @@ const NavBar = () => {
             </Nav.Item>
             <Nav.Item>
               <StaticImage
-                src="../../../images/logoN.png"
+                src="../../../images/fav.png"
                 className={styles.logo}
                 alt="Bargas Logo"
                 placeholder="blurred"
-                width={200}
+                width={105}
                 quality={100}
               />
             </Nav.Item>

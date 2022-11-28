@@ -1,22 +1,16 @@
 .navLink {
-  text-align: center;
   min-width: 128px;
-  margin: 0px 20px 0px 20px;
-  font-family: "Josefin Slab";
-  font-size: 1.8rem;
-  font-weight: bold;
+  margin: 0px 10px 0px 10px;
   text-decoration: none;
-  color: rgb(29, 29, 29);
-}
-
-.navLink:active {
-  color: rgb(29, 29, 29);
+  text-align: center;
+  font-family: "Squada One";
+  font-size: 1.6rem;
+  color: rgb(100, 99, 99);
 }
 
 .active {
   color: rgb(32, 32, 32) !important;
 }
-
 
 @media (min-width: 320px) {
   .navbar {
@@ -27,29 +21,14 @@
   }
   .navBrand {
     display: block;
+    margin-left: 20px;
   }
   .mobileRight {
     display: inline-block;
   }
 }
 
-@media (min-width: 576px) {
-  .navbar {
-    background-color: #14c523;
-  }
-}
-
-@media (min-width: 768px) {
-  .navbar {
-    background-color: #d84848;
-  }
-}
-
-/* Large devices (desktops, 992px and up)*/
 @media (min-width: 991px) {
-  .navbar {
-    background-color: #d8ac5c;
-  }
   .logo {
     display: block;
   }
@@ -59,11 +38,5 @@
 
   .mobileRight {
     display: none;
-  }
-}
-
-@media (min-width: 1200px) {
-  .navbar {
-    background-color: #ffffffe3;
   }
 }
