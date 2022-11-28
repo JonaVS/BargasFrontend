@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import LazyLoad from "react-lazy-load"
 import Container from "react-bootstrap/Container"
 import SubSectionHeader from "../../../../shared/components/SubSectionHeader/SubSectionHeader"
+import { motion } from "framer-motion"
 import Map from "../../../../shared/components/GoogleMap/Map/Map"
 import * as styles from "../ContactBasictInfo/contactBasicInfo.module.css"
 
@@ -18,6 +19,17 @@ const header = {
     },
   },
 }
+
+const mapHolder = {
+  hidden: { opacity: 0, scale: 0.9 },
+  show: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.8,
+    },
+  },
+}
 //END--Framer motion variants--END
 
 const ContactBasicInfo = () => {
@@ -30,7 +42,7 @@ const ContactBasicInfo = () => {
       }
     }
   `)
-  
+
   const sectionDesc = data.strapiHomePage.aboutContact.description
 
   return (
@@ -49,7 +61,14 @@ const ContactBasicInfo = () => {
         >
           {sectionDesc}
         </SubSectionHeader>
-        <Map />
+        <motion.div
+          variants={mapHolder}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ fallback: true, once: true, amount: 0.9 }}
+        >
+          <Map />
+        </motion.div>
       </Container>
     </LazyLoad>
   )
