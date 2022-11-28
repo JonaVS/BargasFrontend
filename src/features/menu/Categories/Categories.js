@@ -46,7 +46,7 @@ const Categories = ({ categories, handleCategorie, currentCategorie }) => {
       variants={categoryHandler}
       initial="hidden"
       whileInView="show"
-      viewport={{ fallback: true, once: true, amount: 1 }}
+      viewport={{ fallback: true, once: true, amount: 0.80 }}
       id='menuCategories'
     >
       <h1 className={styles.title}>Categorias</h1>
