@@ -6,8 +6,9 @@ import NavBar from "../Navbar/Navbar"
 import Footer from "../Footer/Footer"
 import { ToastContainer, Zoom } from "react-toastify"
 import LoadingOverlay from "../LoadingOverlay/LoadingOverlay"
-import * as styles from "../Layout/layout.module.css"
 // import Crisp from "../../../features/chat/components/Crisp/Crisp"
+import ScrollToTop from "../ScrollToTop/ScrollToTop"
+import * as styles from "../Layout/layout.module.css"
 
 const Layout = ({ children }) => {
   const {setUser, setIsloggedIn} = useContext(UserContext)
@@ -42,6 +43,7 @@ const Layout = ({ children }) => {
             <Footer />
             <ToastContainer position="bottom-center" transition={Zoom} />
             {/* <Crisp /> */}
+            <ScrollToTop/>
           </main>
         )}
       </div>
