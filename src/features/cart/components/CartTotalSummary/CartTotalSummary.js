@@ -36,10 +36,8 @@ const CartTotalSummary = ({ focusErrors }) => {
         const result = await agent.generalInfo.websiteInfo()
         const { deliveryCost, onlineOrdering } = result.data.attributes
         setServiceData({ deliveryCost, onlineOrdering })
-        setIsLoading(false)
-      } catch (error) {
-        setIsLoading(false)
-      }
+      } catch (error) {}
+      setIsLoading(false)
     }
     getOrderingServiceStatus()
   }, [])
