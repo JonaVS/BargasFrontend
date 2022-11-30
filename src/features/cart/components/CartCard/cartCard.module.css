@@ -53,7 +53,7 @@
   justify-content: center;
   height: 35px;
   width: 35px;
-  border: solid rgb(216, 183, 35) 2px;
+  border: solid var(--bargas-gold) 2px;
   border-radius: 100%;
   color: aliceblue;
   font-size: 0.8rem;
@@ -102,5 +102,5 @@
 .icon,
 .itemTittle,
 .subTotal {
-  color: rgb(216, 183, 35);
+  color: var(--bargas-gold);
 }

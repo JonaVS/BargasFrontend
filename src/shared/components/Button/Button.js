@@ -9,7 +9,7 @@ const baseAnimationValues = {
 
 const btn = {
   mainHover: {
-    backgroundColor: "rgb(233, 198, 44)",
+    backgroundColor: "rgb(243, 187, 4)",
     ...baseAnimationValues,
   },
   darkHover: {

@@ -36,7 +36,7 @@
 
 .icon,
 .socialIcon {
-  color: rgb(216, 183, 35);
+  color: var(--bargas-gold);
 }
 
 .icon {

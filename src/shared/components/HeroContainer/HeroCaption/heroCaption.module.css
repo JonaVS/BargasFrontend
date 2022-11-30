@@ -14,7 +14,7 @@
   align-items: center;
   font-family: "Niconne";
   margin: 0px;
-  color: rgb(216, 183, 35);
+  color: var(--bargas-gold);
 }
 
 .heroCaption > p {

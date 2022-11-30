@@ -12,6 +12,6 @@
 }
 
 .linkBtn:hover {
-  background-color: rgb(233, 198, 44);
+  background-color: var(--bargas-gold-hover);
   color: rgba(0, 0, 0, 0.692);
 }

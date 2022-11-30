@@ -4,7 +4,7 @@
 
 .catBtn {
   background-color: rgba(0, 0, 0, 0.342);
-  border: solid rgb(216, 183, 35) 2px;
+  border: solid var(--bargas-gold) 2px;
   color: var(--bargas-muted-text1);
 }
 
@@ -16,6 +16,7 @@
 .selectedCat {
   background-color: var(--bargas-gold);
   color: black;
+  border: none;
 }
 
 .selectedCat:focus {

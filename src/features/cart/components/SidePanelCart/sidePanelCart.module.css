@@ -3,13 +3,13 @@
 }
 
 .header > button {
-  background-color: rgb(216, 183, 35) !important;
+  background-color: var(--bargas-gold) !important;
   opacity: 1;
 }
 
 .title {
   font-family: "Niconne";
-  color: rgb(216, 183, 35);
+  color: var(--bargas-gold);
   font-size: 2rem !important;
 }
 
