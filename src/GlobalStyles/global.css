@@ -4,6 +4,7 @@
   --bargas-gold-light: rgba(236, 206, 71, 0.349);
   --bargas-muted-text1: rgb(179, 179, 179);
   --bargas-muted-text2: rgb(212, 212, 212);
+  --toastify-z-index: 10000000;
 }
 
 * {
