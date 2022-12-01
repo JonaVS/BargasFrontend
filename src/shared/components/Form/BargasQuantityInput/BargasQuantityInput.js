@@ -1,7 +1,14 @@
-import { useField } from "formik"
 import React from "react"
+import { useField } from "formik"
 import { FiMinusSquare, FiPlusSquare } from "react-icons/fi"
+import { motion } from "framer-motion"
 import * as styles from "./bargasQuantityInput.module.css"
+
+//START--Framer motion variants--START
+const quantityBtn = {
+  tap: { scale: 0.7 } 
+}
+//END--Framer motion variants--END
 
 const BargasQuantityInput = ({ label, ...props }) => {
   const [field, meta, helpers] = useField(props)
@@ -41,9 +48,15 @@ const BargasQuantityInput = ({ label, ...props }) => {
     <div className={styles.quantityInput}>
       <label htmlFor={props.id || props.name}>{label}</label>
       <div className={styles.inputWrapper}>
-        <button type="button" onClick={quantityOnChange} name="minusItem">
+        <motion.button
+          variants={quantityBtn}
+          whileTap="tap"
+          type="button"
+          onClick={quantityOnChange}
+          name="minusItem"
+        >
           <FiMinusSquare className={styles.icon} />
-        </button>
+        </motion.button>
         <input
           {...field}
           {...props}
@@ -52,9 +65,15 @@ const BargasQuantityInput = ({ label, ...props }) => {
           onKeyPress={handleKeyPress}
           disabled
         />
-        <button type="button" onClick={quantityOnChange} name="plusItem">
+        <motion.button
+          variants={quantityBtn}
+          whileTap="tap"
+          type="button"
+          onClick={quantityOnChange}
+          name="plusItem"
+        >
           <FiPlusSquare className={styles.icon} />
-        </button>
+        </motion.button>
       </div>
     </div>
   )
