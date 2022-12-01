@@ -19,6 +19,7 @@ const OrderDetailsModal = ({ show, close, order }) => {
       centered
       contentClassName={styles.content}
       onHide={close}
+      restoreFocus={false}
     >
       <Modal.Header
         className={styles.modalHeader}
