@@ -28,7 +28,7 @@ const UserAccountOrdersModule = () => {
     }
 
     getUserOrders()
-  }, [])
+  }, [userId])
 
   return (
     <UserAccountModule>

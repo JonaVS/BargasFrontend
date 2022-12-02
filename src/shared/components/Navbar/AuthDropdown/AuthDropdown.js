@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
 import { UserContext } from "../../../../context/UserContext"
-import { Button, Dropdown } from "react-bootstrap"
+import { Dropdown } from "react-bootstrap"
 import ButtonGroup from "react-bootstrap/ButtonGroup"
 import { BiUser } from "react-icons/bi"
 import { Link } from "gatsby"

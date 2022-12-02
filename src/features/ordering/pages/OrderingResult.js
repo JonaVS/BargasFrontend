@@ -19,7 +19,7 @@ const OrderingResult = ({ resultType }) => {
       setMessageType('error')
     }
     setIsValidating(false)
-  }, [resultType])
+  }, [resultType, setCart])
 
   return (
     <>

@@ -1,5 +1,5 @@
 import React from "react"
-import { AnimatePresence, LayoutGroup, motion } from "framer-motion"
+import { AnimatePresence, LayoutGroup } from "framer-motion"
 import { Row } from "react-bootstrap"
 import MenuItemCard from "../MenuItemCard/MenuItemCard"
 

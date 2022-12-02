@@ -2,7 +2,6 @@ import React, { useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Container from "react-bootstrap/Container"
 import Categories from "../Categories/Categories"
-import Row from "react-bootstrap/Row"
 import MenuItemList from "./MenuItemList/MenuItemList"
 import NoContentMessage from "../../../shared/components/NoContentMessage/NoContentMessage"
 import *as styles from './menu.module.css'
