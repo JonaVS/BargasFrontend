@@ -3,20 +3,6 @@ import { userOrdersQuery } from "./paramsQueries"
 
 axios.defaults.baseURL = process.env.GATSBY_STRAPI_API_URL
 
-const sleep = delay => {
-  return new Promise(resolve => {
-    setTimeout(resolve, delay)
-  })
-}
-
-// axios.interceptors.response.use(
-//   async (response) => {
-//     await sleep(2000)
-//     return response
-//   },
-//   error => Promise.reject(error)
-// )
-
 const response = (response) => response.data;
 
 const request = {
