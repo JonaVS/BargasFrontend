@@ -8,12 +8,12 @@
     "@fontsource/josefin-slab": "^4.5.10",
     "@fontsource/niconne": "^4.5.9",
     "@fontsource/squada-one": "^4.5.9",
-    "axios": "^0.27.2",
-    "bootstrap": "^5.2.2",
+    "axios": "^1.2.0",
+    "bootstrap": "^5.2.3",
     "deepmerge": "^4.2.2",
     "dotenv": "^16.0.3",
     "formik": "^2.2.9",
-    "framer-motion": "^7.6.6",
+    "framer-motion": "^7.6.18",
     "gatsby": "^4.24.8",
     "gatsby-plugin-image": "^2.24.0",
     "gatsby-plugin-layout": "^3.24.0",
@@ -29,21 +29,20 @@
     "prop-types": "^15.8.1",
     "qs": "^6.11.0",
     "react": "^18.2.0",
-    "react-bootstrap": "^2.5.0",
+    "react-bootstrap": "^2.6.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
-    "react-icons": "^4.6.0",
-    "react-intersection-observer": "^9.4.0",
+    "react-icons": "^4.7.1",
+    "react-intersection-observer": "^9.4.1",
     "react-lazy-load": "^4.0.1",
-    "react-markdown": "^8.0.3",
+    "react-markdown": "^8.0.4",
     "react-masonry-css": "^1.0.16",
-    "react-responsive": "^9.0.0",
     "react-toastify": "^9.1.1",
     "uuid": "^9.0.0",
     "yup": "^0.32.11"
   },
   "devDependencies": {
-    "prettier": "^2.7.1"
+    "prettier": "^2.8.0"
   },
   "keywords": [
     "gatsby"

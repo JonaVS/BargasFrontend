@@ -12,7 +12,7 @@ export const ErrorContext = {
 }
 
 export const errorMessageBuilder = (context, error) => {
-  if (error.response.status === 0)
+  if (error.code === 'ERR_NETWORK')
     return "No se pudo conectar con el servidor"
 
   const strapiError = error.response.data.error.message
