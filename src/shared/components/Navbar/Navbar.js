@@ -6,7 +6,7 @@ import AuthDropdown from "./AuthDropdown/AuthDropdown"
 import ShoppingBag from "./ShoppingBag/ShoppingBag"
 import { Link } from "gatsby"
 import SidePanelCart from "../../../features/cart/components/SidePanelCart/SidePanelCart"
-import * as styles from "../Navbar/navbar.module.css"
+import *as styles from "./navbar.module.css"
 
 const NavBar = () => {
   const [showCart, setShowCart] = useState(false)
@@ -72,10 +72,9 @@ const NavBar = () => {
                 Menú
               </Nav.Link>
             </Nav.Item>
-            <Nav.Item>
+            <Nav.Item className={styles.logoContainer}>
               <StaticImage
                 src="../../../images/fav.png"
-                className={styles.logo}
                 alt="Bargas Logo"
                 placeholder="blurred"
                 width={105}

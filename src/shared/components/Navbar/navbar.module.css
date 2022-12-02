@@ -16,7 +16,7 @@
   .navbar {
     background-color: #ffffffe3;
   }
-  .logo {
+  .logoContainer {
     display: none;
   }
   .navBrand {
@@ -29,7 +29,7 @@
 }
 
 @media (min-width: 991px) {
-  .logo {
+  .logoContainer {
     display: block;
   }
   .navBrand {
