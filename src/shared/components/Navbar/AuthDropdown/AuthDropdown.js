@@ -7,20 +7,20 @@ import { Link } from "gatsby"
 import * as styles from "./authDropdown.module.css"
 
 const AuthDropdown = () => {
-  const { isLoggedIn, logout } = useContext(UserContext)
+  const { user, logout } = useContext(UserContext)
 
   return (
     <Dropdown as={ButtonGroup}>
       <Dropdown.Toggle className={styles.authDp}>
-      {isLoggedIn && <div className={styles.onlineStatus}/>}
+      {user && <div className={styles.onlineStatus}/>}
         <BiUser className={styles.icon} />
       </Dropdown.Toggle>
       <Dropdown.Menu className={styles.dpMenu}>
-        <Dropdown.Item as={Link} to={!isLoggedIn ? "/app/login" : "/app/user-account"}>
-          {!isLoggedIn ? "Ingresar" : "Mi Cuenta"}
+        <Dropdown.Item as={Link} to={!user ? "/app/login" : "/app/user-account"}>
+          {!user ? "Ingresar" : "Mi Cuenta"}
         </Dropdown.Item>
         <div className={styles.divider} />
-        {!isLoggedIn ? (
+        {!user ? (
           <Dropdown.Item as={Link} to="/app/signup">
             Registrarse
           </Dropdown.Item>

@@ -8,7 +8,6 @@ export const UserContext = createContext({})
 
 export const UserProvider = ({ children }) => {
   const [user, setUser] = useState(null)
-  const [isLoggedIn, setIsloggedIn] = useState(false)
 
   const login = async userCredentials => {
     try {
@@ -20,7 +19,6 @@ export const UserProvider = ({ children }) => {
         { withCredentials: true }
       )
       setUser(response.user)
-      setIsloggedIn(true)
       navigate("/")
     } catch (error) {
       toastDispatcher(
@@ -33,7 +31,6 @@ export const UserProvider = ({ children }) => {
   const logout = async () => {
     await agent.user.logout({}, { withCredentials: true })
     setUser(null)
-    setIsloggedIn(false)
     navigate("/")
   }
 
@@ -48,7 +45,6 @@ export const UserProvider = ({ children }) => {
         { withCredentials: true }
       )
       setUser(response.user)
-      setIsloggedIn(true)
       navigate("/")
     } catch (error) {
       toastDispatcher(
@@ -62,12 +58,10 @@ export const UserProvider = ({ children }) => {
     <UserContext.Provider
       value={{
         user,
-        isLoggedIn,
         register,
         login,
         logout,
         setUser,
-        setIsloggedIn,
       }}
     >
       {children}

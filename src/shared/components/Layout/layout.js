@@ -11,7 +11,7 @@ import ScrollToTop from "../ScrollToTop/ScrollToTop"
 import * as styles from "../Layout/layout.module.css"
 
 const Layout = ({ children }) => {
-  const {setUser, setIsloggedIn} = useContext(UserContext)
+  const {setUser} = useContext(UserContext)
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
@@ -21,14 +21,11 @@ const Layout = ({ children }) => {
           withCredentials: true
         })
         setUser(user)
-        setIsloggedIn(true)
-        setIsLoading(false)
-      } catch (err) {
-        setIsLoading(false)
-      }
+      } catch (err) {}
+      setIsLoading(false)
     }
     getLoggedInUser()
-  },[setUser, setIsloggedIn])
+  },[setUser])
 
   return (
     <>

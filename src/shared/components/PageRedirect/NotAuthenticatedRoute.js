@@ -3,8 +3,8 @@ import { UserContext } from "../../../context/UserContext"
 import { navigate } from "gatsby"
 
 const NotAuthenticatedRoute = ({component: Component}) => {
-  const {isLoggedIn} = useContext(UserContext) 
-  if (isLoggedIn) {
+  const { user } = useContext(UserContext) 
+  if (user) {
     navigate('/')
     return <div style={{width: '100%', height:'100vh'}}></div>
   }
