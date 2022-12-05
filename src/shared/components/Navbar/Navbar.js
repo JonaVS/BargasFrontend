@@ -6,7 +6,7 @@ import AuthDropdown from "./AuthDropdown/AuthDropdown"
 import ShoppingBag from "./ShoppingBag/ShoppingBag"
 import { Link } from "gatsby"
 import SidePanelCart from "../../../features/cart/components/SidePanelCart/SidePanelCart"
-import *as styles from "./navbar.module.css"
+import * as styles from "./navbar.module.css"
 
 const NavBar = () => {
   const [showCart, setShowCart] = useState(false)
@@ -26,7 +26,7 @@ const NavBar = () => {
         collapseOnSelect
       >
         <TopNav handleShowCart={handleShowCart} />
-        <Navbar.Brand className={styles.navBrand} href="#home">
+        <Navbar.Brand as={Link} to="/" className={styles.navBrand}>
           <StaticImage
             src="../../../images/fav.png"
             alt="Business Logo"
@@ -72,7 +72,7 @@ const NavBar = () => {
                 Menú
               </Nav.Link>
             </Nav.Item>
-            <Nav.Item className={styles.logoContainer}>
+            <Nav.Item as={Link} to="/" className={styles.logoContainer}>
               <StaticImage
                 src="../../../images/fav.png"
                 alt="Bargas Logo"
