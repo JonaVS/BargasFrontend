@@ -8,7 +8,7 @@ const toTopBtn = {
   hidden: { scale: 0 },
   show: {
     scale: 1,
-    translateX: "-50%",
+    translateX: "50%",
     transition: {
       duration: 0.8,
       type: "spring",

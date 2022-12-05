@@ -1,7 +1,6 @@
 .scrollBtn {
   position: fixed;
-  top: 30%;
-  right: 0%;
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,4 +12,18 @@
   color: rgb(219, 219, 219);
   font-size: 20px;
   background-color: rgb(15, 15, 15);
+}
+
+@media (min-width: 320px) {
+  .scrollBtn {
+    bottom: 80px;
+    left: 0;
+  }
+}
+
+@media (min-width: 480px) {
+  .scrollBtn {
+    bottom: 100px;
+    left: 15px;
+  }
 }
