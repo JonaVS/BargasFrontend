@@ -65,7 +65,7 @@ const ContactBasicInfo = () => {
           variants={mapHolder}
           initial="hidden"
           whileInView="show"
-          viewport={{ fallback: true, once: true, amount: 0.9 }}
+          viewport={{ fallback: true, once: true, amount: 0.3 }}
         >
           <Map />
         </motion.div>
