@@ -4,9 +4,8 @@
   left: 0;
   background-color: rgba(2, 2, 2, 0.555);
   font-family: "Niconne";
-  border: solid var(--bargas-gold) 1px;
   border-radius: 0px 20px 0px 0px;
-  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+  box-shadow: rgba(73, 73, 73, 0.4) 0px 0px 0px 2px,
     rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
     rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 }
@@ -17,7 +16,7 @@
   align-items: center;
   justify-content: space-between;
   text-align: left;
-  color: rgb(216, 183, 35);
+  color: var(--bargas-gold);
   margin: 0px;
 }
 
@@ -43,7 +42,7 @@
   }
   .caption {
     top: 10%;
-    padding: 5px;
+    padding: 5px 10px 5px 10px;
   }
 }
 
