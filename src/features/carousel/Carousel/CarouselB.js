@@ -13,6 +13,7 @@ const CarouselB = () => {
           strapi_id
           title
           description
+          url
           image {
             localFile {
               childImageSharp {
@@ -33,9 +34,13 @@ const CarouselB = () => {
         <Carousel.Item key={item.strapi_id} className={styles.itemWrapper}>
           <GatsbyImage
             image={item.image.localFile.childImageSharp.gatsbyImageData}
-            alt="test"
+            alt={item.title}
           />
-          <CarouselCaption title={item.title} text={item.description} />
+          <CarouselCaption
+            item={item.title}
+            description={item.description}
+            url={item.url}
+          />
         </Carousel.Item>
       ))}
     </Carousel>

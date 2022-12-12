@@ -11,8 +11,9 @@
     rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 }
 
-.caption > h3 {
+.caption > a {
   display: flex;
+  text-decoration: none;
   align-items: center;
   justify-content: space-between;
   text-align: left;
@@ -34,7 +35,7 @@
 }
 
 @media (min-width: 320px) {
-  .caption > h3 {
+  .caption > a {
     font-size: 1.2rem ;
   }
   .caption > p {
@@ -47,7 +48,7 @@
 }
 
 @media (min-width: 991px) {
-  .caption > h3 {
+  .caption > a {
     font-size: 1.8rem;
   }
   .caption > p {

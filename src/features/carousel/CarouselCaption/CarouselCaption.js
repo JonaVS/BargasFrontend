@@ -1,15 +1,16 @@
 import React from "react"
-import { AiOutlineEye } from "react-icons/ai"
+import { Link } from "gatsby";
+import { BsArrowRight } from "react-icons/bs";
 import * as styles from "../CarouselCaption/carouselCaption.module.css"
 
-const CarouselCaption = ({ text, title }) => {
+const CarouselCaption = ({ item, description, url }) => {
   return (
     <div className={styles.caption}>
-      <h3>
-        {title}
-        <AiOutlineEye className={styles.icon} />
-      </h3>
-      <p>{text}</p>
+      <Link to={`${url}`}>
+        {item}
+        <BsArrowRight className={styles.icon} />
+      </Link>
+      <p>{description}</p>
     </div>
   )
 }
