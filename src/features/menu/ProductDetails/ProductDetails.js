@@ -41,6 +41,11 @@ const ProductDetails = ({ productData }) => {
   const [isLoading, setIsLoading] = useState(true)
   const [isAvailable, setIsAvailable] = useState(false)
   const [apiProductData, setApiProductData] = useState({})
+ 
+  const descData = {
+    description: productData.description,
+    ingredients: productData.ingredients,
+  }
 
   useEffect(() => {
     const getProductDetails = async () => {
@@ -89,7 +94,7 @@ const ProductDetails = ({ productData }) => {
           )}
         </Col>
         <Col xs={{ order: "first" }} lg={{ span: 6, order: "last" }}>
-          <ProductDescription />
+          <ProductDescription data={descData} />
         </Col>
       </Row>
     </Container>

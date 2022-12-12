@@ -1,30 +1,23 @@
-.card {
-  background-color: transparent;
+.descContainer > h2 {
+  color: var(--bargas-gold);
+  display: flex;
+  align-items: center;
+  font-family: 'Niconne';
+  font-size: 1.6rem;
 }
 
-.cardBody {
-  padding: 5px;
-}
-
-.descText {
-  color: white;
-  color: rgb(233, 229, 229);
-  font-family: "Josefin Slab";
+.descContainer > p {
+  color: var(--bargas-muted-text2);
+  font-family: 'Josefin Slab';
   font-size: 1.2rem;
 }
 
-.toggleText {
-  background-color: transparent;
-  border: none;
-  border-bottom: solid rgb(155, 154, 154);
-  font-family: "Niconne";
-  font-style: italic;
-  color: var(--bargas-gold);
-  font-size: 3rem;
-  margin: 0px !important;
-  padding: 0px 0px 0px 0px;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.descContainer > h2 > svg {
+  height: 50px;
+  width: auto;
+  padding: 10px;
+  background-color: rgb(15, 15, 15);
+  border-radius: 100%;
+  border: solid rgb(56, 56, 56) 2px;
+  margin-right: 15px;
 }
