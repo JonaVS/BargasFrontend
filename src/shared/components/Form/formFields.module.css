@@ -21,14 +21,16 @@ select:-webkit-autofill:focus {
 
 .textField,
 .textArea, .selectField, .textBox {
+  display: block;
   color: var(--bargas-muted-text1);
   background-color: rgba(0, 0, 0, 0.65);
   width: 100%;
   padding: 10px;
-  border: solid var(--bargas-gold-light) 1px;
+  border: none;
+  box-shadow: rgba(46, 46, 46, 0.637) 0px 3px 8px;;
   border-radius: 10px 10px 10px 10px;
   margin: none;
-  display: block;
+  font-family: 'Squada One';
 }
 .textField,
 .selectField, .textBox {
@@ -42,7 +44,7 @@ select:-webkit-autofill:focus {
 
 .textField:focus,
 .textArea:focus, .selectField:focus {
-  outline: solid rgb(216, 183, 35) 1px;
+  outline: solid var(--bargas-gold) 2px;
 }
 
 
