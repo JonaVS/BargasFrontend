@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { AnimatePresence, motion } from "framer-motion"
-import { IoRocketOutline } from "react-icons/io5"
+import { AiOutlineArrowUp } from "react-icons/ai";
 import * as styles from "./scrollToTop.module.css"
 
 //START--Framer motion variants--START
@@ -51,7 +51,7 @@ const ScrollToTop = () => {
           title="Go to top"
           className={styles.scrollBtn}
         >
-          <IoRocketOutline />
+          <AiOutlineArrowUp />
         </motion.button>
       )}
     </AnimatePresence>
