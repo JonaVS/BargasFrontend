@@ -17,13 +17,13 @@
 @media (min-width: 320px) {
   .scrollBtn {
     bottom: 80px;
-    left: 0;
+    left: 0px;
   }
 }
 
 @media (min-width: 480px) {
   .scrollBtn {
-    bottom: 100px;
+    bottom: 90px;
     left: 15px;
   }
 }
