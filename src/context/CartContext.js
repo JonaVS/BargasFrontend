@@ -19,18 +19,10 @@ export const CartProvider = ({ children }) => {
 
   const addToCart = (productData, formData) => {
     const cartItem = {
+      ...productData,
+      ...formData,
       id: productData.strapi_id,
       inCartId: uuid(),
-      name: productData.name,
-      price: productData.price,
-      discount: productData.discount,
-      mains: productData.mains,
-      sides: productData.sides,
-      sauces: productData.sauces,
-      sizes: productData.sizes,
-      thumbnail: productData.thumbnail,
-      qualityImg: productData.qualityImg,
-      ...formData,
     }
     setCart([...cart, cartItem])
     toastDispatcher(
@@ -44,13 +36,7 @@ export const CartProvider = ({ children }) => {
       if (item.inCartId === productData.inCartId) {
         return {
           ...item,
-          quantity: formData.quantity,
-          side: formData.side,
-          main: formData.main,
-          sauce: formData.sauce,
-          size: formData.size,
-          extraInfo: formData.extraInfo,
-          subTotal: formData.subTotal,
+          ...formData
         }
       }
       return item
