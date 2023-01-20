@@ -5,6 +5,7 @@
   background-color: rgba(34, 33, 33, 0.712);
   position: absolute;
   bottom: 0%;
+  z-index: -1;
 }
 
 .footerCol {
