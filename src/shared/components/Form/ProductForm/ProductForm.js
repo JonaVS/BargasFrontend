@@ -77,6 +77,7 @@ const ProductForm = ({
             <CustomButton
               whileHover={ButtonTypeAnimation.MainHover}
               className={styles.orderBtn}
+              type="submit"
             >
               Ordenar
             </CustomButton>
