@@ -19,7 +19,7 @@ I'm not a monorepo fan :sweat_smile:
 
 ## Frontend features:
 
-- **Pages:** (home, menu, menu item details, contact, events/promos page, cart details.
+- **Pages:** (home, menu, menu item details, QR code menu, contact, events/promos page, cart details, terms and conditions, privacy info, shopping/ordering help.
 - **Navigation:** Business location via Google Maps API & Waze Navigation (Waze is very popular here in Costa Rica that's why I added that).
 - **Auth:** signup, password recovery, login using JWT & HttpOnly cookies (I had to override the default implementation of StrapI CMS to achieve this).
 - **Cart:** add, edit and delete products.
