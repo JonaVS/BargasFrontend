@@ -62,7 +62,7 @@ const Cart = () => {
             <Col
               as={motion.div}
               variants={orderPanel}
-              initial='hidden'
+              initial="hidden"
               whileInView="show"
               viewport={{ fallback: true, once: true, amount: 0.3 }}
               sm={12}
@@ -70,19 +70,23 @@ const Cart = () => {
               className="p-0 me-0"
             >
               <CartDivider text="Pedido" />
-              <CartActions/>
+              <CartActions />
               <CartItemList
                 cartItems={cart}
                 handleEdit={handleModal}
                 handleDelete={deleteCartItem}
               />
             </Col>
-            <Col               
+            <Col
               as={motion.div}
               variants={formPanel}
-              initial='hidden'
-              animate='show'
-              className="ps-xs-0 mt-5 mt-lg-0 ps-lg-5" sm={12} lg={6}>
+              initial="hidden"
+              animate="show"
+              className="ps-xs-0 mt-5 mt-lg-0 ps-lg-5 position-relative"
+              style={{ zIndex: 1 }}
+              sm={12}
+              lg={6}
+            >
               <CartDivider text="Datos de entrega" />
               <ClientInfoForm />
             </Col>
