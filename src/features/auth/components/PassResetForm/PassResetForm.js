@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import agent from "../../../../API/agent"
+import agent from "../../../../strapiApi/agent"
 import { toastDispatcher, ToastType } from "../../../../helpers/toastDispatcher"
 import { ErrorContext, errorMessageBuilder } from "../../../../helpers/errorMessageBuilder"
 import { Container } from "react-bootstrap"

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import {toastDispatcher, ToastType} from '../../../helpers/toastDispatcher'
 import {errorMessageBuilder, ErrorContext} from '../../../helpers/errorMessageBuilder'
-import agent from "../../../API/agent"
+import agent from "../../../strapiApi/agent"
 import { Container, Row, Col } from "react-bootstrap"
 import { motion } from "framer-motion"
 import ProductDetailsHeader from "./ProductDetailsHeader/ProductDetailsHeader"

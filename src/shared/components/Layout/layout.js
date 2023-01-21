@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css"
 import React, { useContext, useEffect, useState } from "react"
 import { UserContext } from "../../../context/UserContext"
-import agent from "../../../API/agent"
+import agent from "../../../strapiApi/agent"
 import NavBar from "../Navbar/Navbar"
 import Footer from "../Footer/Footer"
 import { ToastContainer, Zoom } from "react-toastify"

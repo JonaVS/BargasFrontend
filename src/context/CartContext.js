@@ -2,7 +2,7 @@ import React, { createContext } from "react"
 import { useLocalStorage } from "../customHooks/useLocalStorage"
 import { v4 as uuid } from "uuid"
 import {ToastType, toastDispatcher} from '../helpers/toastDispatcher'
-import agent from "../API/agent"
+import agent from "../strapiApi/agent"
 import { clientOrderBuilder } from "../helpers/clientOrderBuilder"
 
 export const CartContext = createContext([{}])

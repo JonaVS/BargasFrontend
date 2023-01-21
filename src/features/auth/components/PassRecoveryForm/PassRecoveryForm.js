@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import agent from "../../../../API/agent"
+import agent from "../../../../strapiApi/agent"
 import { toastDispatcher, ToastType } from "../../../../helpers/toastDispatcher"
 import { Container } from "react-bootstrap"
 import { motion } from "framer-motion"

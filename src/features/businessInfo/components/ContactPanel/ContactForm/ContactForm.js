@@ -1,5 +1,5 @@
 import React from "react"
-import agent from "../../../../../API/agent"
+import agent from "../../../../../strapiApi/agent"
 import { toastDispatcher, ToastType } from "../../../../../helpers/toastDispatcher"
 import { ErrorContext, errorMessageBuilder } from "../../../../../helpers/errorMessageBuilder"
 import { Form, Formik } from "formik"

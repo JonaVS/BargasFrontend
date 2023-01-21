@@ -1,5 +1,5 @@
 import React, { createContext, useState } from "react"
-import agent from "../API/agent"
+import agent from "../strapiApi/agent"
 import { navigate } from "gatsby"
 import { toastDispatcher, ToastType } from "../helpers/toastDispatcher"
 import { errorMessageBuilder, ErrorContext} from "../helpers/errorMessageBuilder"

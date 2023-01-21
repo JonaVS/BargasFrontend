@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react"
 import { CartContext } from "../../../../context/CartContext"
-import agent from "../../../../API/agent"
+import agent from "../../../../strapiApi/agent"
 import UnavailableService from "../../../../shared/components/UnavailableService/UnavailableService"
 import { Spinner } from "react-bootstrap"
 import Button, { ButtonTypeAnimation } from "../../../../shared/components/Button/Button"

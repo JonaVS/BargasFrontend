@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react"
 import { UserContext } from "../../../../context/UserContext"
-import agent from "../../../../API/agent"
+import agent from "../../../../strapiApi/agent"
 import { toastDispatcher, ToastType } from "../../../../helpers/toastDispatcher"
 import UserAccountModule from "../UserAccountModule/UserAccountModule"
 import LoadingOverlay from "../../../../shared/components/LoadingOverlay/LoadingOverlay"
