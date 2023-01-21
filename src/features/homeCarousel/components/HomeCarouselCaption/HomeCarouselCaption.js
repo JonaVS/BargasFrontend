@@ -1,9 +1,9 @@
 import React from "react"
 import { Link } from "gatsby";
 import { BsArrowRight } from "react-icons/bs";
-import * as styles from "../CarouselCaption/carouselCaption.module.css"
+import * as styles from "./homeCarouselCaption.module.css"
 
-const CarouselCaption = ({ item, description, url }) => {
+const HomeCarouselCaption = ({ item, description, url }) => {
   return (
     <div className={styles.caption}>
       <Link to={`${url}`}>
@@ -15,4 +15,4 @@ const CarouselCaption = ({ item, description, url }) => {
   )
 }
 
-export default CarouselCaption
+export default HomeCarouselCaption

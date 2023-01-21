@@ -2,10 +2,10 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { Carousel } from "react-bootstrap"
 import { GatsbyImage } from "gatsby-plugin-image"
-import CarouselCaption from "../CarouselCaption/CarouselCaption"
-import * as styles from "../Carousel/carousel.module.css"
+import CarouselCaption from "../HomeCarouselCaption/HomeCarouselCaption"
+import * as styles from "./homeCarousel.module.css"
 
-const CarouselB = () => {
+const HomeCarousel = () => {
   const data = useStaticQuery(graphql`
     query {
       allStrapiCarouselItem {
@@ -47,4 +47,4 @@ const CarouselB = () => {
   )
 }
 
-export default CarouselB
+export default HomeCarousel

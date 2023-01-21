@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Seo from "../shared/components/Seo/seo"
-import CarouselB from "../features/carousel/Carousel/CarouselB"
+import HomeCarousel from "../features/homeCarousel/components/HomeCarousel/HomeCarousel"
 import Divider from "../shared/components/Divider/Divider"
 import About from "../features/businessInfo/components/AboutSection/AboutSection"
 import MenuSection from "../features/businessInfo/components/MenuSection/MenuSection"
@@ -15,7 +15,7 @@ const IndexPage = ({ data }) => {
   return (
     <>
       <Seo title={seoData.title} description={seoData.description} />
-      <CarouselB />
+      <HomeCarousel />
       <Divider />
       <About />
       <Divider />
