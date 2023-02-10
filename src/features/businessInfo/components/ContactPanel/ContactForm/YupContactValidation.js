@@ -1,6 +1,6 @@
 import * as Yup from "yup"
 
-export const contactFormValidators = {
+const contactFormValidation = {
   name: Yup.string()
     .max(30, "El campo debe contar con 40 caracteres o menos")
     .required("Campo requerido"),
@@ -10,3 +10,5 @@ export const contactFormValidators = {
     .max(300, "El maximo de caracteres permito es de 200 o menos")
     .required("Campo requerido"),
 }
+
+export default contactFormValidation

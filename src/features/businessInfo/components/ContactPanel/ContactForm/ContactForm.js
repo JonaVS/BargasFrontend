@@ -4,7 +4,7 @@ import { toastDispatcher, ToastType } from "../../../../../helpers/toastDispatch
 import { ErrorContext, errorMessageBuilder } from "../../../../../helpers/errorMessageBuilder"
 import { Form, Formik } from "formik"
 import * as Yup from "yup"
-import { contactFormValidators } from "./YupContactValidation"
+import contactFormValidation  from "./YupContactValidation"
 import LoadingOverlay from "../../../../../shared/components/LoadingOverlay/LoadingOverlay"
 import BargasTextField from "../../../../../shared/components/Form/BargasTextField/BargasTextField"
 import BargasTextAreaField from "../../../../../shared/components/Form/BargasTextAreaField/BargasTextAreaField"
@@ -32,7 +32,7 @@ const ContactForm = () => {
   return (
     <Formik
       initialValues={{ name: "", email: "", message: "" }}
-      validationSchema={Yup.object(contactFormValidators)}
+      validationSchema={Yup.object(contactFormValidation)}
       onSubmit={(values, formikBag) => handleSubmit(values, formikBag)}
     >
       {formik => (
