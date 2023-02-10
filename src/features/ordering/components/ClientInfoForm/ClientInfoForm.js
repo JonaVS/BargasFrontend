@@ -4,7 +4,7 @@ import { Form, Formik } from "formik"
 import { toastDispatcher, ToastType } from "../../../../helpers/toastDispatcher"
 import { ErrorContext, errorMessageBuilder } from "../../../../helpers/errorMessageBuilder"
 import { navigate } from "gatsby"
-import validationSchemas from "../ClientInfoForm/YupValidations"
+import clientInfoValidationSchemas from "./YupClientInfoValidation"
 import LoadingOverlay from "../../../../shared/components/LoadingOverlay/LoadingOverlay"
 import BargasTextField from "../../../../shared/components/Form/BargasTextField/BargasTextField"
 import BargasTextAreaField from "../../../../shared/components/Form/BargasTextAreaField/BargasTextAreaField"
@@ -65,8 +65,8 @@ const ClientInfoForm = () => {
         }}
         validationSchema={
           withInvoice
-            ? validationSchemas.validationWithEInvoice
-            : validationSchemas.normalValidation
+            ? clientInfoValidationSchemas.validationWithEInvoice
+            : clientInfoValidationSchemas.normalValidation
         }
         onSubmit={(values) => handleSubmit(values)}
       >

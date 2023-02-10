@@ -26,9 +26,9 @@ const validationWithEInvoice = {
     .required("Campo requerido"),
 }
 
-const validationSchemas = {
+const clientInfoValidationSchemas = {
   normalValidation: Yup.object(normalValidation),
   validationWithEInvoice: Yup.object(validationWithEInvoice),
 }
 
-export default validationSchemas
+export default clientInfoValidationSchemas
