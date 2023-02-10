@@ -3,8 +3,7 @@ import agent from "../../../../strapiApi/agent"
 import { toastDispatcher, ToastType } from "../../../../helpers/toastDispatcher"
 import { ErrorContext, errorMessageBuilder } from "../../../../helpers/errorMessageBuilder"
 import { Formik, Form } from "formik"
-import * as Yup from "yup"
-import changePasswordValidators from "./changePasswordYupValidation"
+import changePassValidation from "./YupChangePassValidation"
 import LoadingOverlay from "../../../../shared/components/LoadingOverlay/LoadingOverlay"
 import BargasTextField from "../../../../shared/components/Form/BargasTextField/BargasTextField"
 import Button, { ButtonTypeAnimation } from "../../../../shared/components/Button/Button"
@@ -42,7 +41,7 @@ const ChangePasswordForm = () => {
         password: "",
         passwordConfirmation: "",
       }}
-      validationSchema={Yup.object(changePasswordValidators)}
+      validationSchema={changePassValidation}
       onSubmit={(values, formikBag) => handleSubmit(values, formikBag) }
     >
       {formik => (
