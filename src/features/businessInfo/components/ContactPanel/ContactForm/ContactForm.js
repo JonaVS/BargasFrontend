@@ -4,7 +4,7 @@ import { toastDispatcher, ToastType } from "../../../../../helpers/toastDispatch
 import { ErrorContext, errorMessageBuilder } from "../../../../../helpers/errorMessageBuilder"
 import { Form, Formik } from "formik"
 import * as Yup from "yup"
-import { contactFormValidators } from "./YupValidation"
+import { contactFormValidators } from "./YupContactValidation"
 import LoadingOverlay from "../../../../../shared/components/LoadingOverlay/LoadingOverlay"
 import BargasTextField from "../../../../../shared/components/Form/BargasTextField/BargasTextField"
 import BargasTextAreaField from "../../../../../shared/components/Form/BargasTextAreaField/BargasTextAreaField"

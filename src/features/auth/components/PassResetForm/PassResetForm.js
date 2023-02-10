@@ -6,7 +6,7 @@ import { Container } from "react-bootstrap"
 import { motion } from "framer-motion"
 import { formVariants } from "../../shared/formMotionVariants"
 import { Form, Formik } from "formik"
-import resetPasswordValidators from "./resetPassValidation"
+import resetPasswordValidaton from "./YupResetPassValidation"
 import LoadingOverlay from "../../../../shared/components/LoadingOverlay/LoadingOverlay"
 import BargasTextField from "../../../../shared/components/Form/BargasTextField/BargasTextField"
 import Button, { ButtonTypeAnimation } from "../../../../shared/components/Button/Button"
@@ -46,7 +46,7 @@ const PassResetForm = ({ authCode }) => {
                 password: "",
                 passwordConfirmation: "",
               }}
-              validationSchema={resetPasswordValidators}
+              validationSchema={resetPasswordValidaton}
               onSubmit={values => handleSubmit(values)}
             >
               {formik => (

@@ -1,6 +1,6 @@
 import * as Yup from "yup"
 
-const resetPasswordValidators = Yup.object({
+const resetPasswordValidaton = Yup.object({
   password: Yup.string()
     .min(8, "La contraseña debe contener al menos 8 caracteres")
     .required("Campo requerido"),
@@ -9,4 +9,4 @@ const resetPasswordValidators = Yup.object({
     .required("Campo requerido"),
 })
 
-export default resetPasswordValidators
+export default resetPasswordValidaton
