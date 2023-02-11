@@ -11,10 +11,7 @@ export const CartProvider = ({ children }) => {
   const [cart, setCart] = useLocalStorage("cart", [])
 
   const getCartTotal = () => {
-    let subTotal = 0
-    //The total for products only
-    cart.forEach(item => (subTotal += parseInt(item.subTotal)))
-    return subTotal
+    return cart.reduce((subTotal, item) => subTotal + item.subTotal, 0)
   }
 
   const getItemCount = () => {
