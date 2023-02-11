@@ -11,7 +11,7 @@ const AuthDropdown = () => {
 
   return (
     <Dropdown as={ButtonGroup}>
-      <Dropdown.Toggle className={styles.authDp}>
+      <Dropdown.Toggle title="Auth options" className={styles.authDp}>
       {user && <div className={styles.onlineStatus}/>}
         <BiUser className={styles.icon} />
       </Dropdown.Toggle>
