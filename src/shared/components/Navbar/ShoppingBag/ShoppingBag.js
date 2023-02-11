@@ -19,7 +19,7 @@ const ShoppingBag = ({handleShowCart}) => {
       title="Open cart"
       type="button"
       onClick={handleShowCart}
-      className={styles.cartLink}
+      className={styles.cartBtn}
     >
       <div className={styles.bagWrapper}>
         <div className={styles.counter}>{itemCount}</div>
