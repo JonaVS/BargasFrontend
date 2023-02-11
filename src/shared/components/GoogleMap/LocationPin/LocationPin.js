@@ -6,12 +6,11 @@ import * as styles from "./locationPin.module.css"
 //START--Framer motion variants--START
 const pin = {
   show: {
-    scale: [1, 0.90],
+    scale: [0.90, 1],
     transition: {
-      duration: 1.1,
+      duration: 1,
       repeat: Infinity,
       repeatType: "reverse",
-      type: 'spring'
     },
   },
 }
