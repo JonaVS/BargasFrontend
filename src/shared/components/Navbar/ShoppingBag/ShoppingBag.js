@@ -15,7 +15,12 @@ const ShoppingBag = ({handleShowCart}) => {
   }, [cart])
 
   return (
-    <button onClick={handleShowCart} className={styles.cartLink}>
+    <button
+      title="Open cart"
+      type="button"
+      onClick={handleShowCart}
+      className={styles.cartLink}
+    >
       <div className={styles.bagWrapper}>
         <div className={styles.counter}>{itemCount}</div>
         <BsBag className={styles.bagIcon} />
