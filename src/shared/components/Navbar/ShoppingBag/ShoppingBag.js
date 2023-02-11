@@ -1,18 +1,11 @@
-import React, { useContext, useEffect, useState } from "react"
+import React, { useContext } from "react"
 import { CartContext } from "../../../../context/CartContext"
 import { BsBag } from "react-icons/bs"
 import * as styles from "../ShoppingBag/shoppingBag.module.css"
 
 const ShoppingBag = ({handleShowCart}) => {
 
-  const {cart} = useContext(CartContext)
-  const [itemCount, setItemCount] = useState(0)
-
-  useEffect(() => {
-    let itemCount = 0
-    cart.forEach(item => (itemCount += parseInt(item.quantity)))
-    setItemCount(itemCount)
-  }, [cart])
+  const {itemCount} = useContext(CartContext)
 
   return (
     <button
@@ -30,7 +23,7 @@ const ShoppingBag = ({handleShowCart}) => {
 }
 
 ShoppingBag.defaultProps = {
-  handleShowCart: () => console.log('Default btn message')
+  handleShowCart: () => {}
 }
 
 export default ShoppingBag

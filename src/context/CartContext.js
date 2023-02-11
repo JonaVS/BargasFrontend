@@ -17,6 +17,10 @@ export const CartProvider = ({ children }) => {
     return subTotal
   }
 
+  const getItemCount = () => {
+    return cart.reduce((count, item) => count + item.quantity, 0)
+  }
+
   const addToCart = (productData, formData) => {
     const cartItem = {
       ...productData,
@@ -61,6 +65,7 @@ export const CartProvider = ({ children }) => {
   } 
 
   const cartTotal = getCartTotal()
+  const itemCount = getItemCount()
 
   const placeOrder = async (orderFormData) => {
     try {
@@ -79,6 +84,7 @@ export const CartProvider = ({ children }) => {
         cart,
         setCart,
         cartTotal,
+        itemCount,
         addToCart,
         editCartItem,
         deleteCartItem,
