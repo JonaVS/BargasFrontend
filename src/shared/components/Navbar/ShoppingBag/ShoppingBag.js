@@ -34,14 +34,3 @@ ShoppingBag.defaultProps = {
 }
 
 export default ShoppingBag
-
-
-
-// return (
-//   <Link to="/cart" className={styles.cartLink}>
-//     <div className={styles.bagWrapper}>
-//       <div className={styles.counter}>{itemCount}</div>
-//       <BsBag className={styles.bagIcon} />
-//     </div>
-//   </Link>
-// )
