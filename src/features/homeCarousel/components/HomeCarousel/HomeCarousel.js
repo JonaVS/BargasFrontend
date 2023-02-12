@@ -35,6 +35,7 @@ const HomeCarousel = () => {
           <GatsbyImage
             image={item.image.localFile.childImageSharp.gatsbyImageData}
             alt={item.title}
+            className={styles.carouselImg}
           />
           <CarouselCaption
             item={item.title}

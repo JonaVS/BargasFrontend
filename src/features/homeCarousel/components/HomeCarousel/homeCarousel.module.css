@@ -4,11 +4,17 @@
 }
 
 .itemWrapper {
-  /* max-height: 800px; */
   max-height: 100vh;
 }
 
 .carouselImg {
   object-fit: cover;
   overflow: hidden;
+  width: 100%;
+}
+
+@media (min-width: 1920px) {
+  .carouselImg {
+    height: 100vh;
+  }
 }
