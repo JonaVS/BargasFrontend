@@ -3,11 +3,12 @@
 }
 
 .imgWrapper {
-  /* max-height: 800px; */
-  max-height: 100vh;
+  margin: auto;
+  display: block;
 }
 
-
-
-
-
+@media (min-width: 1920px) {
+  .imgWrapper {
+    height: 100vh;
+  }
+}
