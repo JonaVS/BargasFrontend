@@ -27,8 +27,7 @@ const Footer = () => {
 
   return (
     <footer className={styles.footer}>
-      <Container fluid={true}>
-        <Row className="justify-content-center">
+        <Row>
           <Col lg={true} className={styles.footerCol}>
             <h3 className={styles.footerTittle}>INFORMACIÓN</h3>
             <Link to="/info/privacy">Política de privacidad</Link>
@@ -70,7 +69,6 @@ const Footer = () => {
             />
           </Col>
         </Row>
-      </Container>
     </footer>
   )
 }
