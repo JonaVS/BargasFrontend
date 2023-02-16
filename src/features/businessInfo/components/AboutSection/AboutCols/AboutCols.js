@@ -32,7 +32,7 @@ const AboutCols = ({colsData}) => {
     <Container className={styles.mainCont} fluid>
       <Row
         as={motion.div}
-        className={`justify-content-center ${styles.row}`}
+        className={`${styles.aboutInfoCont}`}
         variants={container}
         initial='hidden'
         whileInView="show"

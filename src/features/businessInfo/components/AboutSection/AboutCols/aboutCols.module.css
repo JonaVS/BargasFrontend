@@ -8,7 +8,7 @@
   padding: 20px 20px 20px 20px;
 }
 
-.row div:last-child {
+.aboutInfoCont div:last-child {
   border-right-style: none;
 }
 
