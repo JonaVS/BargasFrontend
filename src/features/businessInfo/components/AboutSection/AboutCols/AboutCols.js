@@ -29,7 +29,7 @@ const AboutCols = ({colsData}) => {
   const {basicLocation, detailedLocation, openingHours  } = colsData
 
   return (
-    <Container className={styles.mainCont} fluid>
+    <Container className={styles.mainCont}>
       <Row
         as={motion.div}
         className={`${styles.aboutInfoCont}`}
