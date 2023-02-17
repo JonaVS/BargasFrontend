@@ -1,5 +1,5 @@
 import React from "react"
-import { Row, Col  } from "react-bootstrap"
+import { Row, Col, Container  } from "react-bootstrap"
 import { graphql, Link, useStaticQuery } from "gatsby"
 import { MdLocationOn, MdPhone, MdMail } from "react-icons/md"
 import { FiInstagram, FiFacebook } from "react-icons/fi"
@@ -26,7 +26,7 @@ const Footer = () => {
 
   return (
     <footer className={styles.footer}>
-        <Row>
+        <Row as={Container}>
           <Col lg={true} className={styles.footerCol}>
             <h3 className={styles.footerTittle}>INFORMACIÓN</h3>
             <Link to="/info/privacy">Política de privacidad</Link>
